@@ -798,6 +798,55 @@
   
   <entry>
     <title>学习ApacheCxf+Spring建立Rest服务</title>
+    <link href="http://tonglei.win/2016/10/24/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0ApacheCxf+Spring%E5%BB%BA%E7%AB%8BOAuth2%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://tonglei.win/2016/10/24/IT学习/Java/学习ApacheCxf+Spring建立OAuth2服务/</id>
+    <published>2016-10-24T03:20:00.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2"><a href="#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2" class="headerlink" title="Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2"></a>Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2</h2><p>官方文档: <a href="http://cxf.apache.org/docs/jax-rs-oauth2.html" target="_blank" rel="external">http://cxf.apache.org/docs/jax-rs-oauth2.html</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Apache 的 CXF 可以实现 <a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="external">OAuth2.0</a><br>实现 OAuth2.0 需要这么几步：</p>
+<ol>
+<li>浏览器访问第三方网站；</li>
+<li>带着它的客户端ID，状态，地址等信息跳转到 OAuth2.0 服务，服务给它授权；</li>
+<li>OAuth2.0 服务端用请求的 ClientID 生成登录表单给终端用户，用户登录并给第三方应用授权；</li>
+<li>登录成功返回授权码等一大堆参数给第三方应用；</li>
+<li>客户端用授权码请求票据；</li>
+<li>获取票据之后，客户端允许终端用户访问其资源。</li>
+</ol>
+<h2 id="Maven依赖"><a href="#Maven依赖" class="headerlink" title="Maven依赖"></a>Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;cxf-rt-rs-security-oauth2&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;3.1.7&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<h2 id="服务端开发"><a href="#服务端开发" class="headerlink" title="服务端开发"></a>服务端开发</h2><p>三步：</p>
+<ol>
+<li>挑战用户，然后将授权码返回客户端</li>
+<li>用授权码生成票据</li>
+<li>验证票据</li>
+</ol>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot;&gt;&lt;a href=&quot;#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot; clas
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
+    
+    
+      <category term="oauth2" scheme="http://tonglei.win/tags/oauth2/"/>
+    
+      <category term="spring" scheme="http://tonglei.win/tags/spring/"/>
+    
+      <category term="java" scheme="http://tonglei.win/tags/java/"/>
+    
+      <category term="apache cxf" scheme="http://tonglei.win/tags/apache-cxf/"/>
+    
+      <category term="源码" scheme="http://tonglei.win/tags/%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习ApacheCxf+Spring建立Rest服务</title>
     <link href="http://tonglei.win/2016/10/24/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0ApacheCxf+Spring%E5%BB%BA%E7%AB%8BRest%E6%9C%8D%E5%8A%A1/"/>
     <id>http://tonglei.win/2016/10/24/IT学习/Java/学习ApacheCxf+Spring建立Rest服务/</id>
     <published>2016-10-24T03:20:00.000Z</published>
@@ -843,55 +892,6 @@
     
       <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
     
-    
-      <category term="spring" scheme="http://tonglei.win/tags/spring/"/>
-    
-      <category term="java" scheme="http://tonglei.win/tags/java/"/>
-    
-      <category term="apache cxf" scheme="http://tonglei.win/tags/apache-cxf/"/>
-    
-      <category term="源码" scheme="http://tonglei.win/tags/%E6%BA%90%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习ApacheCxf+Spring建立Rest服务</title>
-    <link href="http://tonglei.win/2016/10/24/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0ApacheCxf+Spring%E5%BB%BA%E7%AB%8BOAuth2%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://tonglei.win/2016/10/24/IT学习/Java/学习ApacheCxf+Spring建立OAuth2服务/</id>
-    <published>2016-10-24T03:20:00.000Z</published>
-    <updated>2017-01-07T01:13:51.956Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2"><a href="#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2" class="headerlink" title="Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2"></a>Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2</h2><p>官方文档: <a href="http://cxf.apache.org/docs/jax-rs-oauth2.html" target="_blank" rel="external">http://cxf.apache.org/docs/jax-rs-oauth2.html</a></p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Apache 的 CXF 可以实现 <a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="external">OAuth2.0</a><br>实现 OAuth2.0 需要这么几步：</p>
-<ol>
-<li>浏览器访问第三方网站；</li>
-<li>带着它的客户端ID，状态，地址等信息跳转到 OAuth2.0 服务，服务给它授权；</li>
-<li>OAuth2.0 服务端用请求的 ClientID 生成登录表单给终端用户，用户登录并给第三方应用授权；</li>
-<li>登录成功返回授权码等一大堆参数给第三方应用；</li>
-<li>客户端用授权码请求票据；</li>
-<li>获取票据之后，客户端允许终端用户访问其资源。</li>
-</ol>
-<h2 id="Maven依赖"><a href="#Maven依赖" class="headerlink" title="Maven依赖"></a>Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;cxf-rt-rs-security-oauth2&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;3.1.7&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
-<h2 id="服务端开发"><a href="#服务端开发" class="headerlink" title="服务端开发"></a>服务端开发</h2><p>三步：</p>
-<ol>
-<li>挑战用户，然后将授权码返回客户端</li>
-<li>用授权码生成票据</li>
-<li>验证票据</li>
-</ol>
-<link href="/css/prism.css" rel="stylesheet">]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot;&gt;&lt;a href=&quot;#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot; clas
-    
-    </summary>
-    
-      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
-    
-    
-      <category term="oauth2" scheme="http://tonglei.win/tags/oauth2/"/>
     
       <category term="spring" scheme="http://tonglei.win/tags/spring/"/>
     
