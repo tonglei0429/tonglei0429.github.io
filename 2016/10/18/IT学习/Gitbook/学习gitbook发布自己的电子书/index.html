@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>学习gitbook发布自己的电子书 | 元素力量 | 铁钴镍铜锌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="git,gitbook">
+  <meta name="description" content="关于 Gitbook来自官网的介绍
+
+GitBook is a modern publishing toolchain. Making both writing and collaboration easy.
+
+GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书，GitBook 并非关于 Git 的教程。
+GitBook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习gitbook发布自己的电子书">
+<meta property="og:url" content="http://tonglei.win/2016/10/18/IT学习/Gitbook/学习gitbook发布自己的电子书/index.html">
+<meta property="og:site_name" content="元素力量">
+<meta property="og:description" content="关于 Gitbook来自官网的介绍
+
+GitBook is a modern publishing toolchain. Making both writing and collaboration easy.
+
+GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书，GitBook 并非关于 Git 的教程。
+GitBook">
+<meta property="og:updated_time" content="2017-01-07T01:13:51.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习gitbook发布自己的电子书">
+<meta name="twitter:description" content="关于 Gitbook来自官网的介绍
+
+GitBook is a modern publishing toolchain. Making both writing and collaboration easy.
+
+GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书，GitBook 并非关于 Git 的教程。
+GitBook">
+  
+    <link rel="alternative" href="/atom.xml" title="元素力量" type="application/atom+xml">
+  
+  <meta name="summary" content="null">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">铜镭</h5>
+        <a href="mailto:me@tonglei.win" title="me@tonglei.win" class="mail">me@tonglei.win</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              归档
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/favsites"  >
+              <i class="icon icon-lg icon-fighter-jet"></i>
+              咻～
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/tonglei0429" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p>元素力量 &copy; 2017</p>
+  <p>用的是<a href="http://hexo.io/" target="_blank">Hexo</a> 主题改的<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">学习gitbook发布自己的电子书</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">学习gitbook发布自己的电子书</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2016-10-18T02:34:01.000Z" itemprop="datePublished" class="page-time">
+  2016-10-18
+</time>
+
+
+	<a class="article-category-link" href="/categories/IT学习/">IT学习</a> > <a class="article-category-link" href="/categories/IT学习/Gitbook/">Gitbook</a>
+
+        
+    </h5>
+	<div style="position:absolute;">
+		<iframe src="https://ghbtns.com/github-btn.html?user=tonglei0429&repo=me&type=star&size=small&count=true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+		<iframe src="https://ghbtns.com/github-btn.html?user=tonglei0429&type=follow&size=small" frameborder="0" scrolling="0" width="150" height="20"></iframe>
+	</div>
+  </div>
+  	
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-IT学习/Gitbook/学习gitbook发布自己的电子书" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitbook/">gitbook</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于-Gitbook"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于 Gitbook</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Gitbook-的效果展示"><span class="post-toc-number">2.</span> <span class="post-toc-text">Gitbook 的效果展示</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Gitbook-的用法"><span class="post-toc-number">3.</span> <span class="post-toc-text">Gitbook 的用法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#首先安装-nodejs-和-npm"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">首先安装 nodejs 和 npm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局安装GitBook"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">全局安装GitBook</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建一本书"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">创建一本书</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手动添加-book-json-可选"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">手动添加 book.json (可选)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Gitbook-的测试"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">Gitbook 的测试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Gitbook-静态网站的生成"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">Gitbook 静态网站的生成</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打包-PDF-等电子书的命令"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">打包 PDF 等电子书的命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最后，将-book-上传到自己的静态网页托管服务器就Over了！"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">最后，将 _book 上传到自己的静态网页托管服务器就Over了！</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#PS-Gitbook-的相关资源地址"><span class="post-toc-number">4.</span> <span class="post-toc-text">PS: Gitbook 的相关资源地址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#玩得愉快！"><span class="post-toc-number">5.</span> <span class="post-toc-text">玩得愉快！</span></a></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="关于-Gitbook"><a href="#关于-Gitbook" class="headerlink" title="关于 Gitbook"></a>关于 Gitbook</h1><p>来自官网的介绍</p>
+<blockquote>
+<p>GitBook is a modern publishing toolchain. Making both writing and collaboration easy.</p>
+</blockquote>
+<p>GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书，GitBook 并非关于 Git 的教程。</p>
+<p>GitBook支持输出多种文档格式：</p>
+<ul>
+<li>静态站点：GitBook默认输出该种格式，生成的静态站点可直接托管搭载Github Pages服务上；</li>
+<li>PDF：需要安装gitbook-pdf依赖；</li>
+<li>eBook：需要安装ebook-convert；</li>
+<li>单HTML网页：支持将内容输出为单页的HTML，不过一般用在将电子书格式转换为PDF或eBook的中间过程；</li>
+<li>JSON：一般用于电子书的调试或元数据提取。</li>
+</ul>
+<h1 id="Gitbook-的效果展示"><a href="#Gitbook-的效果展示" class="headerlink" title="Gitbook 的效果展示"></a>Gitbook 的效果展示</h1><blockquote>
+<p>微信小程序使用手册 <a href="https://wechats.github.io/tinyapp-doc/" target="_blank" rel="external">https://wechats.github.io/tinyapp-doc/</a></p>
+</blockquote>
+<p><iframe src="https://wechats.github.io/tinyapp-doc/" frameborder="0" scrolling="0" style="width:100%;height:300px;border:1px solid gray;border-radius:5px;"><iframe></iframe></iframe></p>
+<h1 id="Gitbook-的用法"><a href="#Gitbook-的用法" class="headerlink" title="Gitbook 的用法"></a>Gitbook 的用法</h1><ol>
+<li><h2 id="首先安装-nodejs-和-npm"><a href="#首先安装-nodejs-和-npm" class="headerlink" title="首先安装 nodejs 和 npm"></a>首先安装 <a href="https://nodejs.org/" target="_blank" rel="external">nodejs</a> 和 <a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a></h2></li>
+<li><h2 id="全局安装GitBook"><a href="#全局安装GitBook" class="headerlink" title="全局安装GitBook"></a>全局安装GitBook</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install gitbook-cli -g</div></pre></td></tr></table></figure>
+</li>
+<li><h2 id="创建一本书"><a href="#创建一本书" class="headerlink" title="创建一本书"></a>创建一本书</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook init [目录名]</div></pre></td></tr></table></figure>
+<p>这时会在对应目录下生成 README.md 和 SUMMARY.md。<br>README.md 即为书的简介，会作为书的第一页显示。<br>SUMMARY.md 是书的目录，是 Gitbook 生成电子书的文件索引。</p>
+</li>
+<li><h2 id="手动添加-book-json-可选"><a href="#手动添加-book-json-可选" class="headerlink" title="手动添加 book.json (可选)"></a>手动添加 book.json (可选)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;plugins&quot;: [</div><div class="line">        &quot;betterchinese&quot;,</div><div class="line">        &quot;-duoshuo&quot;,</div><div class="line">        &quot;highlight&quot;,</div><div class="line">        &quot;lunr&quot;,</div><div class="line">        &quot;baidu_gio&quot;,</div><div class="line">        &quot;search&quot;,</div><div class="line">        &quot;fontsettings&quot;,</div><div class="line">        &quot;theme-default&quot;,</div><div class="line">        &quot;toolbar&quot;,</div><div class="line">        &quot;sharing&quot;</div><div class="line">    ],</div><div class="line">    &quot;pluginsConfig&quot;: &#123;</div><div class="line">        &quot;lunr&quot;: &#123;</div><div class="line">            &quot;maxIndexSize&quot;: 1000000,</div><div class="line">            &quot;ignoreSpecialCharacters&quot;: false</div><div class="line">        &#125;,</div><div class="line">        &quot;baidu_gio&quot;: &#123;</div><div class="line">            &quot;token&quot;: &quot;You Token&quot;</div><div class="line">        &#125;,</div><div class="line">        &quot;toolbar&quot;: &#123;</div><div class="line">            &quot;buttons&quot;:</div><div class="line">            [</div><div class="line">                &#123;</div><div class="line">                    &quot;label&quot;: &quot;GitHub&quot;,</div><div class="line">                    &quot;icon&quot;: &quot;fa fa-github&quot;,</div><div class="line">                    &quot;url&quot;: &quot;https://github.com/wechats/tinyapp-doc&quot;</div><div class="line">                &#125;,</div><div class="line">                &#123;</div><div class="line">                    &quot;label&quot;: &quot;PDF&quot;,</div><div class="line">                    &quot;icon&quot;: &quot;fa fa-file-pdf-o&quot;,</div><div class="line">                    &quot;url&quot;: &quot;https://wechats.github.io/tinyapp-doc/gen/tinyapp-doc.pdf&quot;</div><div class="line">                &#125;</div><div class="line">            ]</div><div class="line">        &#125;,</div><div class="line">        &quot;sharing&quot;: &#123;</div><div class="line">            &quot;facebook&quot;: false,</div><div class="line">            &quot;twitter&quot;: false,</div><div class="line">            &quot;google&quot;: false,</div><div class="line">            &quot;weibo&quot;: true,</div><div class="line">            &quot;instapaper&quot;: false,</div><div class="line">            &quot;vk&quot;: false,</div><div class="line">            &quot;all&quot;: [&quot;weibo&quot;]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>book.json 是 Gitbook 的配置文件，plugins 元素定义 Gitbook 需要哪些插件，开头有‘-’代表禁用某个插件，pluginsConfig 定义某个插件的配置。<br>Gitbook 默认包含的插件分别是：</p>
+</li>
+</ol>
+<ul>
+<li>highlight</li>
+<li>search</li>
+<li>lunr</li>
+<li>sharing</li>
+<li>fontsettings</li>
+<li><p>theme-default</p>
+<p>如果想安装新插件，只需要先查询到插件名，然后写到 plugins 里面，再执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook install</div></pre></td></tr></table></figure>
+<p>Gitbook 会自动安装并使用新插件。</p>
+</li>
+</ul>
+<ol>
+<li><h2 id="Gitbook-的测试"><a href="#Gitbook-的测试" class="headerlink" title="Gitbook 的测试"></a>Gitbook 的测试</h2><p>当编辑完 Gitbook，我们可以通过以下命令进行测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook serve</div></pre></td></tr></table></figure>
+<p>然后访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就能看到书的效果</p>
+</li>
+<li><h2 id="Gitbook-静态网站的生成"><a href="#Gitbook-静态网站的生成" class="headerlink" title="Gitbook 静态网站的生成"></a>Gitbook 静态网站的生成</h2><p>通过以下命令，可以输出 Gitbook 静态网站到 _book 文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook build</div></pre></td></tr></table></figure>
+</li>
+<li><h2 id="打包-PDF-等电子书的命令"><a href="#打包-PDF-等电子书的命令" class="headerlink" title="打包 PDF 等电子书的命令"></a>打包 PDF 等电子书的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook pdf</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook mobi</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook epub</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><h2 id="最后，将-book-上传到自己的静态网页托管服务器就Over了！"><a href="#最后，将-book-上传到自己的静态网页托管服务器就Over了！" class="headerlink" title="最后，将 _book 上传到自己的静态网页托管服务器就Over了！"></a>最后，将 _book 上传到自己的静态网页托管服务器就Over了！</h2></li>
+</ol>
+<h1 id="PS-Gitbook-的相关资源地址"><a href="#PS-Gitbook-的相关资源地址" class="headerlink" title="PS: Gitbook 的相关资源地址"></a>PS: Gitbook 的相关资源地址</h1><p>Gitbook 官网： <a href="https://www.gitbook.com" target="_blank" rel="external">https://www.gitbook.com</a></p>
+<p>Gitbook Github: <a href="https://github.com/GitbookIO/gitbook" target="_blank" rel="external">https://github.com/GitbookIO/gitbook</a></p>
+<p>Gitbook Editor: <a href="https://www.gitbook.com/editor" target="_blank" rel="external">https://www.gitbook.com/editor</a></p>
+<p>Gitbook 插件页：<a href="http://plugins.gitbook.com" target="_blank" rel="external">http://plugins.gitbook.com</a></p>
+<p>Gitbook 官方手册：<a href="http://toolchain.gitbook.com/" target="_blank" rel="external">http://toolchain.gitbook.com/</a></p>
+<h1 id="玩得愉快！"><a href="#玩得愉快！" class="headerlink" title="玩得愉快！"></a>玩得愉快！</h1><link href="/css/prism.css" rel="stylesheet">
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="http://tonglei.win/2016/10/18/IT学习/Gitbook/学习gitbook发布自己的电子书/" target="_blank" rel="external">http://tonglei.win/2016/10/18/IT学习/Gitbook/学习gitbook发布自己的电子书/</a>
+                </p>
+                <footer><cite><a href="http://tonglei.win">@铜镭</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2016/10/18/IT学习/微信/微信小程序官方手册离线版本发布/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">微信小程序官方手册离线版本发布</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/10/11/IT学习/Git/学习Git更改注释编辑器/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">学习Git更改注释编辑器</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="IT学习/Gitbook/学习gitbook发布自己的电子书" data-title="学习gitbook发布自己的电子书" data-url="http://tonglei.win/2016/10/18/IT学习/Gitbook/学习gitbook发布自己的电子书/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"tonglei"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "学习gitbook发布自己的电子书",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://tonglei.win/2016/10/18/IT学习/Gitbook/学习gitbook发布自己的电子书/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        点确定别犹豫！
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8b11206e714935934a6674b4a55ea783";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+</body>
+</html>

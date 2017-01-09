@@ -1,0 +1,1295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>元素力量</title>
+  <subtitle>铁钴镍铜锌</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://tonglei.win/"/>
+  <updated>2017-01-07T01:13:51.956Z</updated>
+  <id>http://tonglei.win/</id>
+  
+  <author>
+    <name>铜镭</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NodeJs基本知识</title>
+    <link href="http://tonglei.win/2017/01/07/IT%E5%AD%A6%E4%B9%A0/Javascript/NodeJs%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
+    <id>http://tonglei.win/2017/01/07/IT学习/Javascript/NodeJs基本知识/</id>
+    <published>2017-01-07T01:13:51.956Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是-NodeJS"><a href="#什么是-NodeJS" class="headerlink" title="什么是 NodeJS ?"></a>什么是 NodeJS ?</h1><p>Node.js 是运行在服务端的 JavaScript。   </p>
+<h1 id="NodeJs-的安装"><a href="#NodeJs-的安装" class="headerlink" title="NodeJs 的安装"></a>NodeJs 的安装</h1><p><a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
+<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><h2 id="创建-app-js"><a href="#创建-app-js" class="headerlink" title="创建 app.js"></a>创建 app.js</h2><h2 id="通过-required-引入模块"><a href="#通过-required-引入模块" class="headerlink" title="通过 required 引入模块"></a>通过 required 引入模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div></pre></td></tr></table></figure>
+<h2 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">// 发送 HTTP 头部 </span></div><div class="line">	<span class="comment">// HTTP 状态值: 200 : OK</span></div><div class="line">	<span class="comment">// 内容类型: text/plain</span></div><div class="line">	response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</div><div class="line"></div><div class="line">	<span class="comment">// 发送响应数据 "Hello World"</span></div><div class="line">	response.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;).listen(<span class="number">4000</span>);</div><div class="line"></div><div class="line"><span class="comment">// 终端打印如下信息</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:4000/'</span>);</div></pre></td></tr></table></figure>
+<p>如此便创建了http服务器，使用node命令运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node app.js</div></pre></td></tr></table></figure></p>
+<p>访问 <a href="http://localhost:4000，可以在浏览器里看到熟悉的Hello" target="_blank" rel="external">http://localhost:4000，可以在浏览器里看到熟悉的Hello</a> World。</p>
+<h1 id="关于npm"><a href="#关于npm" class="headerlink" title="关于npm"></a>关于npm</h1><h2 id="什么是npm"><a href="#什么是npm" class="headerlink" title="什么是npm"></a>什么是npm</h2><p>npm是nodejs的包管理工具，类似java的maven，最新的nodejs安装包里已经包含了npm，不需要再单独安装。</p>
+<h2 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h2><p>官网手册 <a href="https://docs.npmjs.com/" target="_blank" rel="external">https://docs.npmjs.com/</a></p>
+<p>查看本地npm版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure></p>
+<p>npm指令列表</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>npm install</td>
+<td>安装模块</td>
+</tr>
+<tr>
+<td>npm uninstall</td>
+<td>卸载模块</td>
+</tr>
+<tr>
+<td>npm update</td>
+<td>更新模块</td>
+</tr>
+<tr>
+<td>npm outdated</td>
+<td>检查模块是否已经过时</td>
+</tr>
+<tr>
+<td>npm ls</td>
+<td>查看安装的模块</td>
+</tr>
+<tr>
+<td>npm init</td>
+<td>在项目中引导创建一个package.json文件</td>
+</tr>
+<tr>
+<td>npm help</td>
+<td>查看某条命令的详细帮助</td>
+</tr>
+<tr>
+<td>npm root</td>
+<td>查看包的安装路径</td>
+</tr>
+<tr>
+<td>npm config</td>
+<td>管理npm的配置路径</td>
+</tr>
+<tr>
+<td>npm cache</td>
+<td>管理模块的缓存</td>
+</tr>
+<tr>
+<td>npm start</td>
+<td>启动模块</td>
+</tr>
+<tr>
+<td>npm stop</td>
+<td>停止模块</td>
+</tr>
+<tr>
+<td>npm restart</td>
+<td>重新启动模块</td>
+</tr>
+<tr>
+<td>npm test</td>
+<td>测试模块</td>
+</tr>
+<tr>
+<td>npm version</td>
+<td>查看模块版本</td>
+</tr>
+<tr>
+<td>npm view</td>
+<td>查看模块的注册信息</td>
+</tr>
+<tr>
+<td>npm publish</td>
+<td>发布模块</td>
+</tr>
+<tr>
+<td>npm access</td>
+<td>在发布的包上设置访问级别</td>
+</tr>
+</tbody>
+</table>
+<h2 id="npm-package-json的语法"><a href="#npm-package-json的语法" class="headerlink" title="npm package.json的语法"></a>npm package.json的语法</h2><p>官网介绍 <a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="external">https://docs.npmjs.com/files/package.json</a><br>网友翻译 <a href="http://mujiang.info/translation/npmjs/files/package.json.html" target="_blank" rel="external">http://mujiang.info/translation/npmjs/files/package.json.html</a></p>
+<p>对于普通人没必要记得太多，只需要在工程目录执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node init</div></pre></td></tr></table></figure></p>
+<p>然后根据提示填好各部分信息即可</p>
+<h1 id="nodejs-REPL"><a href="#nodejs-REPL" class="headerlink" title="nodejs REPL"></a>nodejs REPL</h1><p>REPL = Read Eval Print Loop = 交互解释器<br>类似于 php cli，可以在终端执行nodejs表达式。</p>
+<h2 id="nodejs-REPL-示例"><a href="#nodejs-REPL-示例" class="headerlink" title="nodejs REPL 示例"></a>nodejs REPL 示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ node</div><div class="line">&gt; 1 + 1</div><div class="line">2</div><div class="line">&gt; var x = 1, y = 2</div><div class="line">undefined</div><div class="line">&gt; x + y</div><div class="line">3</div><div class="line">&gt; console.log(&quot;x + y = &quot; + (x + y))</div><div class="line">x + y = 3</div><div class="line">undefined</div><div class="line">&gt; console.log(&quot;http://tonglei.win&quot;)</div><div class="line">http://tonglei.win</div><div class="line">undefined</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h2 id="REPL-指令"><a href="#REPL-指令" class="headerlink" title="REPL 指令"></a>REPL 指令</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl + c</td>
+<td>撤销当前指令</td>
+</tr>
+<tr>
+<td>ctrl + c 两次</td>
+<td>退出 Node REPL</td>
+</tr>
+<tr>
+<td>ctrl + d</td>
+<td>退出 Node REPL</td>
+</tr>
+<tr>
+<td>↑/↓</td>
+<td>查看输入的历史命令</td>
+</tr>
+<tr>
+<td>tab 键</td>
+<td>列出当前命令</td>
+</tr>
+<tr>
+<td>.help</td>
+<td>列出使用命令</td>
+</tr>
+<tr>
+<td>.break</td>
+<td>退出多行表达式</td>
+</tr>
+<tr>
+<td>.clear</td>
+<td>退出多行表达式</td>
+</tr>
+<tr>
+<td>.save filename</td>
+<td>保存当前的 Node REPL 会话到指定文件</td>
+</tr>
+<tr>
+<td>.load filename</td>
+<td>载入当前 Node REPL 会话的文件内容</td>
+</tr>
+</tbody>
+</table>
+<h1 id="node基本用法"><a href="#node基本用法" class="headerlink" title="node基本用法"></a>node基本用法</h1><h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><p>Node.js 异步编程的直接体现就是回调。<br>异步编程依托于回调来实现，但不能说使用了回调后程序就异步化了。<br>回调函数在完成任务后就会被调用，Node 使用了大量的回调函数，Node 所有 API 都支持回调函数。<br>例如，我们可以一边读取文件，一边执行其他命令，在文件读取完成后，我们将文件内容作为回调函数的参数返回。这样在执行代码时就没有阻塞或等待文件 I/O 操作。这就大大提高了 Node.js 的性能，可以处理大量的并发请求。   </p>
+<h3 id="阻塞方式读取文件"><a href="#阻塞方式读取文件" class="headerlink" title="阻塞方式读取文件"></a>阻塞方式读取文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'filename.txt'</span>);</div><div class="line"><span class="built_in">console</span>.log(data.toString());</div></pre></td></tr></table></figure>
+<h3 id="非阻塞方式读取文件"><a href="#非阻塞方式读取文件" class="headerlink" title="非阻塞方式读取文件"></a>非阻塞方式读取文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> data = fs.readFile(<span class="string">'filename.txt'</span>);</div><div class="line"><span class="built_in">console</span>.log(data.toString());</div></pre></td></tr></table></figure>
+<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>Node.js 是单进程单线程应用程序，但是通过事件和回调支持并发，所以性能非常高。<br>Node.js 的每一个 API 都是异步的，并作为一个独立线程运行，使用异步函数调用，并处理并发。<br>Node.js 基本上所有的事件机制都是用设计模式中观察者模式实现。<br>Node.js 单线程类似进入一个while(true)的事件循环，直到没有事件观察者退出，每个异步事件都生成一个事件观察者，如果有事件发生就调用该回调函数。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入 events 模块</span></div><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="comment">// 创建 eventEmitter 对象</span></div><div class="line"><span class="keyword">var</span> eventEmitter = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"></div><div class="line"><span class="comment">// 绑定事件及事件的处理程序</span></div><div class="line">eventEmitter.on(<span class="string">'eventName'</span>, eventHandler);</div><div class="line"></div><div class="line"><span class="comment">// 触发事件</span></div><div class="line">eventEmitter.emit(<span class="string">'eventName'</span>);</div></pre></td></tr></table></figure>
+<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// 引入 events 模块</div><div class="line">var events = require(&apos;events&apos;);</div><div class="line">// 创建 eventEmitter 对象</div><div class="line">var eventEmitter = new events.EventEmitter();</div><div class="line"></div><div class="line">// 创建事件处理程序</div><div class="line">var connectHandler = function connected() &#123;</div><div class="line">   console.log(&apos;连接成功。&apos;);</div><div class="line">   // 触发 data_received 事件 </div><div class="line">   eventEmitter.emit(&apos;data_received&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 绑定 connection 事件处理程序</div><div class="line">eventEmitter.on(&apos;connection&apos;, connectHandler);</div><div class="line"> </div><div class="line">// 使用匿名函数绑定 data_received 事件</div><div class="line">eventEmitter.on(&apos;data_received&apos;, function()&#123;</div><div class="line">   console.log(&apos;数据接收成功。&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 触发 connection 事件 </div><div class="line">eventEmitter.emit(&apos;connection&apos;);</div></pre></td></tr></table></figure>
+<h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><p>为了让Node.js的文件可以相互调用，Node.js提供了一个简单的模块系统。<br>模块是Node.js 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 Node.js 文件就是一个模块，这个文件可能是JavaScript 代码、JSON 或者编译过的C/C++ 扩展。</p>
+<h3 id="创建自定义模块"><a href="#创建自定义模块" class="headerlink" title="创建自定义模块"></a>创建自定义模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hello.js </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>) </span>&#123; </div><div class="line">	<span class="keyword">var</span> name; </div><div class="line">	<span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">newName</span>) </span>&#123; </div><div class="line">		name = newName;</div><div class="line">	&#125;; </div><div class="line">	<span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name); </div><div class="line">	&#125;; </div><div class="line">&#125;; </div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app.js</span></div><div class="line"><span class="keyword">var</span> hello = <span class="built_in">require</span>(<span class="string">'./hello'</span>);</div><div class="line">hello.setName(<span class="string">"tonglei.win"</span>);</div><div class="line">hello.sayHello();</div></pre></td></tr></table></figure>
+<h3 id="模块查找顺序"><a href="#模块查找顺序" class="headerlink" title="模块查找顺序"></a>模块查找顺序</h3><p>nodejs包含了一些内置模块，如前文用到的 http、fs等等，其模块加载顺序为</p>
+<p><strong><em>文件缓存模块 &gt; 原生模块 &gt; 文件模块</em></strong></p>
+<hr>
+<p><strong><em>此篇完 <a href="http://tonglei.win">http://tonglei.win</a> </em></strong></p>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是-NodeJS&quot;&gt;&lt;a href=&quot;#什么是-NodeJS&quot; class=&quot;headerlink&quot; title=&quot;什么是 NodeJS ?&quot;&gt;&lt;/a&gt;什么是 NodeJS ?&lt;/h1&gt;&lt;p&gt;Node.js 是运行在服务端的 JavaScript。   &lt;/p
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Javascript" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Javascript/"/>
+    
+    
+      <category term="nodejs" scheme="http://tonglei.win/tags/nodejs/"/>
+    
+      <category term="javascript" scheme="http://tonglei.win/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>node-in-action_笔记</title>
+    <link href="http://tonglei.win/2017/01/03/IT%E5%AD%A6%E4%B9%A0/Javascript/node-in-action-%E7%AC%94%E8%AE%B0/"/>
+    <id>http://tonglei.win/2017/01/03/IT学习/Javascript/node-in-action-笔记/</id>
+    <published>2017-01-03T09:07:49.000Z</published>
+    <updated>2017-01-09T08:40:33.253Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="第一部分-简介"><a href="#第一部分-简介" class="headerlink" title="第一部分 简介"></a>第一部分 简介</h1><h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><p><strong>关键词: node.js express</strong></p>
+<p>第一章主要回答了以下几个问题。</p>
+<ul>
+<li><p>什么是Node.js:<br>依赖于 Google V8 引擎，使 javascript 脱离浏览器，运行在服务端。</p>
+</li>
+<li><p>Node.js的优势:</p>
+<ol>
+<li>V8 引擎很快，尤其是面对异步和多线程；</li>
+<li>JS 流行已久，资源丰富；</li>
+<li>客户端与服务端可共享代码。</li>
+</ol>
+</li>
+<li><p>为什么用Node.js<br>不是拍脑袋，不是为了性能，是为了全栈开发。</p>
+</li>
+<li><p>什么是Express:<br>Express 就像 JQuery，封装了原生API，并易于扩展。</p>
+</li>
+<li><p>Express 的意义:</p>
+<ol>
+<li>为Node.js增加了不少使用的工具方法；</li>
+<li>将请求重构分解，使其模块化，更易维护。</li>
+</ol>
+</li>
+<li><p>Express 的哲学</p>
+<ol>
+<li>作为一个框架，express的形式并不严格，它适合各类应用，比如视频聊天、博客甚至API服务。</li>
+<li>很少有应用可以仅仅依赖 express，你仍然需要大量的第三方软件包。</li>
+<li>最简化是把双刃剑，它增加了寻找合适第三方的难度。</li>
+</ol>
+</li>
+<li><p>Express 的四个核心特性</p>
+<ol>
+<li>中间件：把请求到响应的过程分解为一个个小模块；</li>
+<li>路由：将请求地址和方法与中间件的函数对应起来；</li>
+<li>子应用：大工程的组成单元，是小型的应用实体；</li>
+<li>简化：就是简化了原生Node.js语法。</li>
+</ol>
+</li>
+<li><p>Express 适合谁？</p>
+<ol>
+<li>适合Web应用</li>
+<li>适合全栈开发人员</li>
+<li>适合单页应用SPAs</li>
+<li>SEAN / MEAN / MEN</li>
+</ol>
+</li>
+</ul>
+<h2 id="第二章-nodejs"><a href="#第二章-nodejs" class="headerlink" title="第二章 nodejs"></a>第二章 nodejs</h2><p><strong>关键词: nodejs</strong></p>
+<p>第二章主要介绍的都是nodejs 的基本用法，例如 HelloWorld，使用模块等。</p>
+<h2 id="第三章-expressjs"><a href="#第三章-expressjs" class="headerlink" title="第三章 expressjs"></a>第三章 expressjs</h2><p><strong>关键词: express</strong></p>
+<p>第三章从express的四个特点方面给出了入门示例。</p>
+<ul>
+<li><p>中间件示例，增加认证能力</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"In comes a "</span> + request.method + <span class="string">" to "</span> + request.url);</div><div class="line">  next();</div><div class="line">&#125;);</div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> minute = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getMinutes();</div><div class="line">  <span class="keyword">if</span> ((minute % <span class="number">2</span>) === <span class="number">0</span>) &#123;</div><div class="line">    next();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    response.statusCode = <span class="number">403</span>;</div><div class="line">    response.end(<span class="string">"Not authorized."</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.end(<span class="string">'Secret info: the password is "swordfish"!'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>路由示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line"><span class="keyword">var</span> publicPath = path.resolve(__dirname, <span class="string">"public"</span>);</div><div class="line">app.use(express.static(publicPath));</div><div class="line"></div><div class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.end(<span class="string">"Welcome to my homepage!"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.get(<span class="string">"/about"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.end(<span class="string">"Welcome to the about page!"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.get(<span class="string">"/weather"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.end(<span class="string">"The current weather is NICE."</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.get(<span class="string">"/hello/:who"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line"> response.end(<span class="string">"Hello, "</span> + request.params.who + <span class="string">"."</span>);</div><div class="line"> <span class="comment">// Fun fact: this has some security issues, which we’ll get to!</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.statusCode = <span class="number">404</span>;</div><div class="line">  response.end(<span class="string">"404!"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">http.createServer(app).listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>扩展原生 Request 和 Response</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="keyword">var</span> EVIL_IP = <span class="string">"192.168.1.1"</span>;</div><div class="line"><span class="keyword">var</span> REDIRECT_IP = <span class="string">"192.168.1.2"</span>;</div><div class="line"><span class="keyword">var</span> SEND_FILE_IP = <span class="string">"192.168.1.3"</span>;</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (request.ip === EVIL_IP) &#123;</div><div class="line">    response.status(<span class="number">401</span>).send(<span class="string">"Not allowed!"</span>);</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (request.ip === REDIRECT_IP) &#123;</div><div class="line">    response.redirect(<span class="string">"http://tonglei.win"</span>);</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (request.ip === SEND_FILE_IP) &#123;</div><div class="line">    response.sendFile(<span class="string">"/path/to/cool_song.mp3"</span>);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    next();</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// ... the rest of your app ...</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>视图<br>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line">app.set(<span class="string">"views"</span>, path.resolve(__dirname, <span class="string">"views"</span>));</div><div class="line">app.set(<span class="string">"view engine"</span>, <span class="string">"ejs"</span>);</div><div class="line"></div><div class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.render(<span class="string">"index"</span>, &#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">"Hey everyone! This is my webpage."</span></div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>views/index.ejs<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">message</span> %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="第二部分-核心"><a href="#第二部分-核心" class="headerlink" title="第二部分 核心"></a>第二部分 核心</h1><h2 id="第四章-中间件"><a href="#第四章-中间件" class="headerlink" title="第四章 中间件"></a>第四章 中间件</h2><p><strong>关键词: middleware, log, thrid part</strong></p>
+<ul>
+<li>Express 包含一个中间件的堆栈，除非中间返回或者出错，不然它会从头执行到底。</li>
+<li>中间件是对 Request 的处理函数，它至少有2个参数: request 和 response，通常还有一个指向下一个中间件处理的方法。</li>
+<li>网络上有各种成熟的第三方中间件。</li>
+</ul>
+<p>从这里可以找到很多网友提供的中间件<br><a href="http://expressjs.com/resources/middleware.html" target="_blank" rel="external">http://expressjs.com/resources/middleware.html</a></p>
+<p>一个完整的例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line"><span class="comment">// 本例始终返回一个文件</span></div><div class="line"><span class="keyword">var</span> filePath = path.join(__dirname, <span class="string">"celine.jpg"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 如果发送文件失败，进入异常处理。</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  res.sendFile(filePath, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">      next(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Error sending file!"</span>));</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 打印错误日志</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.error(err);</div><div class="line">  next(err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 返回错误页</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>) </span>&#123;</div><div class="line">  res.status(<span class="number">500</span>);</div><div class="line">  res.send(<span class="string">"Internal server error."</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 启动 Http 监听</span></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="built_in">console</span>.log(<span class="string">"App started on port 3000"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="第五章-路由"><a href="#第五章-路由" class="headerlink" title="第五章 路由"></a>第五章 路由</h2><p><strong>关键词 routing</strong></p>
+<ul>
+<li>简单的路由参数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">"/users/:userid"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> userId = <span class="built_in">parseInt</span>(req.params.userid, <span class="number">10</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>正则表达式的路由参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="regexp">/^\/users\/(\d+)-(\d+)$/</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> startId = <span class="built_in">parseInt</span>(req.params[<span class="number">0</span>], <span class="number">10</span>);</div><div class="line">  <span class="keyword">var</span> endId = <span class="built_in">parseInt</span>(req.params[<span class="number">1</span>], <span class="number">10</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 Https</p>
+<ol>
+<li><p>生成证书</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out privatekey.pem 1024</div><div class="line">openssl req -new -key privatekey.pem -out request.pem</div></pre></td></tr></table></figure>
+</li>
+<li><p>Express 中使用证书</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div><div class="line"><span class="keyword">var</span> https = <span class="built_in">require</span>(<span class="string">"https"</span>);</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="comment">// ... define your app ...</span></div><div class="line"><span class="keyword">var</span> httpsOptions = &#123;</div><div class="line">  <span class="attr">key</span>: fs.readFileSync(<span class="string">"path/to/private/key.pem"</span>),</div><div class="line">  <span class="attr">cert</span>: fs.readFileSync(<span class="string">"path/to/certificate.pem"</span>)</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.status(<span class="number">404</span>).render(<span class="string">"404"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">http.createServer(app).listen(<span class="number">80</span>);</div><div class="line">https.createServer(httpsOptions, app).listen(<span class="number">443</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="第六章-构建-APIs"><a href="#第六章-构建-APIs" class="headerlink" title="第六章 构建 APIs"></a>第六章 构建 APIs</h2><p><strong>关键词: API, 主机间交互</strong></p>
+<ul>
+<li>一个简单的API样式</li>
+</ul>
+<p>请求方式：/timezone?tz=America+Los_Angeles</p>
+<p>反馈结果：{ “time”: “2015-06-09T16:20:00+01:00”, “zone”: “America/Los_Angeles” }</p>
+<ul>
+<li>一个更完整的Express Api示例</li>
+</ul>
+<p>需求：</p>
+<ol>
+<li>API的调用需要传入一个最小值和一个最大值；</li>
+<li>API返回一个随机数。</li>
+</ol>
+<p>实现步骤：</p>
+<ol>
+<li>创建package.json;</li>
+<li>创建 app.js，作为程序入口;</li>
+<li>在 app.js 中实现express路由，并返回随机数。</li>
+</ol>
+<p>代码：</p>
+<ol>
+<li><p>package.json</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"2-api-random"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">"Express实例2 构建简单的API"</span>,</div><div class="line">  <span class="string">"main"</span>: <span class="string">"app.js"</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"test"</span>: <span class="string">"node app.js"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"author"</span>: <span class="string">"Booker"</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>app.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.get(<span class="string">'/random/:min/:max'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  <span class="comment">// 获取参数</span></div><div class="line">  <span class="keyword">var</span> min = <span class="built_in">parseInt</span>(req.params.min);</div><div class="line">  <span class="keyword">var</span> max = <span class="built_in">parseInt</span>(req.params.max);</div><div class="line"></div><div class="line">  <span class="comment">// 错误处理</span></div><div class="line">  <span class="keyword">if</span>(<span class="built_in">isNaN</span>(min) || <span class="built_in">isNaN</span>(max)) &#123;</div><div class="line">    res.status(<span class="number">400</span>);</div><div class="line">    res.json(&#123;<span class="attr">error</span>: <span class="string">"Bad request."</span>&#125;);</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> result = <span class="built_in">Math</span>.round((<span class="built_in">Math</span>.random() * (max - min)) + min);</div><div class="line"></div><div class="line">  res.json(&#123;<span class="attr">result</span>: result&#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'App started on port 3000'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动和测试<br>控制台输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="built_in">test</span></div></pre></td></tr></table></figure>
+<p>浏览器访问：<a href="http://localhost:3000/random/10/100" target="_blank" rel="external">http://localhost:3000/random/10/100</a><br>可以看到浏览器上的输出：{“result”:61}</p>
+</li>
+<li><p>对异常的处理</p>
+<ol>
+<li>设置http状态为400；</li>
+<li>返回描述错误的 json 对象；</li>
+<li>执行 return，如果没有此步，程序还会继续进行，还会产生其他错误。</li>
+</ol>
+<p>比如访问：<a href="http://localhost:3000/random/10/aaa" target="_blank" rel="external">http://localhost:3000/random/10/aaa</a><br>浏览器上输出：{“error”:”Bad request.”}</p>
+</li>
+</ol>
+<ul>
+<li><p>CRUD - 增 查 改 删 - POST GET PUT DELETE</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">"CREATE"</span>) &#125;);</div><div class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">"READ"</span>) &#125;);</div><div class="line">app.put(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">"UPDATE"</span>) &#125;);</div><div class="line">app.delete(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">"DELETE"</span>) &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>构建多版本API示例</p>
+</li>
+</ul>
+<p>app1.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> api = express.Router();</div><div class="line"></div><div class="line">api.get(<span class="string">"/timezone"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">"Sample response for /timezone"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = api;</div></pre></td></tr></table></figure></p>
+<p>app2.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> api = express.Router();</div><div class="line"></div><div class="line">api.get(<span class="string">"/timezone"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">"API 2: super cool new response for /timezone"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = api;</div></pre></td></tr></table></figure></p>
+<p>app.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> apiVersion1 = <span class="built_in">require</span>(<span class="string">"./api1.js"</span>);</div><div class="line"><span class="keyword">var</span> apiVersion2 = <span class="built_in">require</span>(<span class="string">"./api2.js"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.use(<span class="string">"/v1"</span>, apiVersion1);</div><div class="line">app.use(<span class="string">"/v2"</span>, apiVersion2);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"App started on port 3000"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>测试：<br><a href="http://localhost:3000/v1/timezone" target="_blank" rel="external">http://localhost:3000/v1/timezone</a><br>输出：Sample response for /timezone</p>
+<p><a href="http://localhost:3000/v2/timezone" target="_blank" rel="external">http://localhost:3000/v2/timezone</a><br>输出：API 2: super cool new response for /timezone</p>
+<ul>
+<li>Http 状态码简述</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>码段</th>
+<th>描述</th>
+<th>中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1xx</td>
+<td>hold on</td>
+<td>请求已接收，请求者还要继续发送</td>
+</tr>
+<tr>
+<td>2xx</td>
+<td>here you go</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>3xx</td>
+<td>go away</td>
+<td>重定向</td>
+</tr>
+<tr>
+<td>4xx</td>
+<td>you messed up</td>
+<td>客户端错误</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>I messed up</td>
+<td>服务器错误</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第七章-Views-and-templates-Pug-and-Ejs"><a href="#第七章-Views-and-templates-Pug-and-Ejs" class="headerlink" title="第七章 Views and templates, Pug and Ejs"></a>第七章 Views and templates, Pug and Ejs</h2><p><strong>关键词: jade, pug, ejs</strong></p>
+<ul>
+<li><p>视图引擎<br>用来渲染界面的模块，Pug和Ejs都是视图引擎</p>
+</li>
+<li><p>简单的利用视图引擎渲染的示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.set(<span class="string">"view engine"</span>, ejs);</div><div class="line">app.set(<span class="string">"views"</span>, path.resolve(__dirname, <span class="string">"views"</span>));</div><div class="line"></div><div class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.render(<span class="string">"index"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样当你访问 <a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a> 时候，Nodejs 会寻找 views 目录下的 index.ejs 文件进行渲染，并将结果发送给浏览器。</p>
+<ul>
+<li>从pug到html<br>pug的源文件<br>``js<br>doctype html<br>html(lang=”en”)<br>head<br>  title Hello world!<br>body<br>  h1 This is a pug example<br>  #container<pre><code>p Wow
+</code></pre><code>渲染后的结果</code>js<br>&lt;!DOCTYPE html&gt;<br><html lang="en"><br><head><br>  <title>Hello world!</title><br></head><br><body><br>  <h1>This is a pug example</h1><br>  <div id="container"><pre><code>&lt;p&gt;Wow.&lt;/p&gt;
+</code></pre>  </div><br></body><br></html><br>``<br>关于 Pug 本身的内容，以后再详细介绍。简单说来，pug就是利用缩进来区分区块的层级，用每行的地一个单词表示区块的标签，用空格引出区块的文本内容，用括号指定其属性。</li>
+</ul>
+<h1 id="第三部分"><a href="#第三部分" class="headerlink" title="第三部分"></a>第三部分</h1><h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p><strong>关键词: MongoDB, bcrypt, 认证</strong></p>
+<ul>
+<li>MongoDB 怎么样？</li>
+</ul>
+<ol>
+<li>特别适合Node开发者</li>
+<li>NoSQL数据库与JS对象的结构更相近</li>
+<li>Mongo的原生shell使用的是Javascript</li>
+<li>Application 1-&gt;1 Database 1-&gt;N Collection 1-&gt;N Document</li>
+</ol>
+<ul>
+<li>从SQL到NoSQL(MongoDB)</li>
+</ul>
+<ol>
+<li>MongoDB 的 Documents 相当于 SQL 的结果集，比如应用中的用户，每个用户就是个Document或者是SQL中的一行数据，MongoDB并不限制Schema</li>
+<li>MongoDB 的 Collections 相当于 SQL 中的 tables。Collections 包含多个 Documents。此外，Documents 可以绑定其他 Documents</li>
+<li>MongoDB 的 Databases 相当与 SQL 的 Databases</li>
+</ol>
+<ul>
+<li>构建一个简单的工程</li>
+</ul>
+<ol>
+<li>首页，所有用户可见，可以查看用户信息</li>
+<li>用户信息页显示用户昵称或用户名，注册日期，用户登录后可以编辑自己的信息</li>
+<li>新用户注册页</li>
+</ol>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;第一部分-简介&quot;&gt;&lt;a href=&quot;#第一部分-简介&quot; class=&quot;headerlink&quot; title=&quot;第一部分 简介&quot;&gt;&lt;/a&gt;第一部分 简介&lt;/h1&gt;&lt;h2 id=&quot;第一章-基本概念&quot;&gt;&lt;a href=&quot;#第一章-基本概念&quot; class=&quot;headerli
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Javascript" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Javascript/"/>
+    
+    
+      <category term="nodejs" scheme="http://tonglei.win/tags/nodejs/"/>
+    
+      <category term="javascript" scheme="http://tonglei.win/tags/javascript/"/>
+    
+      <category term="express" scheme="http://tonglei.win/tags/express/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>史上最全最强资源网站整理</title>
+    <link href="http://tonglei.win/2016/12/28/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E6%9C%80%E5%BC%BA%E8%B5%84%E6%BA%90%E7%BD%91%E7%AB%99%E6%95%B4%E7%90%86/"/>
+    <id>http://tonglei.win/2016/12/28/日常记录/史上最全最强资源网站整理/</id>
+    <published>2016-12-28T03:56:33.000Z</published>
+    <updated>2017-01-09T07:13:45.603Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、找资源利器"><a href="#一、找资源利器" class="headerlink" title="一、找资源利器"></a>一、找资源利器</h1><p>西林街：<a href="http://www.xilinjie.com/" target="_blank" rel="external">http://www.xilinjie.com/</a><br>胖次：<a href="http://www.panc.cc/" target="_blank" rel="external">http://www.panc.cc/</a><br>EV搜索：<a href="http://www.evsou.com/" target="_blank" rel="external">http://www.evsou.com/</a><br>找文件：<a href="http://www.zhaofile.com/" target="_blank" rel="external">http://www.zhaofile.com/</a><br>呆木瓜：<a href="http://www.daimugua.com/" target="_blank" rel="external">http://www.daimugua.com/</a><br>爱挖盘：<a href="http://www.iwapan.com/" target="_blank" rel="external">http://www.iwapan.com/</a></p>
+<h1 id="二、外文书籍下载网站"><a href="#二、外文书籍下载网站" class="headerlink" title="二、外文书籍下载网站"></a>二、外文书籍下载网站</h1><p>Library Genesis：<a href="http://gen.lib.rus.ec/" target="_blank" rel="external">http://gen.lib.rus.ec/</a><br>Book ZZ：<a href="http://bookzz.org/" target="_blank" rel="external">http://bookzz.org/</a><br>Free-Ebooks：<a href="http://www.free-ebooks.net/" target="_blank" rel="external">http://www.free-ebooks.net/</a><br>Bookboon：<a href="http://bookboon.com/en" target="_blank" rel="external">http://bookboon.com/en</a><br>ManyBooks：<a href="http://manybooks.net/" target="_blank" rel="external">http://manybooks.net/</a><br>SnipFiles：<a href="http://www.snipfiles.com/" target="_blank" rel="external">http://www.snipfiles.com/</a><br>Open Library：<a href="https://openlibrary.org/" target="_blank" rel="external">https://openlibrary.org/</a><br>Bookyards：<a href="http://www.bookyards.com/" target="_blank" rel="external">http://www.bookyards.com/</a></p>
+<h1 id="三、中文书籍下载网站"><a href="#三、中文书籍下载网站" class="headerlink" title="三、中文书籍下载网站"></a>三、中文书籍下载网站</h1><p>书林网：<a href="http://www.booksforest.com/" target="_blank" rel="external">http://www.booksforest.com/</a><br>钱氏藏书：<a href="http://qscs.haotui.com/?fromuid=272" target="_blank" rel="external">http://qscs.haotui.com/?fromuid=272</a><br>大熊图书馆：<a href="http://dxlibrary.haotui.com/bbs.php" target="_blank" rel="external">http://dxlibrary.haotui.com/bbs.php</a><br>大众图书馆：<a href="http://dztsg.info/forum.php" target="_blank" rel="external">http://dztsg.info/forum.php</a><br>读远：<a href="http://www.readfar.com/" target="_blank" rel="external">http://www.readfar.com/</a><br>Bucee杂志馆：<a href="http://bucee.net/" target="_blank" rel="external">http://bucee.net/</a><br>汉川草庐：<a href="http://www.sidneyluo.net/index.html" target="_blank" rel="external">http://www.sidneyluo.net/index.html</a></p>
+<h1 id="四、非常强大的翻译平台"><a href="#四、非常强大的翻译平台" class="headerlink" title="四、非常强大的翻译平台"></a>四、非常强大的翻译平台</h1><p>CNKI翻译助手：<a href="http://dict.cnki.net/" target="_blank" rel="external">http://dict.cnki.net/</a><br>句酷：<a href="http://www.jukuu.com/" target="_blank" rel="external">http://www.jukuu.com/</a><br>词都：<a href="http://www.dictall.com/" target="_blank" rel="external">http://www.dictall.com/</a><br>LINE Dictionary：<a href="http://ce.linedict.com/dict.html#/cnen/" target="_blank" rel="external">http://ce.linedict.com/dict.html#/cnen/</a><br>Glosbe：<a href="https://glosbe.com/" target="_blank" rel="external">https://glosbe.com/</a></p>
+<h1 id="五、所谓的神站系列"><a href="#五、所谓的神站系列" class="headerlink" title="五、所谓的神站系列"></a>五、所谓的神站系列</h1><p>大软坊：<a href="http://app.hustonline.net/major" target="_blank" rel="external">http://app.hustonline.net/major</a><br>香当网：<a href="http://www.xiangdang.net/" target="_blank" rel="external">http://www.xiangdang.net/</a><br>Smallpdf：<a href="http://smallpdf.com/" target="_blank" rel="external">http://smallpdf.com/</a><br>MSDN：<a href="http://www.itellyou.cn/" target="_blank" rel="external">http://www.itellyou.cn/</a></p>
+<h1 id="六、考研资料相关网站"><a href="#六、考研资料相关网站" class="headerlink" title="六、考研资料相关网站"></a>六、考研资料相关网站</h1><p>考研圈：<a href="http://www.zhuansoo.com/vbar/c/vc.html?id=19" target="_blank" rel="external">http://www.zhuansoo.com/vbar/c/vc.html?id=19</a><br>考试点社区:<a href="http://bbs.kaoshidian.com/resource" target="_blank" rel="external">http://bbs.kaoshidian.com/resource</a><br>考研论坛：<a href="http://download.bbs.kaoyan.com/" target="_blank" rel="external">http://download.bbs.kaoyan.com/</a><br>小木虫论坛：<a href="http://emuch.net/bbs/index.php" target="_blank" rel="external">http://emuch.net/bbs/index.php</a><br>考研网：<a href="http://download.kaoyan.com/" target="_blank" rel="external">http://download.kaoyan.com/</a><br>传媒人网：<a href="http://www.chuanmeiren.cn/bbs/" target="_blank" rel="external">http://www.chuanmeiren.cn/bbs/</a></p>
+<h1 id="七、动漫资源网站"><a href="#七、动漫资源网站" class="headerlink" title="七、动漫资源网站"></a>七、动漫资源网站</h1><p>Animation World Network：<a href="http://www.awn.com/" target="_blank" rel="external">http://www.awn.com/</a><br>卡通酿造：<a href="http://www.cartoonbrew.com/" target="_blank" rel="external">http://www.cartoonbrew.com/</a><br>皮克斯帝国：<a href="http://pixarempire.com/" target="_blank" rel="external">http://pixarempire.com/</a><br>动漫花园：<a href="http://share.dmhy.org" target="_blank" rel="external">http://share.dmhy.org</a><br>漫游BT：<a href="http://share.popgo.org" target="_blank" rel="external">http://share.popgo.org</a><br>简单动漫：<a href="http://www.36dm.com/" target="_blank" rel="external">http://www.36dm.com/</a><br>漫画书：<a href="http://manhuashu.net/" target="_blank" rel="external">http://manhuashu.net/</a><br>旋风动漫：<a href="http://bt.xfsub.com/" target="_blank" rel="external">http://bt.xfsub.com/</a></p>
+<h1 id="八、高清电影资源网站"><a href="#八、高清电影资源网站" class="headerlink" title="八、高清电影资源网站"></a>八、高清电影资源网站</h1><p>高清控联盟：<a href="http://www.gaoqingkong.com/" target="_blank" rel="external">http://www.gaoqingkong.com/</a><br>藏云阁高清网：<a href="http://www.cangyunge.com/" target="_blank" rel="external">http://www.cangyunge.com/</a><br>中国高清网：<a href="http://gaoqing.la/" target="_blank" rel="external">http://gaoqing.la/</a><br>小无相：<a href="http://movtop.cn/" target="_blank" rel="external">http://movtop.cn/</a><br>优质电影网：<a href="http://www.youzhidy.com/" target="_blank" rel="external">http://www.youzhidy.com/</a><br>蓝光电影网：<a href="http://www.hd1080.cn/" target="_blank" rel="external">http://www.hd1080.cn/</a><br>电影王国：<a href="http://www.moviewg.com/" target="_blank" rel="external">http://www.moviewg.com/</a><br>蓝影网：<a href="http://www.lanyingwang.com/" target="_blank" rel="external">http://www.lanyingwang.com/</a><br>[22个电影资源网站：<a href="http://weibo.com/p/1001603822968198317617?mod=zwenzhang" target="_blank" rel="external">http://weibo.com/p/1001603822968198317617?mod=zwenzhang</a>]</p>
+<h1 id="九、六个纪录片精品网站"><a href="#九、六个纪录片精品网站" class="headerlink" title="九、六个纪录片精品网站"></a>九、六个纪录片精品网站</h1><p>Ary Heaven：<a href="http://documentaryheaven.com/" target="_blank" rel="external">http://documentaryheaven.com/</a><br>Free DocumentAries：<a href="http://freedocumentaries.org/" target="_blank" rel="external">http://freedocumentaries.org/</a><br>Top DocumentaryFilm：<a href="http://topdocumentaryfilms.com/" target="_blank" rel="external">http://topdocumentaryfilms.com/</a><br>District 7 Media:<a href="http://www.district7media.net/main/" target="_blank" rel="external">http://www.district7media.net/main/</a><br>Citizen 4Film:<a href="https://citizenfourfilm.com/" target="_blank" rel="external">https://citizenfourfilm.com/</a><br>Documentary：<a href="http://documentaryaddict.com/" target="_blank" rel="external">http://documentaryaddict.com/</a></p>
+<h1 id="十、下载国内外杂志的资源网站"><a href="#十、下载国内外杂志的资源网站" class="headerlink" title="十、下载国内外杂志的资源网站"></a>十、下载国内外杂志的资源网站</h1><p>高清杂志网：<a href="http://www.gqzzw.com/" target="_blank" rel="external">http://www.gqzzw.com/</a><br>PDF magazines：<a href="http://pdfmagazines.org/" target="_blank" rel="external">http://pdfmagazines.org/</a><br>PDF-giant：<a href="http://pdf-giant.com/" target="_blank" rel="external">http://pdf-giant.com/</a><br>PDF之家：<a href="http://www.pdfzj.com/" target="_blank" rel="external">http://www.pdfzj.com/</a><br>十月杂志网：<a href="http://shiyue.me/" target="_blank" rel="external">http://shiyue.me/</a></p>
+<h1 id="十一、有声读物网站"><a href="#十一、有声读物网站" class="headerlink" title="十一、有声读物网站"></a>十一、有声读物网站</h1><p>天方听书 <a href="http://www.tingbook.com/" target="_blank" rel="external">http://www.tingbook.com/</a><br>静雅思听 <a href="http://www.justing.com.cn/" target="_blank" rel="external">http://www.justing.com.cn/</a><br>博客思听<a href="http://www.bookast.com/Bookast/" target="_blank" rel="external">http://www.bookast.com/Bookast/</a><br>畅想听吧 <a href="http://t.cn/h4n3Fi；" target="_blank" rel="external">http://t.cn/h4n3Fi；</a><br>书喇叭 <a href="http://shulaba.com/" target="_blank" rel="external">http://shulaba.com/</a><br>爱听网 <a href="http://www.aitingwang.com/" target="_blank" rel="external">http://www.aitingwang.com/</a><br>酷听网 <a href="http://www.kting.cn/" target="_blank" rel="external">http://www.kting.cn/</a><br>家常读书 <a href="http://www.jiachangdushu.com/portal.php" target="_blank" rel="external">http://www.jiachangdushu.com/portal.php</a></p>
+<h1 id="十二、旧书交易类网站"><a href="#十二、旧书交易类网站" class="headerlink" title="十二、旧书交易类网站"></a>十二、旧书交易类网站</h1><p>孔夫子旧书网 <a href="http://shop.kongfz.com/" target="_blank" rel="external">http://shop.kongfz.com/</a><br>布衣书局<a href="http://www.booyee.com.cn/index.jsp" target="_blank" rel="external">http://www.booyee.com.cn/index.jsp</a><br>有路网 <a href="http://www.youlu.net/" target="_blank" rel="external">http://www.youlu.net/</a><br>中国旧书网 <a href="http://www.jiushu.cn/" target="_blank" rel="external">http://www.jiushu.cn/</a><br>天下旧书网 <a href="http://www.jiushu.net/" target="_blank" rel="external">http://www.jiushu.net/</a></p>
+<h1 id="十三、免费音效资源类网站"><a href="#十三、免费音效资源类网站" class="headerlink" title="十三、免费音效资源类网站"></a>十三、免费音效资源类网站</h1><p>闪吧音效库 <a href="http://www.flash8.net/download.shtml" target="_blank" rel="external">http://www.flash8.net/download.shtml</a><br>中国素材网音效库 <a href="http://www.sucai.com/duomeiti/yx/" target="_blank" rel="external">http://www.sucai.com/duomeiti/yx/</a><br>日本的音效库 <a href="http://koukaongen.com/" target="_blank" rel="external">http://koukaongen.com/</a><br>站长素材-音效 <a href="http://sc.chinaz.com/yinxiao/" target="_blank" rel="external">http://sc.chinaz.com/yinxiao/</a><br>Soundsnap <a href="http://www.soundsnap.com/" target="_blank" rel="external">http://www.soundsnap.com/</a><br>Freeplay Music <a href="http://www.freeplaymusic.com/" target="_blank" rel="external">http://www.freeplaymusic.com/</a><br>Ilovewavs <a href="http://www.ilovewavs.com/" target="_blank" rel="external">http://www.ilovewavs.com/</a><br>Breakout <a href="http://www.breakout4u.com/en/" target="_blank" rel="external">http://www.breakout4u.com/en/</a></p>
+<h1 id="十四、影视后期教程类网站"><a href="#十四、影视后期教程类网站" class="headerlink" title="十四、影视后期教程类网站"></a>十四、影视后期教程类网站</h1><p>火星教育<a href="http://t.cn/zOSDxUa" target="_blank" rel="external">http://t.cn/zOSDxUa</a><br>我要自学网<a href="http://t.cn/hgWA5w" target="_blank" rel="external">http://t.cn/hgWA5w</a><br>翼虎网<a href="http://t.cn/RhcgNMN" target="_blank" rel="external">http://t.cn/RhcgNMN</a><br>飞特网<a href="http://t.cn/hbBHpZ" target="_blank" rel="external">http://t.cn/hbBHpZ</a><br>直线网<a href="http://t.cn/8sA9xv2" target="_blank" rel="external">http://t.cn/8sA9xv2</a><br>Videocopilot <a href="http://www.videocopilot.net/" target="_blank" rel="external">http://www.videocopilot.net/</a><br>Vfxinfo <a href="http://vfxinfo.net/" target="_blank" rel="external">http://vfxinfo.net/</a><br>BW Design <a href="http://benwattsdesign.com/" target="_blank" rel="external">http://benwattsdesign.com/</a></p>
+<h1 id="十五、免费视频素材-模板下载网站"><a href="#十五、免费视频素材-模板下载网站" class="headerlink" title="十五、免费视频素材/模板下载网站"></a>十五、免费视频素材/模板下载网站</h1><p>视崛<a href="http://www.shij001.com/" target="_blank" rel="external">http://www.shij001.com/</a><br>92素材网<a href="http://www.92sucai.com/" target="_blank" rel="external">http://www.92sucai.com/</a><br>新GG儿<a href="http://www.newcger.com/" target="_blank" rel="external">http://www.newcger.com/</a><br>千图网 <a href="http://www.58pic.com/shipin/" target="_blank" rel="external">http://www.58pic.com/shipin/</a><br>39视频<a href="http://www.39video.com/" target="_blank" rel="external">http://www.39video.com/</a><br>模板天空<a href="http://www.mobantiankong.com/" target="_blank" rel="external">http://www.mobantiankong.com/</a><br>人人素材社区<a href="http://www.rr-sc.com/?fromuid=201838" target="_blank" rel="external">http://www.rr-sc.com/?fromuid=201838</a></p>
+<h1 id="十六、Photoshop教程网站"><a href="#十六、Photoshop教程网站" class="headerlink" title="十六、Photoshop教程网站"></a>十六、Photoshop教程网站</h1><p>我要自学网 <a href="http://www.51zxw.net/" target="_blank" rel="external">http://www.51zxw.net/</a><br>52photoshop <a href="http://www.52photoshop.cn/" target="_blank" rel="external">http://www.52photoshop.cn/</a><br>PSDFAN <a href="http://psd.fanextra.com/" target="_blank" rel="external">http://psd.fanextra.com/</a><br>Photoshop Tutorials <a href="http://www.photoshoptutorials.ws/" target="_blank" rel="external">http://www.photoshoptutorials.ws/</a><br>PS Brushes <a href="http://www.psbrushes.net/" target="_blank" rel="external">http://www.psbrushes.net/</a><br>ps联盟 <a href="http://www.68ps.com/" target="_blank" rel="external">http://www.68ps.com/</a></p>
+<h1 id="十七、专业影评类网站"><a href="#十七、专业影评类网站" class="headerlink" title="十七、专业影评类网站"></a>十七、专业影评类网站</h1><p>时光网 <a href="http://www.mtime.com/community/" target="_blank" rel="external">http://www.mtime.com/community/</a><br>豆瓣电影<a href="http://movie.douban.com/" target="_blank" rel="external">http://movie.douban.com/</a><br>烂番茄 <a href="http://www.rottentomatoes.com/" target="_blank" rel="external">http://www.rottentomatoes.com/</a><br>IMBD <a href="http://www.imdb.com/" target="_blank" rel="external">http://www.imdb.com/</a><br>美国广播影评人协会<a href="http://www.criticschoice.com/" target="_blank" rel="external">http://www.criticschoice.com/</a><br>纽约影评家协会<a href="http://www.nyfcc.com/" target="_blank" rel="external">http://www.nyfcc.com/</a><br>Film <a href="http://www.film.com/" target="_blank" rel="external">http://www.film.com/</a><br>GoodFil.ms <a href="http://goodfil.ms/" target="_blank" rel="external">http://goodfil.ms/</a><br>Cinephilia <a href="http://cinephilia.net/" target="_blank" rel="external">http://cinephilia.net/</a><br>ScreenJunkies <a href="http://www.screenjunkies.com/" target="_blank" rel="external">http://www.screenjunkies.com/</a><br>IndieWire: <a href="http://www.indiewire.com/" target="_blank" rel="external">http://www.indiewire.com/</a></p>
+<h1 id="十八、公开课网站"><a href="#十八、公开课网站" class="headerlink" title="十八、公开课网站"></a>十八、公开课网站</h1><p>网易公开课：<a href="http://open.163.com/" target="_blank" rel="external">http://open.163.com/</a><br>中国大学MOOC：<a href="http://www.icourse163.org/" target="_blank" rel="external">http://www.icourse163.org/</a><br>新浪公开课：<a href="http://open.sina.com.cn/" target="_blank" rel="external">http://open.sina.com.cn/</a><br>央视网–公开课：<a href="http://opencla.cntv.cn/" target="_blank" rel="external">http://opencla.cntv.cn/</a><br>爱课堂：<a href="http://www.icourses.cn/home/" target="_blank" rel="external">http://www.icourses.cn/home/</a><br>MOOC中国：<a href="http://www.mooc.cn/" target="_blank" rel="external">http://www.mooc.cn/</a><br>超星公开课：<a href="http://openv.chaoxing.com/" target="_blank" rel="external">http://openv.chaoxing.com/</a></p>
+<h1 id="十九、小语种系列学习资源"><a href="#十九、小语种系列学习资源" class="headerlink" title="十九、小语种系列学习资源"></a>十九、小语种系列学习资源</h1><p>小语种入门：<a href="http://www.yingyurumen.com/" target="_blank" rel="external">http://www.yingyurumen.com/</a><br>小语种学习网：<a href="http://xyz.tingroom.com/" target="_blank" rel="external">http://xyz.tingroom.com/</a><br>其他小语种学习资源：<a href="http://wwwNaNzyk.com/h-nd-633.html" target="_blank" rel="external">http://wwwNaNzyk.com/h-nd-633.html</a></p>
+<h1 id="二十、其他系列资源"><a href="#二十、其他系列资源" class="headerlink" title="二十、其他系列资源"></a>二十、其他系列资源</h1><p>学术网站大全：<a href="http://dir.cnki.net/" target="_blank" rel="external">http://dir.cnki.net/</a><br>常用二十六大学术搜素引擎：<a href="http://cmzyk.lofter.com/post/1cb13862_27ea8a6" target="_blank" rel="external">http://cmzyk.lofter.com/post/1cb13862_27ea8a6</a><br>歌谱简谱搜索下载网站：<a href="http://suo.im/gz9xj" target="_blank" rel="external">http://suo.im/gz9xj</a><br>10个LOGO资源站：<a href="http://www.uisdc.com/top-logo-design-resources" target="_blank" rel="external">http://www.uisdc.com/top-logo-design-resources</a><br>10个无版权限制的大图特供网站：<a href="http://www.uisdc.com/free-hd-picture-website" target="_blank" rel="external">http://www.uisdc.com/free-hd-picture-website</a><br>找工作必备网站大全：<a href="http://wwwNaNzyk.com/h-nd-j-79-4_5.html" target="_blank" rel="external">http://wwwNaNzyk.com/h-nd-j-79-4_5.html</a><br>查询国内外文献资料的实用网站：<a href="http://cmzyk.lofter.com/post/1cb13862_5cc54cb" target="_blank" rel="external">http://cmzyk.lofter.com/post/1cb13862_5cc54cb</a><br>法律网站大全：<a href="http://cmzyk.lofter.com/post/1cb13862_3189e56" target="_blank" rel="external">http://cmzyk.lofter.com/post/1cb13862_3189e56</a><br>财经类网站大全：<a href="http://wwwNaNzyk.com/h-nd-j-182-4_5.html" target="_blank" rel="external">http://wwwNaNzyk.com/h-nd-j-182-4_5.html</a><br>国外免费期刊全文数据库：<a href="http://cmzyk.lofter.com/post/1cb13862_27ea88a" target="_blank" rel="external">http://cmzyk.lofter.com/post/1cb13862_27ea88a</a><br>免费论文检测网站大全：<a href="http://cmzyk.lofter.com/post/1cb13862_26d5117" target="_blank" rel="external">http://cmzyk.lofter.com/post/1cb13862_26d5117</a><br>33个最值得读的世界级社科博客榜单：<a href="http://wwwNaNzyk.com/h-nd-101-109_361.html" target="_blank" rel="external">http://wwwNaNzyk.com/h-nd-101-109_361.html</a></p>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、找资源利器&quot;&gt;&lt;a href=&quot;#一、找资源利器&quot; class=&quot;headerlink&quot; title=&quot;一、找资源利器&quot;&gt;&lt;/a&gt;一、找资源利器&lt;/h1&gt;&lt;p&gt;西林街：&lt;a href=&quot;http://www.xilinjie.com/&quot; target=&quot;_bl
+    
+    </summary>
+    
+      <category term="日常记录" scheme="http://tonglei.win/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="来自网络" scheme="http://tonglei.win/tags/%E6%9D%A5%E8%87%AA%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="下载" scheme="http://tonglei.win/tags/%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>找资源终极指南：90%的人都不知道的电影资源下载站</title>
+    <link href="http://tonglei.win/2016/12/28/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/%E6%89%BE%E8%B5%84%E6%BA%90%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%EF%BC%9A90-%E7%9A%84%E4%BA%BA%E9%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E7%94%B5%E5%BD%B1%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD%E7%AB%99/"/>
+    <id>http://tonglei.win/2016/12/28/日常记录/找资源终极指南：90-的人都不知道的电影资源下载站/</id>
+    <published>2016-12-28T03:44:31.000Z</published>
+    <updated>2017-01-09T07:13:45.603Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、初级"><a href="#一、初级" class="headerlink" title="一、初级"></a>一、初级</h1><p>你已经有兴趣看电影了，区别于那些完全不看电影的人。你可以在各大视频网站在线观看，不介意效果差、片源少、更新慢的话推荐一个播放器——快播的继承者：西瓜影音。</p>
+<p>跟快播的使用方法一模一样，下载一个西瓜影音播放器，打开网页即可观看电影。以下电影站，都可以：Tom51、西瓜电影、琪琪影院、看看电影院。</p>
+<p>这些网站的特点是，站内广告超多，除了播放器里面没广告，网站上下左右全是广告、体验较差。</p>
+<h1 id="二、中级"><a href="#二、中级" class="headerlink" title="二、中级"></a>二、中级</h1><p>如果你不是特别热爱电影，只是闲暇之余看看热门的新片、美剧，也不特别要求画质与速度的话，下面这几个网站能满足你了：</p>
+<p>迅播影院：<a href="http://www.xiamp4.com/" target="_blank" rel="external">http://www.xiamp4.com/</a></p>
+<p>4567TV：<a href="http://www.4567.tv/" target="_blank" rel="external">http://www.4567.tv/</a></p>
+<p>迅速影院：<a href="http://www.xunsu.cc" target="_blank" rel="external">http://www.xunsu.cc</a></p>
+<p>电影FM ：<a href="http://dianying.fm/ranking/imdb250" target="_blank" rel="external">http://dianying.fm/ranking/imdb250</a></p>
+<p>电影天堂：<a href="http://www.xiaopian.com/" target="_blank" rel="external">http://www.xiaopian.com/</a></p>
+<p>迅雷好： <a href="http://xunleihao.com/" target="_blank" rel="external">http://xunleihao.com/</a></p>
+<p>飘花电影：<a href="http://www.piaohua.com/" target="_blank" rel="external">http://www.piaohua.com/</a></p>
+<p>6V电影 ：<a href="http://www.6vdy.com/" target="_blank" rel="external">http://www.6vdy.com/</a></p>
+<p>圣城家园：<a href="http://www.cnscg.org/" target="_blank" rel="external">http://www.cnscg.org/</a></p>
+<p>Mp4吧：<a href="http://www.mp4ba.com/" target="_blank" rel="external">http://www.mp4ba.com/</a></p>
+<p>搬运工：<a href="http://banyungong.net/" target="_blank" rel="external">http://banyungong.net/</a></p>
+<p>嘎嘎影视：<a href="http://www.gagays.com/" target="_blank" rel="external">http://www.gagays.com/</a></p>
+<p>小浣熊：<a href="http://www.xiaohx.com/" target="_blank" rel="external">http://www.xiaohx.com/</a></p>
+<p>乐搜：<a href="http://www.lesou.org/" target="_blank" rel="external">http://www.lesou.org/</a></p>
+<p>电影小二网：<a href="http://movie002.com/" target="_blank" rel="external">http://movie002.com/</a></p>
+<p>我爱P2P: <a href="http://www.byhh.org/" target="_blank" rel="external">http://www.byhh.org/</a></p>
+<h1 id="三、高级"><a href="#三、高级" class="headerlink" title="三、高级"></a>三、高级</h1><p>（再往下看的话，请先准备好至少几十TB的硬盘，以及高性能的播放设备，否则后果很严重）</p>
+<p>如果你有右列任一需求：</p>
+<p>1、爱看经典老电影，2、爱看高清画质的电影，3、想尽快拿到新片资源。</p>
+<p>恭喜，你已经被称为影迷了，那么最好学会用这些网站：</p>
+<p>1.电影蜜蜂：<a href="http://www.dybee.net/" target="_blank" rel="external">http://www.dybee.net/</a></p>
+<p>目前已停止更新，但积累的资源相当丰富。注意网站右边的标签，某些标签的资源很丰富哦。</p>
+<p>2.ED2000：<a href="http://www.ed2000.com/" target="_blank" rel="external">http://www.ed2000.com/</a></p>
+<p>网站提供的都是电驴链接，电影资源很强大，游戏/音乐/软件都有</p>
+<p>3.SimpleCD：<a href="http://www.simplecd.me/" target="_blank" rel="external">http://www.simplecd.me/</a></p>
+<p>有电驴/种子/网盘等资源链接，很有名气的一个站。</p>
+<p>4.BT天堂：<a href="http://www.bttiantang.com/" target="_blank" rel="external">http://www.bttiantang.com/</a></p>
+<p>片子很多，优点是对于热门电影来说，它提供了各大压制组、各版本的资源供选择，BDRip/720p/1080p等等，另外可以通过IMDB编号来搜索影片。</p>
+<p>5.BT之家：<a href="http://bbs.1lou.com/" target="_blank" rel="external">http://bbs.1lou.com/</a></p>
+<p>综合性很强，在电影方面主要是中字熟肉，方便手机/iPad等移动设备观看。</p>
+<p>6.顶好精品论坛（需注册）：<a href="http://www.bmdru.com/forum.php" target="_blank" rel="external">http://www.bmdru.com/forum.php</a></p>
+<p>重点推荐，影片分类很牛逼，比如著名导演的合集/TOP 250合集/三大电影节合集/CC标准收藏合集。</p>
+<p>7.大米论坛（需注册）：<a href="http://www.iminisd.com/forum.php" target="_blank" rel="external">http://www.iminisd.com/forum.php</a></p>
+<p>国产片/港产片资源很强大</p>
+<p>8.KICKASS：<a href="http://kickass.to/" target="_blank" rel="external">http://kickass.to/</a></p>
+<p>俗称“踢屁股”，也是个综合性种子站，新片老片应有尽有。</p>
+<p>9.RARBG：<a href="http://www.rarbg.com/torrents.php" target="_blank" rel="external">http://www.rarbg.com/torrents.php</a></p>
+<p>和KICKASS差不多，但是新片的发布速度貌似更快些，而且网页排版很好看。</p>
+<p>10.Torrentz：<a href="http://torrentz.eu/" target="_blank" rel="external">http://torrentz.eu/</a></p>
+<p>综合型种子搜索引擎，很多资源帝都爱用，被称为“万金油BT站”。</p>
+<p>11.SeeHD：<a href="http://www.seehd.org/" target="_blank" rel="external">http://www.seehd.org/</a></p>
+<p>以高清资源为主，720p/1080p/Remux/蓝光原盘，适合收藏党。</p>
+<p>12.BTSPREAD：<a href="http://www.btspread.com/" target="_blank" rel="external">http://www.btspread.com/</a></p>
+<p>个人主要用来转换BT文件和磁力链接，也有种子搜索引擎，可搜番号。</p>
+<p>13.Demonoid：<a href="http://www.demonoid.ph/" target="_blank" rel="external">http://www.demonoid.ph/</a></p>
+<p>这个站有一个特色，自压制的电影都带有花絮，前提是蓝光原盘有花絮的话。这是目前唯一一个压制电影时，附带压制花絮的站点。压制小组名是：Grym ，可以在该网站搜索此压制组的作品。</p>
+<p>14.飞鸟论坛：<a href="http://bbs.hdbird.com/" target="_blank" rel="external">http://bbs.hdbird.com/</a></p>
+<p>15.蓝影网：<a href="http://www.lanyingwang.com/" target="_blank" rel="external">http://www.lanyingwang.com/</a></p>
+<p>最新的资源，会第一时间更新。除了最新资源的高清片源，还有同类型资源盘点等。纯净无广告、无需注册。除了资源，还有高清科普知识、影讯等内容。</p>
+<p>16.星空家园，<a href="http://bbs.xskwhd.com/forum.php" target="_blank" rel="external">http://bbs.xskwhd.com/forum.php</a></p>
+<p>搬运PT里的高清电影、电视剧、综艺资源，较丰富。</p>
+<p>17.高清论坛，<a href="http://www.bt49.com/" target="_blank" rel="external">http://www.bt49.com/</a></p>
+<p>资源丰富，更新速度快</p>
+<p>18.下载搜：<a href="http://www.somag.net/" target="_blank" rel="external">http://www.somag.net/</a></p>
+<p>非常不错磁力下载站点，干净的站点，没有图片、截图等。</p>
+<h1 id="四、灭绝师太"><a href="#四、灭绝师太" class="headerlink" title="四、灭绝师太"></a>四、灭绝师太</h1><p>什么？你说你逼格特别的高？那也不要紧啊，下面还有一些适合淘冷门电影的网站。倘若碰到一些豆瓣评分人数不足的，甚至是没有条目的电影，这些网站可能会有奇效。好用的BT种子搜索引擎：</p>
+<p>Bitsnoop：<a href="http://bitsnoop.com/" target="_blank" rel="external">http://bitsnoop.com/</a></p>
+<p>资源容量高达28PB，磁力站，可以配合上面的BTSPREAD转成种子。</p>
+<p>BT Kitty：<a href="http://btkitty.org/" target="_blank" rel="external">http://btkitty.org/</a></p>
+<p>号称共24.03PB大小的资源，来源于全球超过300个BT种子。</p>
+<p>海盗湾：<a href="http://thepiratebay.ee/" target="_blank" rel="external">http://thepiratebay.ee/</a></p>
+<p>自称是目前世界上最大的BT种子服务器。</p>
+<p>BTDigg：<a href="https://btdigg.org/" target="_blank" rel="external">https://btdigg.org/</a></p>
+<p>磁力站，搜索关键字的能力较强，个人最爱用的网站。</p>
+<p>ulozto：<a href="http://www.ulozto.net/" target="_blank" rel="external">http://www.ulozto.net/</a></p>
+<p>据说搜捷克电影很好用，我没试过。</p>
+<p>rutracker：<a href="http://rutracker.org/forum/index.php（俄罗斯BT站）" target="_blank" rel="external">http://rutracker.org/forum/index.php（俄罗斯BT站）</a></p>
+<p>BT搜搜：<a href="http://www.btsoso.me/" target="_blank" rel="external">http://www.btsoso.me/</a></p>
+<p>Btbook：<a href="http://t.cn/8sgPF9Q" target="_blank" rel="external">http://t.cn/8sgPF9Q</a></p>
+<p>RunBT：<a href="http://t.cn/Rvn5wDB" target="_blank" rel="external">http://t.cn/Rvn5wDB</a></p>
+<p>DiggBt：<a href="http://t.cn/RPhEeST" target="_blank" rel="external">http://t.cn/RPhEeST</a></p>
+<p>BtDigg：<a href="http://t.cn/zWKSDdH" target="_blank" rel="external">http://t.cn/zWKSDdH</a></p>
+<p>手撕包菜：<a href="http://t.cn/zHcP7Ue" target="_blank" rel="external">http://t.cn/zHcP7Ue</a></p>
+<p>BT樱桃：<a href="http://t.cn/8sh3oB3" target="_blank" rel="external">http://t.cn/8sh3oB3</a></p>
+<h1 id="五、风清扬（无即是有）"><a href="#五、风清扬（无即是有）" class="headerlink" title="五、风清扬（无即是有）"></a>五、风清扬（无即是有）</h1><p>如果上述网站依旧找不到你要的电影，那就得自己动手去其他地方找了，下面介绍一些电影挖掘技术：</p>
+<p>谷歌：懒人一般不会用，但除了网站之外，谷歌引擎是最靠谱的找片方法。搜索片名+download/torrent/magnet/ed2k等后缀，能找到不少冷门电影。</p>
+<p>豆瓣条目：在豆瓣电影搜索片名之后，该影片的简介页面，就叫豆瓣条目。很多人忽视了这块地方：冷门电影的话，在条目的讨论区偶尔会有热心网友给出资源下载；短片的话，在条目的短评区会有热心网友给出在线观看地址。<br>豆瓣小组：这个社区可以说是高手在民间，比如像是：第三世界电影资源，这种小组，里面会有很多珍贵片源，玩豆瓣的朋友可以慢慢发掘。</p>
+<p>百度贴吧：贴吧精品区里有不少好东西，比如“北野武吧”就有不少粉丝上传的纪录片资源，“百度网盘吧”“360云盘吧”这种，偶尔会有人扔出一些容量几个T的资源合集。</p>
+<p>小豆瓣影集：如果你不知道看什么电影？那么小豆瓣影集或许能够为你节省不少时间，大大提高你找电影的效率，这里有大量原创的精彩影集推荐，各种类型的电影盘点，电影爱好者必须要收藏的网址：<a href="http://www.xiaodouban.com/film-pandian。" target="_blank" rel="external">http://www.xiaodouban.com/film-pandian。</a></p>
+<p>关于资源搜索的技巧，这个才是重中之重好吗：</p>
+<p>有些片子不一定搜一个片名就能搜出来，国内的网站主要搜索中文名，外网主要搜索外文名。而几乎所有的片名，都可以在对应的豆瓣条目简介里面找到，当然IMDB条目也有。国内的网站当然比较简单，比如《血色将至》这部片，你可以搜“血色将至”、“血色黑金”、“There Will Be Blood”</p>
+<p>重点说下国外的网站，很多非英语片，除了中文译名之外，都会有两个片名，举个例子：《精疲力尽》这部片，你可以搜英文名“Breathless”、法文名“à bout de souffle”。《七武士》这部片，你可以搜中文名“七武士”，日文名“七人の侍”，英文名“Seven Samurai”，最好用的方法是搜索日语发音“Shichinin no samurai”，最后一种方法是在外网搜索日语片的首选。<br>有些名字相同的片子，可以在后面加上年份，方便区分，比如希区柯克的《惊魂记》，可以搜“psycho 1960”。想高清的可片名+720p/1080p/bluray等后缀。</p>
+<p>搜电影原声，可搜索片名+soundtrack/OST</p>
+<p>在谷歌上搜索某个导演的合集，可以加上collection这个后缀，比如搜伍迪艾伦的，“Woody Allen collection”。</p>
+<p>搜冷门片，可以用刚刚提到的方法，搜索片名+download/torrent/magnet/ed2k</p>
+<p>最后说一下的是关于字幕的问题：</p>
+<p>Sub HD 字幕站：<a href="http://subhd.com/" target="_blank" rel="external">http://subhd.com/</a></p>
+<p>伪射手网：<a href="http://sub.makedie.me/" target="_blank" rel="external">http://sub.makedie.me/</a></p>
+<p>寻找英文/小语种的字幕：<a href="http://t.cn/8sjjac7" target="_blank" rel="external">http://t.cn/8sjjac7</a></p>
+<p>关于字幕的一些小科普：<a href="http://t.cn/Rh3uKxR" target="_blank" rel="external">http://t.cn/Rh3uKxR</a></p>
+<h1 id="补充特色网站"><a href="#补充特色网站" class="headerlink" title="补充特色网站"></a>补充特色网站</h1><p>KiSHD，<a href="http://www.kishd.org/，韩影、韩剧、韩国综艺等，资源丰富。还有自己的韩语字幕组。" target="_blank" rel="external">http://www.kishd.org/，韩影、韩剧、韩国综艺等，资源丰富。还有自己的韩语字幕组。</a></p>
+<p>立体中国，<a href="http://bbs.cnliti.com/，主打3D资源" target="_blank" rel="external">http://bbs.cnliti.com/，主打3D资源</a></p>
+<p>纪录片之家，<a href="http://www.jlpzj.net/" target="_blank" rel="external">http://www.jlpzj.net/</a> ，最丰富的纪录片资源站点</p>
+<p>同志亦凡人，<a href="http://www.qafone.co/" target="_blank" rel="external">http://www.qafone.co/</a> ，gay片网站</p>
+<p>印度电影论坛：<a href="http://www.indmi.com/" target="_blank" rel="external">http://www.indmi.com/</a> ，印度电影资源丰富，还有印度相关知识</p>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、初级&quot;&gt;&lt;a href=&quot;#一、初级&quot; class=&quot;headerlink&quot; title=&quot;一、初级&quot;&gt;&lt;/a&gt;一、初级&lt;/h1&gt;&lt;p&gt;你已经有兴趣看电影了，区别于那些完全不看电影的人。你可以在各大视频网站在线观看，不介意效果差、片源少、更新慢的话推荐一个播放
+    
+    </summary>
+    
+      <category term="日常记录" scheme="http://tonglei.win/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="来自网络" scheme="http://tonglei.win/tags/%E6%9D%A5%E8%87%AA%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="下载" scheme="http://tonglei.win/tags/%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论语</title>
+    <link href="http://tonglei.win/2016/12/06/%E6%96%87%E5%AD%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E8%AF%AD/"/>
+    <id>http://tonglei.win/2016/12/06/文学学习/论语/</id>
+    <published>2016-12-06T03:26:09.000Z</published>
+    <updated>2017-01-09T07:13:45.603Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>论语二十篇</strong></p>
+<p>全文阅读：<a href="https://tonglei0429.github.io/lunyu/" target="_blank" rel="external">https://tonglei0429.github.io/lunyu/</a></p>
+<p><a href="https://tonglei0429.github.io/lunyu/gen/lunyu.pdf" target="_blank" rel="external">PDF下载</a></p>
+<p><strong>书籍目录</strong></p>
+<ul>
+<li>论语简介</li>
+<li>学而第一</li>
+<li>为政第二</li>
+<li>八佾第三</li>
+<li>里仁第四</li>
+<li>公冶长第五</li>
+<li>雍也第六</li>
+<li>述而第七</li>
+<li>泰伯第八</li>
+<li>子罕第九</li>
+<li>乡党第十</li>
+<li>先进第十一</li>
+<li>颜渊第十二</li>
+<li>子路第十三</li>
+<li>宪问第十四</li>
+<li>卫灵公第十五</li>
+<li>季氏第十六</li>
+<li>阳货第十七</li>
+<li>微子第十八</li>
+<li>子张第十九</li>
+<li>尧曰第二十</li>
+</ul>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;论语二十篇&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;全文阅读：&lt;a href=&quot;https://tonglei0429.github.io/lunyu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://tonglei0429.gith
+    
+    </summary>
+    
+      <category term="文学学习" scheme="http://tonglei.win/categories/%E6%96%87%E5%AD%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="国学" scheme="http://tonglei.win/tags/%E5%9B%BD%E5%AD%A6/"/>
+    
+      <category term="论语" scheme="http://tonglei.win/tags/%E8%AE%BA%E8%AF%AD/"/>
+    
+      <category term="孔子" scheme="http://tonglei.win/tags/%E5%AD%94%E5%AD%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习MYSQL5.7免装版的使用</title>
+    <link href="http://tonglei.win/2016/11/03/IT%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%BA%93/%E5%AD%A6%E4%B9%A0MYSQL5-7%E5%85%8D%E8%A3%85%E7%89%88%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://tonglei.win/2016/11/03/IT学习/数据库/学习MYSQL5-7免装版的使用/</id>
+    <published>2016-11-03T15:29:55.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Mysql5.7 以后压缩包中不再包含data文件夹，相对应的数据库初始化工作也稍有改变，在此记录。</p>
+<h1 id="下载压缩包"><a href="#下载压缩包" class="headerlink" title="下载压缩包"></a>下载压缩包</h1><p>对于一般人来说，Mysql社区版就足够耍了，下载地址如下：<br><a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a></p>
+<ul>
+<li><p>win32版:</p>
+<p><a href="http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-win32.zip" target="_blank" rel="external">http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-win32.zip</a></p>
+</li>
+<li><p>win64版</p>
+<p><a href="http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-winx64.zip" target="_blank" rel="external">http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-winx64.zip</a></p>
+</li>
+<li><p>其他版本自己选链接</p>
+</li>
+</ul>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><ol>
+<li>将已下载的 ZIP 解压，并将 bin 目录添加到系统环境变量 path 中;</li>
+<li>重命名解压文件夹中的 my-default.ini 为 my.ini;</li>
+<li>在 my.ini 中设置各个参数，如:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line">basedir = E:/projects/mysql-db</div><div class="line">datadir = E:/projects/mysql-db/data</div><div class="line">port = 3306</div><div class="line">character-set-server=utf8</div><div class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="初始化Mysql"><a href="#初始化Mysql" class="headerlink" title="初始化Mysql"></a>初始化Mysql</h1><p>初始化也就是创建 data 目录的过程，使用以下命令(管理员)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --initialize</div></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --initialize-insecure</div></pre></td></tr></table></figure></p>
+<p>前者为root用户创建随机密码，后者不设置 root 用户密码</p>
+<h1 id="启动-Mysql-Server"><a href="#启动-Mysql-Server" class="headerlink" title="启动 Mysql Server"></a>启动 Mysql Server</h1><p>完成以上步骤后就可以直接启动Mysql了，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --console</div></pre></td></tr></table></figure></p>
+<h1 id="注册-Mysql-Server-为系统服务（可选）"><a href="#注册-Mysql-Server-为系统服务（可选）" class="headerlink" title="注册 Mysql Server 为系统服务（可选）"></a>注册 Mysql Server 为系统服务（可选）</h1><p>如果希望注册为系统服务，可以敲这个：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --install</div></pre></td></tr></table></figure></p>
+<p>注销删除服务为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --remove</div></pre></td></tr></table></figure></p>
+<p>启动和停止服务的命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ net start mysql</div><div class="line">$ net stop mysql</div></pre></td></tr></table></figure></p>
+<hr>
+<p>就到这里，玩的愉快！</p>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Mysql5.7 以后压缩包中不再包含data文件夹，相对应的数据库初始化工作也稍有改变，在此记录。&lt;/p&gt;
+&lt;h1 id=&quot;下载压缩包&quot;&gt;
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="数据库" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mysql" scheme="http://tonglei.win/tags/mysql/"/>
+    
+      <category term="database" scheme="http://tonglei.win/tags/database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>理解OAuth2.0协议-基础篇</title>
+    <link href="http://tonglei.win/2016/10/25/IT%E5%AD%A6%E4%B9%A0/SSO/%E7%90%86%E8%A7%A3OAuth2.0%E5%8D%8F%E8%AE%AE-%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://tonglei.win/2016/10/25/IT学习/SSO/理解OAuth2.0协议-基础篇/</id>
+    <published>2016-10-25T06:01:01.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是OAuth2-0？"><a href="#什么是OAuth2-0？" class="headerlink" title="什么是OAuth2.0？"></a>什么是OAuth2.0？</h1><p><a href="https://oauth.net/2/" target="_blank" rel="external">https://oauth.net/2/</a> 说：</p>
+<blockquote>
+<p>OAuth 2.0 is the next evolution of the OAuth protocol which was originally created in late 2006. OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. This specification is being developed within the IETF OAuth WG.</p>
+</blockquote>
+<p>OAuth（开放授权）是一个开放标准，允许用户授权第三方网站访问他们存储在另外的服务提供者上的信息，而不需要将用户名和密码提供给第三方网站或分享他们数据的所有内容。</p>
+<p>OAuth2.0 是在 OAuth 基础上的简化与优化，虽然不向下兼容，但是和OAuth 有着相似的理论。</p>
+<h1 id="OAuth2-0-的角色"><a href="#OAuth2-0-的角色" class="headerlink" title="OAuth2.0 的角色"></a>OAuth2.0 的角色</h1><h2 id="资源所有者-resource-owner-RO"><a href="#资源所有者-resource-owner-RO" class="headerlink" title="资源所有者 resource owner (RO)"></a>资源所有者 resource owner (RO)</h2><p>指对某种资源拥有授权能力的实体，如果资源属于某个人的话，这个 RO 就是这个人的终端账户。</p>
+<h2 id="资源服务器-resource-server-RS"><a href="#资源服务器-resource-server-RS" class="headerlink" title="资源服务器 resource server (RS)"></a>资源服务器 resource server (RS)</h2><p>指某种资源的容器，RS 通过判断 Access Token 是否有效决定资源是否被授权访问。</p>
+<h2 id="客户端-client-C"><a href="#客户端-client-C" class="headerlink" title="客户端 client (C)"></a>客户端 client (C)</h2><p>指需要访问某个用户的受保护资源的客户端程序，既可以是个桌面程序，也可以是个浏览器，也可以是个后台服务。</p>
+<h2 id="认证服务端-authorization-server-AS"><a href="#认证服务端-authorization-server-AS" class="headerlink" title="认证服务端 authorization server (AS)"></a>认证服务端 authorization server (AS)</h2><p>指颁发 Access Token 给客户端的服务，当然颁发之前要对 RO 进行认证并且由 RO 完成授权。</p>
+<h1 id="OAuth2-0-协议流程"><a href="#OAuth2-0-协议流程" class="headerlink" title="OAuth2.0 协议流程"></a>OAuth2.0 协议流程</h1><p>从上面的角色可以猜到，OAuth2.0 认证发生在某个资源拥有者希望通过客户端访问其所有资源的时候。<br>例如：网站 wepass.vip 希望实现微信登录，并获取用户微信的头像，那这时候 wepass.vip 这个网站本身就可以看作是一个 Client，作为拥有微信的我，就是一个资源拥有者（RO），要获取的头像就是我的资源（其实用户名密码本身也属于资源），而 RS（存头像的那个服务器） 和 AS （给认证的那个服务器） 则全部是由<a href="http://wiki.open.qq.com/wiki/website/OAuth2.0%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3" target="_blank" rel="external">腾讯开放平台</a>提供。</p>
+<p>所以，当我（RO）想在 wepass.vip （Client） 上看到我的头像（Resource）的时候，我会先访问 wepass.vip，然后 wepass.vip 发现我没登录，就求腾讯（AS）给我验身，然后我在腾讯的认证服务器（AS）上输入我的用户名口令（或者二维码、或者快捷登录），如果腾讯认可我（有时还需要认可Client），就会生成一个 Access Token，wepass.vip 再通过Access Token 去腾讯的资源服务器（RS）上要我的头像，然后再展示给我，这样就完成了一个 OAuth2.0 认证。</p>
+<p>这样做的好处是：wepass.vip 不会得到我的用户名密码，但是依然可以相信我的身份，而我也只需要记住自己的微信口令，就可以同时登录 wepass1、wepass2、wepass3 … 也就是实现了单点登录。</p>
+<p>看图（纯手绘）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">+--------+                               +---------------+</div><div class="line">|        |--(A)- Authorization Request -&gt;|   Resource    |</div><div class="line">|        |                               |     Owner     |</div><div class="line">|        |&lt;-(B)-- Authorization Grant ---|               |</div><div class="line">|        |                               +---------------+</div><div class="line">|        |</div><div class="line">|        |                               +---------------+</div><div class="line">|        |--(C)-- Authorization Grant --&gt;| Authorization |</div><div class="line">| Client |                               |     Server    |</div><div class="line">|        |&lt;-(D)----- Access Token -------|               |</div><div class="line">|        |                               +---------------+</div><div class="line">|        |</div><div class="line">|        |                               +---------------+</div><div class="line">|        |--(E)----- Access Token ------&gt;|    Resource   |</div><div class="line">|        |                               |     Server    |</div><div class="line">|        |&lt;-(F)--- Protected Resource ---|               |</div><div class="line">+--------+                               +---------------+</div></pre></td></tr></table></figure></p>
+<h1 id="还有一些常见概念"><a href="#还有一些常见概念" class="headerlink" title="还有一些常见概念"></a>还有一些常见概念</h1><h2 id="许可类型-Authorization-Grant"><a href="#许可类型-Authorization-Grant" class="headerlink" title="许可类型 Authorization Grant"></a>许可类型 Authorization Grant</h2><p>由于第三方应用（client）的多样性，OAuth2.0提出了多种授权类型：</p>
+<ul>
+<li><p>如授权码 Authorization Code Grant</p>
+<p>这种类型 AS 在完成 RO 的认证和授权后，给 Client 一个 Code, Client 带着 Code 再去换 AccessToken，再用 AccessToken 访问资源。</p>
+</li>
+<li><p>隐式授权 Implicit Grant</p>
+<p>这种情况下，RO 认证并授权后，AS 会把 AccessToken 直接交给 Client，而不需要 Client 保存 Authorization Code，再去换取 Access Token。<br>这种场景适合于没有服务端的程序，也就是没有办法对 Authorization Code 进行保密的 Client 类型。</p>
+</li>
+<li><p>RO凭证授权 Resource Owner Password Credentials Grant</p>
+<p>这是一种 RO 对 Client 高度可信的授权方式，RO 要把自己的凭证（用户名、密码）交给 Client，Client 直接拿去向 AS 请求 Access Token。</p>
+</li>
+<li><p>Client凭证授权 Client Credentials Grant</p>
+<p>这种场景下 AS 只需要认证 Client，比较适合于待访问资源的安全级别不高或者资源只属于这个 Client 的场景。</p>
+</li>
+</ul>
+<h2 id="访问令牌-Access-Token"><a href="#访问令牌-Access-Token" class="headerlink" title="访问令牌 Access Token"></a>访问令牌 Access Token</h2><p>访问令牌就是为了访问资源用的，一般是字符串形式，里面标注了其范围（Scope）和寿命（Duration）。</p>
+<h2 id="续期令牌-Refresh-Token"><a href="#续期令牌-Refresh-Token" class="headerlink" title="续期令牌 Refresh Token"></a>续期令牌 Refresh Token</h2><p>续期令牌就是在当前的访问令牌到期时，为期续期使用的。续期令牌是个可选项，它会和访问令牌一起颁发给Client，只不过续期令牌指在 AS 上使用，不在 RS 上使用。</p>
+<h2 id="传输层安全性版本-TLS-Version"><a href="#传输层安全性版本-TLS-Version" class="headerlink" title="传输层安全性版本 TLS Version"></a>传输层安全性版本 TLS Version</h2><p>TLS = Transport Layer Security，如果使用了 TLS，我们就要对其遵循的规范版本进行标注。目前最新的版本号为1.2，最广泛的版本号为1.0。</p>
+<h1 id="谁在用-OAuth2-0？"><a href="#谁在用-OAuth2-0？" class="headerlink" title="谁在用 OAuth2.0？"></a>谁在用 OAuth2.0？</h1><ul>
+<li><a href="http://developer.baidu.com/wiki/index.php?title=docs/oauth" target="_blank" rel="external">百度开发者中心</a></li>
+<li><a href="http://wiki.open.qq.com/wiki/website/OAuth2.0%E7%AE%80%E4%BB%8B" target="_blank" rel="external">腾讯开放平台</a></li>
+<li><a href="https://developers.google.com/identity/protocols/OAuth2" target="_blank" rel="external">谷歌开发者中心(估计你打不开)</a></li>
+<li><a href="http://open.weibo.com/wiki/Oauth2/authorize" target="_blank" rel="external">微博开发平台</a></li>
+</ul>
+<p>还有HP、IBM、Oracle等等等等，有头有脸有用户的大公司都有自己的 AS 和 RS。</p>
+<p><strong>下次再聊聊客户端的注册</strong></p>
+<h1 id="玩得开心！"><a href="#玩得开心！" class="headerlink" title="玩得开心！"></a>玩得开心！</h1><link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是OAuth2-0？&quot;&gt;&lt;a href=&quot;#什么是OAuth2-0？&quot; class=&quot;headerlink&quot; title=&quot;什么是OAuth2.0？&quot;&gt;&lt;/a&gt;什么是OAuth2.0？&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://oauth.net/2/&quot;
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="SSO" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/SSO/"/>
+    
+    
+      <category term="oauth2" scheme="http://tonglei.win/tags/oauth2/"/>
+    
+      <category term="sso" scheme="http://tonglei.win/tags/sso/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习ApacheCxf+Spring建立Rest服务</title>
+    <link href="http://tonglei.win/2016/10/24/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0ApacheCxf+Spring%E5%BB%BA%E7%AB%8BRest%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://tonglei.win/2016/10/24/IT学习/Java/学习ApacheCxf+Spring建立Rest服务/</id>
+    <published>2016-10-24T03:20:00.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用到的工具"><a href="#用到的工具" class="headerlink" title="用到的工具"></a>用到的工具</h2><ul>
+<li>maven 做依赖管理</li>
+<li>Spring 做容器</li>
+<li>Cxf 做服务框架</li>
+</ul>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="首先在-Maven-的-pom-xml-文件中配置，配置好依赖"><a href="#首先在-Maven-的-pom-xml-文件中配置，配置好依赖" class="headerlink" title="首先在 Maven 的 pom.xml 文件中配置，配置好依赖"></a>首先在 Maven 的 pom.xml 文件中配置，配置好依赖</h3><p>pom.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></div><div class="line">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>wepass.vip<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>wecard-api-service-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>wepass.vip<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>wecard-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">relativePath</span>&gt;</span>../<span class="tag">&lt;/<span class="name">relativePath</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">tomcat.version</span>&gt;</span>8.5.2<span class="tag">&lt;/<span class="name">tomcat.version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">cxf.version</span>&gt;</span>3.1.7<span class="tag">&lt;/<span class="name">cxf.version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">jackson.version</span>&gt;</span>2.4.1<span class="tag">&lt;/<span class="name">jackson.version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">spring.version</span>&gt;</span>4.2.6.RELEASE<span class="tag">&lt;/<span class="name">spring.version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.embed<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-embed-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;tomcat.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.embed<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-embed-logging-juli<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;tomcat.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.embed<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-embed-jasper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;tomcat.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-jasper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;tomcat.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-jasper-el<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;tomcat.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat-jsp-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;tomcat.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="comment">&lt;!-- Spring --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="comment">&lt;!-- CXF --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.cxf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cxf-rt-frontend-jaxrs<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;cxf.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.jaxrs<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-jaxrs-json-provider<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>wecard-api-service<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="创建-Web-应用，在-web-xml-中配置-Spring-上下文"><a href="#创建-Web-应用，在-web-xml-中配置-Spring-上下文" class="headerlink" title="创建 Web 应用，在 web.xml 中配置 Spring 上下文"></a>创建 Web 应用，在 web.xml 中配置 Spring 上下文</h3><p><em>web.xml</em></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">web-app</span></span></div><div class="line">        <span class="attr">version</span>=<span class="string">"3.0"</span></div><div class="line">        <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span></div><div class="line">        <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">        <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>微卡API服务平台<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Powered by wePass.vip<span class="tag">&lt;/<span class="name">description</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath*:/application-context.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>CXFService<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.apache.cxf.transport.servlet.CXFServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>CXFService<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">error-page</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">error-code</span>&gt;</span>404<span class="tag">&lt;/<span class="name">error-code</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">location</span>&gt;</span>/404.html<span class="tag">&lt;/<span class="name">location</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">error-page</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="配置-Spring-容器，增加-Rest-访问入口"><a href="#配置-Spring-容器，增加-Rest-访问入口" class="headerlink" title="配置 Spring 容器，增加 Rest 访问入口"></a>配置 Spring 容器，增加 Rest 访问入口</h3><p><em>application-context.xml</em></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></div><div class="line">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">       <span class="attr">xmlns:jaxrs</span>=<span class="string">"http://cxf.apache.org/jaxrs"</span></div><div class="line">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd     http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"restSample"</span> <span class="attr">class</span>=<span class="string">"demo.spring.service.RESTSampleSource"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 重点就在这里！WebService --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">jaxrs:server</span> <span class="attr">id</span>=<span class="string">"restServiceContainer"</span> <span class="attr">address</span>=<span class="string">"/rest"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">jaxrs:serviceBeans</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"restSample"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">jaxrs:serviceBeans</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">jaxrs:extensionMappings</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">"json"</span> <span class="attr">value</span>=<span class="string">"application/json"</span>/&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">"xml"</span> <span class="attr">value</span>=<span class="string">"application/xml"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">jaxrs:extensionMappings</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">jaxrs:languageMappings</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">"cn"</span> <span class="attr">value</span>=<span class="string">"cn-ZH"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">jaxrs:languageMappings</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">jaxrs:providers</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">jaxrs:providers</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">jaxrs:server</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="以下是-Java-相关代码，包含实体类User-和-Users，Rest接口及实现"><a href="#以下是-Java-相关代码，包含实体类User-和-Users，Rest接口及实现" class="headerlink" title="以下是 Java 相关代码，包含实体类User 和 Users，Rest接口及实现"></a>以下是 Java 相关代码，包含实体类User 和 Users，Rest接口及实现</h3><p><em>User.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> demo.spring.service;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonIgnoreProperties;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.xml.bind.annotation.XmlRootElement;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Booker on 16/10/12.</div><div class="line"> */</div><div class="line"><span class="meta">@XmlRootElement</span>(name = <span class="string">"UserInfo"</span>)</div><div class="line"><span class="meta">@JsonIgnoreProperties</span>(&#123;<span class="string">"handler"</span>, <span class="string">"hibernateLazyInitializer"</span>&#125;)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</div><div class="line">    <span class="keyword">private</span> String name = <span class="string">"123"</span>;</div><div class="line">    <span class="keyword">private</span> String email = <span class="string">"456"</span>;</div><div class="line">    <span class="keyword">private</span> String address = <span class="string">"789"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.id + <span class="string">"#"</span> + <span class="keyword">this</span>.name + <span class="string">"#"</span> + <span class="keyword">this</span>.email + <span class="string">"#"</span> + <span class="keyword">this</span>.address;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.id = id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span><span class="params">(String email)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.email = email;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddress</span><span class="params">(String address)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.address = address;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> email;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAddress</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> address;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>Users.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> demo.spring.service;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"><span class="keyword">import</span> javax.xml.bind.annotation.XmlRootElement;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Booker on 16/10/12.</div><div class="line"> */</div><div class="line"><span class="meta">@XmlRootElement</span>(name = <span class="string">"UserInfos"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Users</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> List&lt;User&gt; users;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> User[] userArr;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> HashMap&lt;String, User&gt; maps;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">getUsers</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> users;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsers</span><span class="params">(List&lt;User&gt; users)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.users = users;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> User[] getUserArr() &#123;</div><div class="line">        <span class="keyword">return</span> userArr;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUserArr</span><span class="params">(User[] userArr)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.userArr = userArr;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> HashMap&lt;String, User&gt; <span class="title">getMaps</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> maps;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMaps</span><span class="params">(HashMap&lt;String, User&gt; maps)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.maps = maps;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>RESTSample.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> demo.spring.service;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.Consumes;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.DELETE;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.GET;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.POST;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.PUT;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.Path;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.PathParam;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.Produces;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.core.Context;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.core.MediaType;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Booker on 16/10/12.</div><div class="line"> */</div><div class="line"><span class="meta">@Path</span>(value = <span class="string">"/sample"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">RESTSample</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Produces</span>(MediaType.TEXT_PLAIN)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">doGet</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Produces</span>(MediaType.TEXT_PLAIN)</div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/request/&#123;param&#125;"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">doRequest</span><span class="params">(@PathParam(<span class="string">"param"</span>)</span> String param,</span></div><div class="line">                            @Context HttpServletRequest servletRequest, @Context HttpServletResponse servletResponse);</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/bean/&#123;id&#125;"</span>)</div><div class="line">    <span class="meta">@Produces</span>(&#123;MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON&#125;)</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getBean</span><span class="params">(@PathParam(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id)</span>;</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/list"</span>)</div><div class="line">    <span class="meta">@Produces</span>(&#123;MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML&#125;)</div><div class="line">    <span class="function"><span class="keyword">public</span> Users <span class="title">getList</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/map"</span>)</div><div class="line">    <span class="meta">@Produces</span>(&#123;MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON&#125;)</div><div class="line">    <span class="function"><span class="keyword">public</span> MapBean <span class="title">getMap</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="meta">@POST</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/postData"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">postData</span><span class="params">(User user)</span> <span class="keyword">throws</span> IOException</span>;</div><div class="line"></div><div class="line">    <span class="meta">@PUT</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/putData/&#123;id&#125;"</span>)</div><div class="line">    <span class="meta">@Consumes</span>(MediaType.APPLICATION_XML)</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">putData</span><span class="params">(@PathParam(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id, User user)</span>;</div><div class="line"></div><div class="line">    <span class="meta">@DELETE</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/removeData/&#123;id&#125;"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteData</span><span class="params">(@PathParam(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>RESTSampleSource.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> demo.spring.service;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.Consumes;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.DELETE;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.GET;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.POST;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.PUT;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.Path;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.PathParam;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.Produces;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.core.Context;</div><div class="line"><span class="keyword">import</span> javax.ws.rs.core.MediaType;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Booker on 16/10/12.</div><div class="line"> */</div><div class="line"><span class="meta">@Path</span>(value = <span class="string">"/sample"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">RESTSample</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Produces</span>(MediaType.TEXT_PLAIN)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">doGet</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Produces</span>(MediaType.TEXT_PLAIN)</div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/request/&#123;param&#125;"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">doRequest</span><span class="params">(@PathParam(<span class="string">"param"</span>)</span> String param,</span></div><div class="line">                            @Context HttpServletRequest servletRequest, @Context HttpServletResponse servletResponse);</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/bean/&#123;id&#125;"</span>)</div><div class="line">    <span class="meta">@Produces</span>(&#123;MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON&#125;)</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getBean</span><span class="params">(@PathParam(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id)</span>;</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/list"</span>)</div><div class="line">    <span class="meta">@Produces</span>(&#123;MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML&#125;)</div><div class="line">    <span class="function"><span class="keyword">public</span> Users <span class="title">getList</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="meta">@GET</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/map"</span>)</div><div class="line">    <span class="meta">@Produces</span>(&#123;MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON&#125;)</div><div class="line">    <span class="function"><span class="keyword">public</span> MapBean <span class="title">getMap</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">    <span class="meta">@POST</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/postData"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">postData</span><span class="params">(User user)</span> <span class="keyword">throws</span> IOException</span>;</div><div class="line"></div><div class="line">    <span class="meta">@PUT</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/putData/&#123;id&#125;"</span>)</div><div class="line">    <span class="meta">@Consumes</span>(MediaType.APPLICATION_XML)</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">putData</span><span class="params">(@PathParam(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id, User user)</span>;</div><div class="line"></div><div class="line">    <span class="meta">@DELETE</span></div><div class="line">    <span class="meta">@Path</span>(<span class="string">"/removeData/&#123;id&#125;"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteData</span><span class="params">(@PathParam(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id)</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="最后是启动类"><a href="#最后是启动类" class="headerlink" title="最后是启动类"></a>最后是启动类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> demo.spring;</div><div class="line"></div><div class="line"><span class="keyword">import</span> org.apache.catalina.LifecycleException;</div><div class="line"><span class="keyword">import</span> org.apache.catalina.WebResourceRoot;</div><div class="line"><span class="keyword">import</span> org.apache.catalina.core.StandardContext;</div><div class="line"><span class="keyword">import</span> org.apache.catalina.startup.Tomcat;</div><div class="line"><span class="keyword">import</span> org.apache.catalina.webresources.DirResourceSet;</div><div class="line"><span class="keyword">import</span> org.apache.catalina.webresources.StandardRoot;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.servlet.ServletException;</div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by Booker on 16/10/10.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiService</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> <span class="keyword">throws</span> ServletException, LifecycleException </span>&#123;</div><div class="line"></div><div class="line">        String webappDirLocation = <span class="string">"src/main/webapp/"</span>;</div><div class="line">        Tomcat tomcat = <span class="keyword">new</span> Tomcat();</div><div class="line"></div><div class="line">        <span class="comment">//The port that we should run on can be set into an environment variable</span></div><div class="line">        <span class="comment">//Look for that variable and default to 8080 if it isn't there.</span></div><div class="line">        String webPort = System.getenv(<span class="string">"PORT"</span>);</div><div class="line">        <span class="keyword">if</span> (webPort == <span class="keyword">null</span> || webPort.isEmpty()) &#123;</div><div class="line">            webPort = <span class="string">"8080"</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        tomcat.setPort(Integer.valueOf(webPort));</div><div class="line"></div><div class="line">        StandardContext ctx = (StandardContext) tomcat.addWebapp(<span class="string">""</span>, <span class="keyword">new</span> File(webappDirLocation).getAbsolutePath());</div><div class="line">        System.out.println(<span class="string">"configuring app with basedir: "</span> + <span class="keyword">new</span> File(<span class="string">"./"</span> + webappDirLocation).getAbsolutePath());</div><div class="line"></div><div class="line">        <span class="comment">// Declare an alternative location for your "WEB-INF/classes" dir</span></div><div class="line">        <span class="comment">// Servlet 3.0 annotation will work</span></div><div class="line">        File additionWebInfClasses = <span class="keyword">new</span> File(<span class="string">"target/classes"</span>);</div><div class="line">        WebResourceRoot resources = <span class="keyword">new</span> StandardRoot(ctx);</div><div class="line">        resources.addPreResources(<span class="keyword">new</span> DirResourceSet(resources, <span class="string">"/WEB-INF/classes"</span>,</div><div class="line">                additionWebInfClasses.getAbsolutePath(), <span class="string">"/"</span>));</div><div class="line">        ctx.setResources(resources);</div><div class="line"></div><div class="line">        tomcat.start();</div><div class="line">        tomcat.getServer().await();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            ApiService.run();</div><div class="line">        &#125; <span class="keyword">catch</span> (ServletException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">catch</span> (LifecycleException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="运行与测试"><a href="#运行与测试" class="headerlink" title="运行与测试"></a>运行与测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ java demo.spring.ApiService</div></pre></td></tr></table></figure>
+<p>访问：<a href="http://localhost:8080/rest/sample/list" target="_blank" rel="external">http://localhost:8080/rest/sample/list</a></p>
+<p>得到如下显示：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">address</span>&gt;</span>789<span class="tag">&lt;/<span class="name">address</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">email</span>&gt;</span>456<span class="tag">&lt;/<span class="name">email</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>0<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>name-0<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">address</span>&gt;</span>789<span class="tag">&lt;/<span class="name">address</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">email</span>&gt;</span>456<span class="tag">&lt;/<span class="name">email</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>1<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>name-1<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">address</span>&gt;</span>789<span class="tag">&lt;/<span class="name">address</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">email</span>&gt;</span>456<span class="tag">&lt;/<span class="name">email</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>2<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>name-2<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">users</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">address</span>&gt;</span>789<span class="tag">&lt;/<span class="name">address</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">email</span>&gt;</span>456<span class="tag">&lt;/<span class="name">email</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">id</span>&gt;</span>3<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>name-3<span class="tag">&lt;/<span class="name">name</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">users</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">UserInfos</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="源码下载"><a href="#源码下载" class="headerlink" title="源码下载"></a>源码下载</h2><p><a href="https://github.com/tonglei0429/samples/tree/master/j2ee/cxf-spring-rest" target="_blank" rel="external">https://github.com/tonglei0429/samples/tree/master/j2ee/cxf-spring-rest</a></p>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;用到的工具&quot;&gt;&lt;a href=&quot;#用到的工具&quot; class=&quot;headerlink&quot; title=&quot;用到的工具&quot;&gt;&lt;/a&gt;用到的工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;maven 做依赖管理&lt;/li&gt;
+&lt;li&gt;Spring 做容器&lt;/li&gt;
+&lt;li&gt;Cxf 做服务框架&lt;/
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
+    
+    
+      <category term="spring" scheme="http://tonglei.win/tags/spring/"/>
+    
+      <category term="java" scheme="http://tonglei.win/tags/java/"/>
+    
+      <category term="apache cxf" scheme="http://tonglei.win/tags/apache-cxf/"/>
+    
+      <category term="源码" scheme="http://tonglei.win/tags/%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习ApacheCxf+Spring建立Rest服务</title>
+    <link href="http://tonglei.win/2016/10/24/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0ApacheCxf+Spring%E5%BB%BA%E7%AB%8BOAuth2%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://tonglei.win/2016/10/24/IT学习/Java/学习ApacheCxf+Spring建立OAuth2服务/</id>
+    <published>2016-10-24T03:20:00.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2"><a href="#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2" class="headerlink" title="Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2"></a>Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2</h2><p>官方文档: <a href="http://cxf.apache.org/docs/jax-rs-oauth2.html" target="_blank" rel="external">http://cxf.apache.org/docs/jax-rs-oauth2.html</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Apache 的 CXF 可以实现 <a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="external">OAuth2.0</a><br>实现 OAuth2.0 需要这么几步：</p>
+<ol>
+<li>浏览器访问第三方网站；</li>
+<li>带着它的客户端ID，状态，地址等信息跳转到 OAuth2.0 服务，服务给它授权；</li>
+<li>OAuth2.0 服务端用请求的 ClientID 生成登录表单给终端用户，用户登录并给第三方应用授权；</li>
+<li>登录成功返回授权码等一大堆参数给第三方应用；</li>
+<li>客户端用授权码请求票据；</li>
+<li>获取票据之后，客户端允许终端用户访问其资源。</li>
+</ol>
+<h2 id="Maven依赖"><a href="#Maven依赖" class="headerlink" title="Maven依赖"></a>Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;cxf-rt-rs-security-oauth2&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;3.1.7&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<h2 id="服务端开发"><a href="#服务端开发" class="headerlink" title="服务端开发"></a>服务端开发</h2><p>三步：</p>
+<ol>
+<li>挑战用户，然后将授权码返回客户端</li>
+<li>用授权码生成票据</li>
+<li>验证票据</li>
+</ol>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot;&gt;&lt;a href=&quot;#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot; clas
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
+    
+    
+      <category term="oauth2" scheme="http://tonglei.win/tags/oauth2/"/>
+    
+      <category term="spring" scheme="http://tonglei.win/tags/spring/"/>
+    
+      <category term="java" scheme="http://tonglei.win/tags/java/"/>
+    
+      <category term="apache cxf" scheme="http://tonglei.win/tags/apache-cxf/"/>
+    
+      <category term="源码" scheme="http://tonglei.win/tags/%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序官方手册离线版本发布</title>
+    <link href="http://tonglei.win/2016/10/18/IT%E5%AD%A6%E4%B9%A0/%E5%BE%AE%E4%BF%A1/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%98%E6%96%B9%E6%89%8B%E5%86%8C%E7%A6%BB%E7%BA%BF%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83/"/>
+    <id>http://tonglei.win/2016/10/18/IT学习/微信/微信小程序官方手册离线版本发布/</id>
+    <published>2016-10-18T06:41:45.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h1><p>微信官方日前发布了关于小程序的帮助手册，起地址为：</p>
+<p><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/" target="_blank" rel="external">https://mp.weixin.qq.com/debug/wxadoc/dev/</a></p>
+<p>如果需要最新离线版，可以打开</p>
+<p><a href="https://wechats.github.io/tinyapp-doc/" target="_blank" rel="external">https://wechats.github.io/tinyapp-doc/</a></p>
+<p>然后点右上角的 pdf 图标</p>
+<h1 id="快速下载通道"><a href="#快速下载通道" class="headerlink" title="快速下载通道"></a>快速下载通道</h1><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>html</td>
+<td><a href="https://github.com/wechats/tinyapp-doc/archive/master.zip" target="_blank" rel="external">https://github.com/wechats/tinyapp-doc/archive/master.zip</a></td>
+</tr>
+<tr>
+<td>pdf</td>
+<td><a href="https://wechats.github.io/tinyapp-doc/gen/tinyapp-doc.pdf" target="_blank" rel="external">https://wechats.github.io/tinyapp-doc/gen/tinyapp-doc.pdf</a></td>
+</tr>
+<tr>
+<td>epub</td>
+<td><a href="https://wechats.github.io/tinyapp-doc/gen/tinyapp-doc.epub" target="_blank" rel="external">https://wechats.github.io/tinyapp-doc/gen/tinyapp-doc.epub</a></td>
+</tr>
+<tr>
+<td>mobi</td>
+<td><a href="https://wechats.github.io/tinyapp-doc/gen/tinyapp-doc.mobi" target="_blank" rel="external">https://wechats.github.io/tinyapp-doc/gen/tinyapp-doc.mobi</a></td>
+</tr>
+</tbody>
+</table>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;微信小程序&quot;&gt;&lt;a href=&quot;#微信小程序&quot; class=&quot;headerlink&quot; title=&quot;微信小程序&quot;&gt;&lt;/a&gt;微信小程序&lt;/h1&gt;&lt;p&gt;微信官方日前发布了关于小程序的帮助手册，起地址为：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://mp.weixi
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="微信" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/%E5%BE%AE%E4%BF%A1/"/>
+    
+    
+      <category term="gitbook" scheme="http://tonglei.win/tags/gitbook/"/>
+    
+      <category term="微信" scheme="http://tonglei.win/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="小程序" scheme="http://tonglei.win/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="离线" scheme="http://tonglei.win/tags/%E7%A6%BB%E7%BA%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习gitbook发布自己的电子书</title>
+    <link href="http://tonglei.win/2016/10/18/IT%E5%AD%A6%E4%B9%A0/Gitbook/%E5%AD%A6%E4%B9%A0gitbook%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    <id>http://tonglei.win/2016/10/18/IT学习/Gitbook/学习gitbook发布自己的电子书/</id>
+    <published>2016-10-18T02:34:01.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于-Gitbook"><a href="#关于-Gitbook" class="headerlink" title="关于 Gitbook"></a>关于 Gitbook</h1><p>来自官网的介绍</p>
+<blockquote>
+<p>GitBook is a modern publishing toolchain. Making both writing and collaboration easy.</p>
+</blockquote>
+<p>GitBook 是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书，GitBook 并非关于 Git 的教程。</p>
+<p>GitBook支持输出多种文档格式：</p>
+<ul>
+<li>静态站点：GitBook默认输出该种格式，生成的静态站点可直接托管搭载Github Pages服务上；</li>
+<li>PDF：需要安装gitbook-pdf依赖；</li>
+<li>eBook：需要安装ebook-convert；</li>
+<li>单HTML网页：支持将内容输出为单页的HTML，不过一般用在将电子书格式转换为PDF或eBook的中间过程；</li>
+<li>JSON：一般用于电子书的调试或元数据提取。</li>
+</ul>
+<h1 id="Gitbook-的效果展示"><a href="#Gitbook-的效果展示" class="headerlink" title="Gitbook 的效果展示"></a>Gitbook 的效果展示</h1><blockquote>
+<p>微信小程序使用手册 <a href="https://wechats.github.io/tinyapp-doc/" target="_blank" rel="external">https://wechats.github.io/tinyapp-doc/</a></p>
+</blockquote>
+<p><iframe src="https://wechats.github.io/tinyapp-doc/" frameborder="0" scrolling="0" style="width:100%;height:300px;border:1px solid gray;border-radius:5px;"><iframe></iframe></iframe></p>
+<h1 id="Gitbook-的用法"><a href="#Gitbook-的用法" class="headerlink" title="Gitbook 的用法"></a>Gitbook 的用法</h1><ol>
+<li><h2 id="首先安装-nodejs-和-npm"><a href="#首先安装-nodejs-和-npm" class="headerlink" title="首先安装 nodejs 和 npm"></a>首先安装 <a href="https://nodejs.org/" target="_blank" rel="external">nodejs</a> 和 <a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a></h2></li>
+<li><h2 id="全局安装GitBook"><a href="#全局安装GitBook" class="headerlink" title="全局安装GitBook"></a>全局安装GitBook</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install gitbook-cli -g</div></pre></td></tr></table></figure>
+</li>
+<li><h2 id="创建一本书"><a href="#创建一本书" class="headerlink" title="创建一本书"></a>创建一本书</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook init [目录名]</div></pre></td></tr></table></figure>
+<p>这时会在对应目录下生成 README.md 和 SUMMARY.md。<br>README.md 即为书的简介，会作为书的第一页显示。<br>SUMMARY.md 是书的目录，是 Gitbook 生成电子书的文件索引。</p>
+</li>
+<li><h2 id="手动添加-book-json-可选"><a href="#手动添加-book-json-可选" class="headerlink" title="手动添加 book.json (可选)"></a>手动添加 book.json (可选)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;plugins&quot;: [</div><div class="line">        &quot;betterchinese&quot;,</div><div class="line">        &quot;-duoshuo&quot;,</div><div class="line">        &quot;highlight&quot;,</div><div class="line">        &quot;lunr&quot;,</div><div class="line">        &quot;baidu_gio&quot;,</div><div class="line">        &quot;search&quot;,</div><div class="line">        &quot;fontsettings&quot;,</div><div class="line">        &quot;theme-default&quot;,</div><div class="line">        &quot;toolbar&quot;,</div><div class="line">        &quot;sharing&quot;</div><div class="line">    ],</div><div class="line">    &quot;pluginsConfig&quot;: &#123;</div><div class="line">        &quot;lunr&quot;: &#123;</div><div class="line">            &quot;maxIndexSize&quot;: 1000000,</div><div class="line">            &quot;ignoreSpecialCharacters&quot;: false</div><div class="line">        &#125;,</div><div class="line">        &quot;baidu_gio&quot;: &#123;</div><div class="line">            &quot;token&quot;: &quot;You Token&quot;</div><div class="line">        &#125;,</div><div class="line">        &quot;toolbar&quot;: &#123;</div><div class="line">            &quot;buttons&quot;:</div><div class="line">            [</div><div class="line">                &#123;</div><div class="line">                    &quot;label&quot;: &quot;GitHub&quot;,</div><div class="line">                    &quot;icon&quot;: &quot;fa fa-github&quot;,</div><div class="line">                    &quot;url&quot;: &quot;https://github.com/wechats/tinyapp-doc&quot;</div><div class="line">                &#125;,</div><div class="line">                &#123;</div><div class="line">                    &quot;label&quot;: &quot;PDF&quot;,</div><div class="line">                    &quot;icon&quot;: &quot;fa fa-file-pdf-o&quot;,</div><div class="line">                    &quot;url&quot;: &quot;https://wechats.github.io/tinyapp-doc/gen/tinyapp-doc.pdf&quot;</div><div class="line">                &#125;</div><div class="line">            ]</div><div class="line">        &#125;,</div><div class="line">        &quot;sharing&quot;: &#123;</div><div class="line">            &quot;facebook&quot;: false,</div><div class="line">            &quot;twitter&quot;: false,</div><div class="line">            &quot;google&quot;: false,</div><div class="line">            &quot;weibo&quot;: true,</div><div class="line">            &quot;instapaper&quot;: false,</div><div class="line">            &quot;vk&quot;: false,</div><div class="line">            &quot;all&quot;: [&quot;weibo&quot;]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>book.json 是 Gitbook 的配置文件，plugins 元素定义 Gitbook 需要哪些插件，开头有‘-’代表禁用某个插件，pluginsConfig 定义某个插件的配置。<br>Gitbook 默认包含的插件分别是：</p>
+</li>
+</ol>
+<ul>
+<li>highlight</li>
+<li>search</li>
+<li>lunr</li>
+<li>sharing</li>
+<li>fontsettings</li>
+<li><p>theme-default</p>
+<p>如果想安装新插件，只需要先查询到插件名，然后写到 plugins 里面，再执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook install</div></pre></td></tr></table></figure>
+<p>Gitbook 会自动安装并使用新插件。</p>
+</li>
+</ul>
+<ol>
+<li><h2 id="Gitbook-的测试"><a href="#Gitbook-的测试" class="headerlink" title="Gitbook 的测试"></a>Gitbook 的测试</h2><p>当编辑完 Gitbook，我们可以通过以下命令进行测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook serve</div></pre></td></tr></table></figure>
+<p>然后访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就能看到书的效果</p>
+</li>
+<li><h2 id="Gitbook-静态网站的生成"><a href="#Gitbook-静态网站的生成" class="headerlink" title="Gitbook 静态网站的生成"></a>Gitbook 静态网站的生成</h2><p>通过以下命令，可以输出 Gitbook 静态网站到 _book 文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook build</div></pre></td></tr></table></figure>
+</li>
+<li><h2 id="打包-PDF-等电子书的命令"><a href="#打包-PDF-等电子书的命令" class="headerlink" title="打包 PDF 等电子书的命令"></a>打包 PDF 等电子书的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook pdf</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook mobi</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gitbook epub</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><h2 id="最后，将-book-上传到自己的静态网页托管服务器就Over了！"><a href="#最后，将-book-上传到自己的静态网页托管服务器就Over了！" class="headerlink" title="最后，将 _book 上传到自己的静态网页托管服务器就Over了！"></a>最后，将 _book 上传到自己的静态网页托管服务器就Over了！</h2></li>
+</ol>
+<h1 id="PS-Gitbook-的相关资源地址"><a href="#PS-Gitbook-的相关资源地址" class="headerlink" title="PS: Gitbook 的相关资源地址"></a>PS: Gitbook 的相关资源地址</h1><p>Gitbook 官网： <a href="https://www.gitbook.com" target="_blank" rel="external">https://www.gitbook.com</a></p>
+<p>Gitbook Github: <a href="https://github.com/GitbookIO/gitbook" target="_blank" rel="external">https://github.com/GitbookIO/gitbook</a></p>
+<p>Gitbook Editor: <a href="https://www.gitbook.com/editor" target="_blank" rel="external">https://www.gitbook.com/editor</a></p>
+<p>Gitbook 插件页：<a href="http://plugins.gitbook.com" target="_blank" rel="external">http://plugins.gitbook.com</a></p>
+<p>Gitbook 官方手册：<a href="http://toolchain.gitbook.com/" target="_blank" rel="external">http://toolchain.gitbook.com/</a></p>
+<h1 id="玩得愉快！"><a href="#玩得愉快！" class="headerlink" title="玩得愉快！"></a>玩得愉快！</h1><link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;关于-Gitbook&quot;&gt;&lt;a href=&quot;#关于-Gitbook&quot; class=&quot;headerlink&quot; title=&quot;关于 Gitbook&quot;&gt;&lt;/a&gt;关于 Gitbook&lt;/h1&gt;&lt;p&gt;来自官网的介绍&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GitBook is
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Gitbook" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Gitbook/"/>
+    
+    
+      <category term="git" scheme="http://tonglei.win/tags/git/"/>
+    
+      <category term="gitbook" scheme="http://tonglei.win/tags/gitbook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习Git更改注释编辑器</title>
+    <link href="http://tonglei.win/2016/10/11/IT%E5%AD%A6%E4%B9%A0/Git/%E5%AD%A6%E4%B9%A0Git%E6%9B%B4%E6%94%B9%E6%B3%A8%E9%87%8A%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    <id>http://tonglei.win/2016/10/11/IT学习/Git/学习Git更改注释编辑器/</id>
+    <published>2016-10-11T06:46:44.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<p>Git 在 Windows 下默认会使用 Vi 风格的编辑器，如果想更换，如使用 Windows 记事本，可以通过以下命令实现：<br>     git config --global core.editor notepad.exe</p>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Git 在 Windows 下默认会使用 Vi 风格的编辑器，如果想更换，如使用 Windows 记事本，可以通过以下命令实现：&lt;br&gt;     git config --global core.editor notepad.exe&lt;/p&gt;
+&lt;link href=&quot;/css
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Git" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Git/"/>
+    
+    
+      <category term="git" scheme="http://tonglei.win/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习Git保存Http[s]远端库用户名密码</title>
+    <link href="http://tonglei.win/2016/10/10/IT%E5%AD%A6%E4%B9%A0/Git/%E5%AD%A6%E4%B9%A0Git%E4%BF%9D%E5%AD%98Http%5Bs%5D%E8%BF%9C%E7%AB%AF%E5%BA%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/"/>
+    <id>http://tonglei.win/2016/10/10/IT学习/Git/学习Git保存Http[s]远端库用户名密码/</id>
+    <published>2016-10-10T15:59:06.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<p>Git 使用 Http/Https 方式连接的远端库，会在每次提交时要求输入用户名密码。<br>如果需要记住用户名密码，可以通过以下方式解决：</p>
+<ol>
+<li>查看远端库的配置<pre><code>git remote -v
+</code></pre></li>
+<li>删除远端库配置<pre><code>git remote rm origin
+</code></pre></li>
+<li>增加带用户名密码的远端库配置<pre><code>git remote add origin http[s]://{username}:{password}@domain/group/repository.git
+</code></pre>再次提交已跳过输入用户名密码的步骤。</li>
+</ol>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Git 使用 Http/Https 方式连接的远端库，会在每次提交时要求输入用户名密码。&lt;br&gt;如果需要记住用户名密码，可以通过以下方式解决：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;查看远端库的配置&lt;pre&gt;&lt;code&gt;git remote -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Git" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Git/"/>
+    
+    
+      <category term="git" scheme="http://tonglei.win/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习用Maven+Tomcat 8 embded构造JavaWeb应用</title>
+    <link href="http://tonglei.win/2016/10/10/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0%E7%94%A8Maven-Tomcat-8-embded%E6%9E%84%E9%80%A0JavaWeb%E5%BA%94%E7%94%A8/"/>
+    <id>http://tonglei.win/2016/10/10/IT学习/Java/学习用Maven-Tomcat-8-embded构造JavaWeb应用/</id>
+    <published>2016-10-10T14:44:46.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-目录结构如下："><a href="#1-目录结构如下：" class="headerlink" title="1. 目录结构如下："></a>1. 目录结构如下：</h3><pre><code>project
+    -src
+        -main
+            -package
+                -Application.java
+    pom.xml
+</code></pre><h3 id="2-首先，写好-pom-xml-文件"><a href="#2-首先，写好-pom-xml-文件" class="headerlink" title="2. 首先，写好 pom.xml 文件"></a>2. 首先，写好 pom.xml 文件</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+        xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;wepass.vip&lt;/groupId&gt;
+    &lt;artifactId&gt;wecard-api-service-java&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;properties&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+        &lt;maven.compiler.source&gt;${java.version}&lt;/maven.compiler.source&gt;
+        &lt;maven.compiler.target&gt;${java.version}&lt;/maven.compiler.target&gt;
+        &lt;tomcat.version&gt;8.5.2&lt;/tomcat.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+            &lt;artifactId&gt;tomcat-embed-core&lt;/artifactId&gt;
+            &lt;version&gt;${tomcat.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+            &lt;artifactId&gt;tomcat-embed-logging-juli&lt;/artifactId&gt;
+            &lt;version&gt;${tomcat.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+            &lt;artifactId&gt;tomcat-embed-jasper&lt;/artifactId&gt;
+            &lt;version&gt;${tomcat.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt;
+            &lt;artifactId&gt;tomcat-jasper&lt;/artifactId&gt;
+            &lt;version&gt;${tomcat.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt;
+            &lt;artifactId&gt;tomcat-jasper-el&lt;/artifactId&gt;
+            &lt;version&gt;${tomcat.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt;
+            &lt;artifactId&gt;tomcat-jsp-api&lt;/artifactId&gt;
+            &lt;version&gt;${tomcat.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;junit&lt;/groupId&gt;
+            &lt;artifactId&gt;junit&lt;/artifactId&gt;
+            &lt;version&gt;4.12&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+&lt;/project&gt;
+</code></pre><h3 id="3-写一个启动方法"><a href="#3-写一个启动方法" class="headerlink" title="3. 写一个启动方法"></a>3. 写一个启动方法</h3><pre><code>package samples.j2ee.tomcat8embed;
+
+import org.apache.catalina.LifecycleException;
+import org.apache.catalina.WebResourceRoot;
+import org.apache.catalina.core.StandardContext;
+import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.webresources.DirResourceSet;
+import org.apache.catalina.webresources.StandardRoot;
+
+import javax.servlet.ServletException;
+import java.io.File;
+
+/**
+* Created by Booker on 16/10/10.
+*/
+public class Application {
+    public static void main(String[] args) throws ServletException, LifecycleException {
+
+        String webappDirLocation = &quot;src/main/webapp/&quot;;
+        Tomcat tomcat = new Tomcat();
+
+        //The port that we should run on can be set into an environment variable
+        //Look for that variable and default to 8080 if it isn&apos;t there.
+        String webPort = System.getenv(&quot;PORT&quot;);
+        if (webPort == null || webPort.isEmpty()) {
+            webPort = &quot;8080&quot;;
+        }
+
+        tomcat.setPort(Integer.valueOf(webPort));
+
+        StandardContext ctx = (StandardContext) tomcat.addWebapp(&quot;/&quot;, new File(webappDirLocation).getAbsolutePath());
+        System.out.println(&quot;configuring app with basedir: &quot; + new File(&quot;./&quot; + webappDirLocation).getAbsolutePath());
+
+        // Declare an alternative location for your &quot;WEB-INF/classes&quot; dir
+        // Servlet 3.0 annotation will work
+        File additionWebInfClasses = new File(&quot;target/classes&quot;);
+        WebResourceRoot resources = new StandardRoot(ctx);
+        resources.addPreResources(new DirResourceSet(resources, &quot;/WEB-INF/classes&quot;,
+                additionWebInfClasses.getAbsolutePath(), &quot;/&quot;));
+        ctx.setResources(resources);
+
+        tomcat.start();
+        tomcat.getServer().await();
+    }
+}
+</code></pre><h3 id="4-编译-gt-运行-gt-测试"><a href="#4-编译-gt-运行-gt-测试" class="headerlink" title="4. 编译&gt;运行&gt;测试"></a>4. 编译&gt;运行&gt;测试</h3><pre><code>mvn compile 
+mvn test 
+访问 http://localhost:8080/
+</code></pre><h3 id="5-源码下载"><a href="#5-源码下载" class="headerlink" title="5. 源码下载"></a>5. 源码下载</h3><pre><code>https://github.com/tonglei0429/samples/tree/master/j2ee/tomcat-8-embed
+</code></pre><link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-目录结构如下：&quot;&gt;&lt;a href=&quot;#1-目录结构如下：&quot; class=&quot;headerlink&quot; title=&quot;1. 目录结构如下：&quot;&gt;&lt;/a&gt;1. 目录结构如下：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;project
+    -src
+        -main
+ 
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
+    
+    
+      <category term="java" scheme="http://tonglei.win/tags/java/"/>
+    
+      <category term="源码" scheme="http://tonglei.win/tags/%E6%BA%90%E7%A0%81/"/>
+    
+      <category term="maven" scheme="http://tonglei.win/tags/maven/"/>
+    
+      <category term="tomcat" scheme="http://tonglei.win/tags/tomcat/"/>
+    
+      <category term="j2ee" scheme="http://tonglei.win/tags/j2ee/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用元素周期表开篇</title>
+    <link href="http://tonglei.win/2016/10/08/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/%E7%94%A8%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8%E5%BC%80%E7%AF%87/"/>
+    <id>http://tonglei.win/2016/10/08/日常记录/用元素周期表开篇/</id>
+    <published>2016-10-08T07:01:54.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2015年元素周期表"><a href="#2015年元素周期表" class="headerlink" title="2015年元素周期表"></a>2015年元素周期表</h1><h3 id="跟当过化学课代表似的"><a href="#跟当过化学课代表似的" class="headerlink" title="跟当过化学课代表似的 :-)"></a>跟当过化学课代表似的 :-)</h3><p><img src="/images/periodic_table-2015.png" alt="2015年元素周期表"></p>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;2015年元素周期表&quot;&gt;&lt;a href=&quot;#2015年元素周期表&quot; class=&quot;headerlink&quot; title=&quot;2015年元素周期表&quot;&gt;&lt;/a&gt;2015年元素周期表&lt;/h1&gt;&lt;h3 id=&quot;跟当过化学课代表似的&quot;&gt;&lt;a href=&quot;#跟当过化学课代表似的&quot;
+    
+    </summary>
+    
+      <category term="日常记录" scheme="http://tonglei.win/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="日常记录" scheme="http://tonglei.win/tags/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="有图" scheme="http://tonglei.win/tags/%E6%9C%89%E5%9B%BE/"/>
+    
+  </entry>
+  
+</feed>

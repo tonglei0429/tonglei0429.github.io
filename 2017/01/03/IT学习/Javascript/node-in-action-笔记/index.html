@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>node-in-action_笔记 | 元素力量 | 铁钴镍铜锌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="nodejs,javascript,express">
+  <meta name="description" content="第一部分 简介第一章 基本概念关键词: node.js express
+第一章主要回答了以下几个问题。
+
+什么是Node.js:依赖于 Google V8 引擎，使 javascript 脱离浏览器，运行在服务端。
+
+Node.js的优势:
+
+V8 引擎很快，尤其是面对异步和多线程；
+JS 流行已久，资源丰富；
+客户端与服务端可共享代码。
+
+
+为什么用Node.js不是拍脑袋，不是为了性能，是为了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node-in-action_笔记">
+<meta property="og:url" content="http://tonglei.win/2017/01/03/IT学习/Javascript/node-in-action-笔记/index.html">
+<meta property="og:site_name" content="元素力量">
+<meta property="og:description" content="第一部分 简介第一章 基本概念关键词: node.js express
+第一章主要回答了以下几个问题。
+
+什么是Node.js:依赖于 Google V8 引擎，使 javascript 脱离浏览器，运行在服务端。
+
+Node.js的优势:
+
+V8 引擎很快，尤其是面对异步和多线程；
+JS 流行已久，资源丰富；
+客户端与服务端可共享代码。
+
+
+为什么用Node.js不是拍脑袋，不是为了性能，是为了">
+<meta property="og:updated_time" content="2017-01-09T08:40:33.253Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node-in-action_笔记">
+<meta name="twitter:description" content="第一部分 简介第一章 基本概念关键词: node.js express
+第一章主要回答了以下几个问题。
+
+什么是Node.js:依赖于 Google V8 引擎，使 javascript 脱离浏览器，运行在服务端。
+
+Node.js的优势:
+
+V8 引擎很快，尤其是面对异步和多线程；
+JS 流行已久，资源丰富；
+客户端与服务端可共享代码。
+
+
+为什么用Node.js不是拍脑袋，不是为了性能，是为了">
+  
+    <link rel="alternative" href="/atom.xml" title="元素力量" type="application/atom+xml">
+  
+  <meta name="summary" content="null">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">铜镭</h5>
+        <a href="mailto:me@tonglei.win" title="me@tonglei.win" class="mail">me@tonglei.win</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              归档
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/favsites"  >
+              <i class="icon icon-lg icon-fighter-jet"></i>
+              咻～
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/tonglei0429" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p>元素力量 &copy; 2017</p>
+  <p>用的是<a href="http://hexo.io/" target="_blank">Hexo</a> 主题改的<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">node-in-action_笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">node-in-action_笔记</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2017-01-03T09:07:49.000Z" itemprop="datePublished" class="page-time">
+  2017-01-03
+</time>
+
+
+	<a class="article-category-link" href="/categories/IT学习/">IT学习</a> > <a class="article-category-link" href="/categories/IT学习/Javascript/">Javascript</a>
+
+        
+    </h5>
+	<div style="position:absolute;">
+		<iframe src="https://ghbtns.com/github-btn.html?user=tonglei0429&repo=me&type=star&size=small&count=true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+		<iframe src="https://ghbtns.com/github-btn.html?user=tonglei0429&type=follow&size=small" frameborder="0" scrolling="0" width="150" height="20"></iframe>
+	</div>
+  </div>
+  	
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-IT学习/Javascript/node-in-action-笔记" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一部分-简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一部分 简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一章-基本概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一章 基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二章-nodejs"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第二章 nodejs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三章-expressjs"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">第三章 expressjs</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二部分-核心"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二部分 核心</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第四章-中间件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">第四章 中间件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第五章-路由"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">第五章 路由</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第六章-构建-APIs"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">第六章 构建 APIs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第七章-Views-and-templates-Pug-and-Ejs"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">第七章 Views and templates, Pug and Ejs</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">3.</span> <span class="post-toc-text">This is a pug example</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三部分"><span class="post-toc-number">4.</span> <span class="post-toc-text">第三部分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MongoDB"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">MongoDB</span></a></li></ol></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="第一部分-简介"><a href="#第一部分-简介" class="headerlink" title="第一部分 简介"></a>第一部分 简介</h1><h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><p><strong>关键词: node.js express</strong></p>
+<p>第一章主要回答了以下几个问题。</p>
+<ul>
+<li><p>什么是Node.js:<br>依赖于 Google V8 引擎，使 javascript 脱离浏览器，运行在服务端。</p>
+</li>
+<li><p>Node.js的优势:</p>
+<ol>
+<li>V8 引擎很快，尤其是面对异步和多线程；</li>
+<li>JS 流行已久，资源丰富；</li>
+<li>客户端与服务端可共享代码。</li>
+</ol>
+</li>
+<li><p>为什么用Node.js<br>不是拍脑袋，不是为了性能，是为了全栈开发。</p>
+</li>
+<li><p>什么是Express:<br>Express 就像 JQuery，封装了原生API，并易于扩展。</p>
+</li>
+<li><p>Express 的意义:</p>
+<ol>
+<li>为Node.js增加了不少使用的工具方法；</li>
+<li>将请求重构分解，使其模块化，更易维护。</li>
+</ol>
+</li>
+<li><p>Express 的哲学</p>
+<ol>
+<li>作为一个框架，express的形式并不严格，它适合各类应用，比如视频聊天、博客甚至API服务。</li>
+<li>很少有应用可以仅仅依赖 express，你仍然需要大量的第三方软件包。</li>
+<li>最简化是把双刃剑，它增加了寻找合适第三方的难度。</li>
+</ol>
+</li>
+<li><p>Express 的四个核心特性</p>
+<ol>
+<li>中间件：把请求到响应的过程分解为一个个小模块；</li>
+<li>路由：将请求地址和方法与中间件的函数对应起来；</li>
+<li>子应用：大工程的组成单元，是小型的应用实体；</li>
+<li>简化：就是简化了原生Node.js语法。</li>
+</ol>
+</li>
+<li><p>Express 适合谁？</p>
+<ol>
+<li>适合Web应用</li>
+<li>适合全栈开发人员</li>
+<li>适合单页应用SPAs</li>
+<li>SEAN / MEAN / MEN</li>
+</ol>
+</li>
+</ul>
+<h2 id="第二章-nodejs"><a href="#第二章-nodejs" class="headerlink" title="第二章 nodejs"></a>第二章 nodejs</h2><p><strong>关键词: nodejs</strong></p>
+<p>第二章主要介绍的都是nodejs 的基本用法，例如 HelloWorld，使用模块等。</p>
+<h2 id="第三章-expressjs"><a href="#第三章-expressjs" class="headerlink" title="第三章 expressjs"></a>第三章 expressjs</h2><p><strong>关键词: express</strong></p>
+<p>第三章从express的四个特点方面给出了入门示例。</p>
+<ul>
+<li><p>中间件示例，增加认证能力</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"In comes a "</span> + request.method + <span class="string">" to "</span> + request.url);</div><div class="line">  next();</div><div class="line">&#125;);</div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> minute = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getMinutes();</div><div class="line">  <span class="keyword">if</span> ((minute % <span class="number">2</span>) === <span class="number">0</span>) &#123;</div><div class="line">    next();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    response.statusCode = <span class="number">403</span>;</div><div class="line">    response.end(<span class="string">"Not authorized."</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.end(<span class="string">'Secret info: the password is "swordfish"!'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>路由示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line"><span class="keyword">var</span> publicPath = path.resolve(__dirname, <span class="string">"public"</span>);</div><div class="line">app.use(express.static(publicPath));</div><div class="line"></div><div class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.end(<span class="string">"Welcome to my homepage!"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.get(<span class="string">"/about"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.end(<span class="string">"Welcome to the about page!"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.get(<span class="string">"/weather"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.end(<span class="string">"The current weather is NICE."</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.get(<span class="string">"/hello/:who"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line"> response.end(<span class="string">"Hello, "</span> + request.params.who + <span class="string">"."</span>);</div><div class="line"> <span class="comment">// Fun fact: this has some security issues, which we’ll get to!</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.statusCode = <span class="number">404</span>;</div><div class="line">  response.end(<span class="string">"404!"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">http.createServer(app).listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>扩展原生 Request 和 Response</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="keyword">var</span> EVIL_IP = <span class="string">"192.168.1.1"</span>;</div><div class="line"><span class="keyword">var</span> REDIRECT_IP = <span class="string">"192.168.1.2"</span>;</div><div class="line"><span class="keyword">var</span> SEND_FILE_IP = <span class="string">"192.168.1.3"</span>;</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">request, response, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (request.ip === EVIL_IP) &#123;</div><div class="line">    response.status(<span class="number">401</span>).send(<span class="string">"Not allowed!"</span>);</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (request.ip === REDIRECT_IP) &#123;</div><div class="line">    response.redirect(<span class="string">"http://tonglei.win"</span>);</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (request.ip === SEND_FILE_IP) &#123;</div><div class="line">    response.sendFile(<span class="string">"/path/to/cool_song.mp3"</span>);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    next();</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// ... the rest of your app ...</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>视图<br>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line">app.set(<span class="string">"views"</span>, path.resolve(__dirname, <span class="string">"views"</span>));</div><div class="line">app.set(<span class="string">"view engine"</span>, <span class="string">"ejs"</span>);</div><div class="line"></div><div class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">  response.render(<span class="string">"index"</span>, &#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">"Hey everyone! This is my webpage."</span></div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>views/index.ejs<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">message</span> %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="第二部分-核心"><a href="#第二部分-核心" class="headerlink" title="第二部分 核心"></a>第二部分 核心</h1><h2 id="第四章-中间件"><a href="#第四章-中间件" class="headerlink" title="第四章 中间件"></a>第四章 中间件</h2><p><strong>关键词: middleware, log, thrid part</strong></p>
+<ul>
+<li>Express 包含一个中间件的堆栈，除非中间返回或者出错，不然它会从头执行到底。</li>
+<li>中间件是对 Request 的处理函数，它至少有2个参数: request 和 response，通常还有一个指向下一个中间件处理的方法。</li>
+<li>网络上有各种成熟的第三方中间件。</li>
+</ul>
+<p>从这里可以找到很多网友提供的中间件<br><a href="http://expressjs.com/resources/middleware.html" target="_blank" rel="external">http://expressjs.com/resources/middleware.html</a></p>
+<p>一个完整的例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line"><span class="comment">// 本例始终返回一个文件</span></div><div class="line"><span class="keyword">var</span> filePath = path.join(__dirname, <span class="string">"celine.jpg"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 如果发送文件失败，进入异常处理。</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  res.sendFile(filePath, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">      next(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Error sending file!"</span>));</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 打印错误日志</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.error(err);</div><div class="line">  next(err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 返回错误页</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>) </span>&#123;</div><div class="line">  res.status(<span class="number">500</span>);</div><div class="line">  res.send(<span class="string">"Internal server error."</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 启动 Http 监听</span></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="built_in">console</span>.log(<span class="string">"App started on port 3000"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="第五章-路由"><a href="#第五章-路由" class="headerlink" title="第五章 路由"></a>第五章 路由</h2><p><strong>关键词 routing</strong></p>
+<ul>
+<li>简单的路由参数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">"/users/:userid"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> userId = <span class="built_in">parseInt</span>(req.params.userid, <span class="number">10</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>正则表达式的路由参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="regexp">/^\/users\/(\d+)-(\d+)$/</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> startId = <span class="built_in">parseInt</span>(req.params[<span class="number">0</span>], <span class="number">10</span>);</div><div class="line">  <span class="keyword">var</span> endId = <span class="built_in">parseInt</span>(req.params[<span class="number">1</span>], <span class="number">10</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 Https</p>
+<ol>
+<li><p>生成证书</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">openssl genrsa -out privatekey.pem 1024</div><div class="line">openssl req -new -key privatekey.pem -out request.pem</div></pre></td></tr></table></figure>
+</li>
+<li><p>Express 中使用证书</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div><div class="line"><span class="keyword">var</span> https = <span class="built_in">require</span>(<span class="string">"https"</span>);</div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"><span class="comment">// ... define your app ...</span></div><div class="line"><span class="keyword">var</span> httpsOptions = &#123;</div><div class="line">  <span class="attr">key</span>: fs.readFileSync(<span class="string">"path/to/private/key.pem"</span>),</div><div class="line">  <span class="attr">cert</span>: fs.readFileSync(<span class="string">"path/to/certificate.pem"</span>)</div><div class="line">&#125;;</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.status(<span class="number">404</span>).render(<span class="string">"404"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">http.createServer(app).listen(<span class="number">80</span>);</div><div class="line">https.createServer(httpsOptions, app).listen(<span class="number">443</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="第六章-构建-APIs"><a href="#第六章-构建-APIs" class="headerlink" title="第六章 构建 APIs"></a>第六章 构建 APIs</h2><p><strong>关键词: API, 主机间交互</strong></p>
+<ul>
+<li>一个简单的API样式</li>
+</ul>
+<p>请求方式：/timezone?tz=America+Los_Angeles</p>
+<p>反馈结果：{ “time”: “2015-06-09T16:20:00+01:00”, “zone”: “America/Los_Angeles” }</p>
+<ul>
+<li>一个更完整的Express Api示例</li>
+</ul>
+<p>需求：</p>
+<ol>
+<li>API的调用需要传入一个最小值和一个最大值；</li>
+<li>API返回一个随机数。</li>
+</ol>
+<p>实现步骤：</p>
+<ol>
+<li>创建package.json;</li>
+<li>创建 app.js，作为程序入口;</li>
+<li>在 app.js 中实现express路由，并返回随机数。</li>
+</ol>
+<p>代码：</p>
+<ol>
+<li><p>package.json</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"2-api-random"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">"Express实例2 构建简单的API"</span>,</div><div class="line">  <span class="string">"main"</span>: <span class="string">"app.js"</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"test"</span>: <span class="string">"node app.js"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"author"</span>: <span class="string">"Booker"</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>app.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.get(<span class="string">'/random/:min/:max'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  <span class="comment">// 获取参数</span></div><div class="line">  <span class="keyword">var</span> min = <span class="built_in">parseInt</span>(req.params.min);</div><div class="line">  <span class="keyword">var</span> max = <span class="built_in">parseInt</span>(req.params.max);</div><div class="line"></div><div class="line">  <span class="comment">// 错误处理</span></div><div class="line">  <span class="keyword">if</span>(<span class="built_in">isNaN</span>(min) || <span class="built_in">isNaN</span>(max)) &#123;</div><div class="line">    res.status(<span class="number">400</span>);</div><div class="line">    res.json(&#123;<span class="attr">error</span>: <span class="string">"Bad request."</span>&#125;);</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> result = <span class="built_in">Math</span>.round((<span class="built_in">Math</span>.random() * (max - min)) + min);</div><div class="line"></div><div class="line">  res.json(&#123;<span class="attr">result</span>: result&#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'App started on port 3000'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动和测试<br>控制台输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="built_in">test</span></div></pre></td></tr></table></figure>
+<p>浏览器访问：<a href="http://localhost:3000/random/10/100" target="_blank" rel="external">http://localhost:3000/random/10/100</a><br>可以看到浏览器上的输出：{“result”:61}</p>
+</li>
+<li><p>对异常的处理</p>
+<ol>
+<li>设置http状态为400；</li>
+<li>返回描述错误的 json 对象；</li>
+<li>执行 return，如果没有此步，程序还会继续进行，还会产生其他错误。</li>
+</ol>
+<p>比如访问：<a href="http://localhost:3000/random/10/aaa" target="_blank" rel="external">http://localhost:3000/random/10/aaa</a><br>浏览器上输出：{“error”:”Bad request.”}</p>
+</li>
+</ol>
+<ul>
+<li><p>CRUD - 增 查 改 删 - POST GET PUT DELETE</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">"CREATE"</span>) &#125;);</div><div class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">"READ"</span>) &#125;);</div><div class="line">app.put(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">"UPDATE"</span>) &#125;);</div><div class="line">app.delete(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">"DELETE"</span>) &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>构建多版本API示例</p>
+</li>
+</ul>
+<p>app1.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> api = express.Router();</div><div class="line"></div><div class="line">api.get(<span class="string">"/timezone"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">"Sample response for /timezone"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = api;</div></pre></td></tr></table></figure></p>
+<p>app2.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> api = express.Router();</div><div class="line"></div><div class="line">api.get(<span class="string">"/timezone"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">"API 2: super cool new response for /timezone"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = api;</div></pre></td></tr></table></figure></p>
+<p>app.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> apiVersion1 = <span class="built_in">require</span>(<span class="string">"./api1.js"</span>);</div><div class="line"><span class="keyword">var</span> apiVersion2 = <span class="built_in">require</span>(<span class="string">"./api2.js"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.use(<span class="string">"/v1"</span>, apiVersion1);</div><div class="line">app.use(<span class="string">"/v2"</span>, apiVersion2);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"App started on port 3000"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>测试：<br><a href="http://localhost:3000/v1/timezone" target="_blank" rel="external">http://localhost:3000/v1/timezone</a><br>输出：Sample response for /timezone</p>
+<p><a href="http://localhost:3000/v2/timezone" target="_blank" rel="external">http://localhost:3000/v2/timezone</a><br>输出：API 2: super cool new response for /timezone</p>
+<ul>
+<li>Http 状态码简述</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>码段</th>
+<th>描述</th>
+<th>中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1xx</td>
+<td>hold on</td>
+<td>请求已接收，请求者还要继续发送</td>
+</tr>
+<tr>
+<td>2xx</td>
+<td>here you go</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>3xx</td>
+<td>go away</td>
+<td>重定向</td>
+</tr>
+<tr>
+<td>4xx</td>
+<td>you messed up</td>
+<td>客户端错误</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>I messed up</td>
+<td>服务器错误</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第七章-Views-and-templates-Pug-and-Ejs"><a href="#第七章-Views-and-templates-Pug-and-Ejs" class="headerlink" title="第七章 Views and templates, Pug and Ejs"></a>第七章 Views and templates, Pug and Ejs</h2><p><strong>关键词: jade, pug, ejs</strong></p>
+<ul>
+<li><p>视图引擎<br>用来渲染界面的模块，Pug和Ejs都是视图引擎</p>
+</li>
+<li><p>简单的利用视图引擎渲染的示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">app.set(<span class="string">"view engine"</span>, ejs);</div><div class="line">app.set(<span class="string">"views"</span>, path.resolve(__dirname, <span class="string">"views"</span>));</div><div class="line"></div><div class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.render(<span class="string">"index"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样当你访问 <a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a> 时候，Nodejs 会寻找 views 目录下的 index.ejs 文件进行渲染，并将结果发送给浏览器。</p>
+<ul>
+<li>从pug到html<br>pug的源文件<br>``js<br>doctype html<br>html(lang=”en”)<br>head<br>  title Hello world!<br>body<br>  h1 This is a pug example<br>  #container<pre><code>p Wow
+</code></pre><code>渲染后的结果</code>js<br>&lt;!DOCTYPE html&gt;<br><html lang="en"><br><head><br>  <title>Hello world!</title><br></head><br><body><br>  <h1>This is a pug example</h1><br>  <div id="container"><pre><code>&lt;p&gt;Wow.&lt;/p&gt;
+</code></pre>  </div><br></body><br></html><br>``<br>关于 Pug 本身的内容，以后再详细介绍。简单说来，pug就是利用缩进来区分区块的层级，用每行的地一个单词表示区块的标签，用空格引出区块的文本内容，用括号指定其属性。</li>
+</ul>
+<h1 id="第三部分"><a href="#第三部分" class="headerlink" title="第三部分"></a>第三部分</h1><h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p><strong>关键词: MongoDB, bcrypt, 认证</strong></p>
+<ul>
+<li>MongoDB 怎么样？</li>
+</ul>
+<ol>
+<li>特别适合Node开发者</li>
+<li>NoSQL数据库与JS对象的结构更相近</li>
+<li>Mongo的原生shell使用的是Javascript</li>
+<li>Application 1-&gt;1 Database 1-&gt;N Collection 1-&gt;N Document</li>
+</ol>
+<ul>
+<li>从SQL到NoSQL(MongoDB)</li>
+</ul>
+<ol>
+<li>MongoDB 的 Documents 相当于 SQL 的结果集，比如应用中的用户，每个用户就是个Document或者是SQL中的一行数据，MongoDB并不限制Schema</li>
+<li>MongoDB 的 Collections 相当于 SQL 中的 tables。Collections 包含多个 Documents。此外，Documents 可以绑定其他 Documents</li>
+<li>MongoDB 的 Databases 相当与 SQL 的 Databases</li>
+</ol>
+<ul>
+<li>构建一个简单的工程</li>
+</ul>
+<ol>
+<li>首页，所有用户可见，可以查看用户信息</li>
+<li>用户信息页显示用户昵称或用户名，注册日期，用户登录后可以编辑自己的信息</li>
+<li>新用户注册页</li>
+</ol>
+<link href="/css/prism.css" rel="stylesheet">
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="http://tonglei.win/2017/01/03/IT学习/Javascript/node-in-action-笔记/" target="_blank" rel="external">http://tonglei.win/2017/01/03/IT学习/Javascript/node-in-action-笔记/</a>
+                </p>
+                <footer><cite><a href="http://tonglei.win">@铜镭</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2017/01/07/IT学习/Javascript/NodeJs基本知识/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">NodeJs基本知识</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/12/28/日常记录/史上最全最强资源网站整理/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">史上最全最强资源网站整理</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="IT学习/Javascript/node-in-action-笔记" data-title="node-in-action_笔记" data-url="http://tonglei.win/2017/01/03/IT学习/Javascript/node-in-action-笔记/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"tonglei"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "node-in-action_笔记",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://tonglei.win/2017/01/03/IT学习/Javascript/node-in-action-笔记/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        点确定别犹豫！
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8b11206e714935934a6674b4a55ea783";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+</body>
+</html>

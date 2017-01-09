@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>学习MYSQL5.7免装版的使用 | 元素力量 | 铁钴镍铜锌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="mysql,database">
+  <meta name="description" content="前言Mysql5.7 以后压缩包中不再包含data文件夹，相对应的数据库初始化工作也稍有改变，在此记录。
+下载压缩包对于一般人来说，Mysql社区版就足够耍了，下载地址如下：http://dev.mysql.com/downloads/mysql/
+
+win32版:
+http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-win32.zi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习MYSQL5.7免装版的使用">
+<meta property="og:url" content="http://tonglei.win/2016/11/03/IT学习/数据库/学习MYSQL5-7免装版的使用/index.html">
+<meta property="og:site_name" content="元素力量">
+<meta property="og:description" content="前言Mysql5.7 以后压缩包中不再包含data文件夹，相对应的数据库初始化工作也稍有改变，在此记录。
+下载压缩包对于一般人来说，Mysql社区版就足够耍了，下载地址如下：http://dev.mysql.com/downloads/mysql/
+
+win32版:
+http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-win32.zi">
+<meta property="og:updated_time" content="2017-01-07T01:13:51.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习MYSQL5.7免装版的使用">
+<meta name="twitter:description" content="前言Mysql5.7 以后压缩包中不再包含data文件夹，相对应的数据库初始化工作也稍有改变，在此记录。
+下载压缩包对于一般人来说，Mysql社区版就足够耍了，下载地址如下：http://dev.mysql.com/downloads/mysql/
+
+win32版:
+http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-win32.zi">
+  
+    <link rel="alternative" href="/atom.xml" title="元素力量" type="application/atom+xml">
+  
+  <meta name="summary" content="null">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">铜镭</h5>
+        <a href="mailto:me@tonglei.win" title="me@tonglei.win" class="mail">me@tonglei.win</a>
+      </hgroup>
+    </div>
+  </div>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              归档
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/favsites"  >
+              <i class="icon icon-lg icon-fighter-jet"></i>
+              咻～
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://github.com/tonglei0429" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+    </ul>
+
+    <footer class="footer">
+  <p>元素力量 &copy; 2017</p>
+  <p>用的是<a href="http://hexo.io/" target="_blank">Hexo</a> 主题改的<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+  </div>
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">学习MYSQL5.7免装版的使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">学习MYSQL5.7免装版的使用</h1>
+    <h5 class="subtitle">
+        
+            <time datetime="2016-11-03T15:29:55.000Z" itemprop="datePublished" class="page-time">
+  2016-11-03
+</time>
+
+
+	<a class="article-category-link" href="/categories/IT学习/">IT学习</a> > <a class="article-category-link" href="/categories/IT学习/数据库/">数据库</a>
+
+        
+    </h5>
+	<div style="position:absolute;">
+		<iframe src="https://ghbtns.com/github-btn.html?user=tonglei0429&repo=me&type=star&size=small&count=true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+		<iframe src="https://ghbtns.com/github-btn.html?user=tonglei0429&type=follow&size=small" frameborder="0" scrolling="0" width="150" height="20"></iframe>
+	</div>
+  </div>
+  	
+</header>
+
+    <div class="container body-wrap">
+      <article id="post-IT学习/数据库/学习MYSQL5-7免装版的使用" 
+  class="article article-type-post" itemprop="blogPost">
+    <div class="post-meta flex-row">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </div>
+    <div class="post-body">
+        <aside class="post-widget" id="post-widget">
+
+            
+            <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+            
+
+            
+            <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载压缩包"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载压缩包</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境配置"><span class="post-toc-number">3.</span> <span class="post-toc-text">环境配置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#初始化Mysql"><span class="post-toc-number">4.</span> <span class="post-toc-text">初始化Mysql</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动-Mysql-Server"><span class="post-toc-number">5.</span> <span class="post-toc-text">启动 Mysql Server</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注册-Mysql-Server-为系统服务（可选）"><span class="post-toc-number">6.</span> <span class="post-toc-text">注册 Mysql Server 为系统服务（可选）</span></a></li></ol>
+            </nav>
+            
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Mysql5.7 以后压缩包中不再包含data文件夹，相对应的数据库初始化工作也稍有改变，在此记录。</p>
+<h1 id="下载压缩包"><a href="#下载压缩包" class="headerlink" title="下载压缩包"></a>下载压缩包</h1><p>对于一般人来说，Mysql社区版就足够耍了，下载地址如下：<br><a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="external">http://dev.mysql.com/downloads/mysql/</a></p>
+<ul>
+<li><p>win32版:</p>
+<p><a href="http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-win32.zip" target="_blank" rel="external">http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-win32.zip</a></p>
+</li>
+<li><p>win64版</p>
+<p><a href="http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-winx64.zip" target="_blank" rel="external">http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.16-winx64.zip</a></p>
+</li>
+<li><p>其他版本自己选链接</p>
+</li>
+</ul>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><ol>
+<li>将已下载的 ZIP 解压，并将 bin 目录添加到系统环境变量 path 中;</li>
+<li>重命名解压文件夹中的 my-default.ini 为 my.ini;</li>
+<li>在 my.ini 中设置各个参数，如:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[mysqld]</div><div class="line">basedir = E:/projects/mysql-db</div><div class="line">datadir = E:/projects/mysql-db/data</div><div class="line">port = 3306</div><div class="line">character-set-server=utf8</div><div class="line">sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="初始化Mysql"><a href="#初始化Mysql" class="headerlink" title="初始化Mysql"></a>初始化Mysql</h1><p>初始化也就是创建 data 目录的过程，使用以下命令(管理员)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --initialize</div></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --initialize-insecure</div></pre></td></tr></table></figure></p>
+<p>前者为root用户创建随机密码，后者不设置 root 用户密码</p>
+<h1 id="启动-Mysql-Server"><a href="#启动-Mysql-Server" class="headerlink" title="启动 Mysql Server"></a>启动 Mysql Server</h1><p>完成以上步骤后就可以直接启动Mysql了，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --console</div></pre></td></tr></table></figure></p>
+<h1 id="注册-Mysql-Server-为系统服务（可选）"><a href="#注册-Mysql-Server-为系统服务（可选）" class="headerlink" title="注册 Mysql Server 为系统服务（可选）"></a>注册 Mysql Server 为系统服务（可选）</h1><p>如果希望注册为系统服务，可以敲这个：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --install</div></pre></td></tr></table></figure></p>
+<p>注销删除服务为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqld --remove</div></pre></td></tr></table></figure></p>
+<p>启动和停止服务的命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ net start mysql</div><div class="line">$ net stop mysql</div></pre></td></tr></table></figure></p>
+<hr>
+<p>就到这里，玩的愉快！</p>
+<link href="/css/prism.css" rel="stylesheet">
+
+            
+            <div class="post-reward">
+                <a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light">赏</a>
+            </div>
+            
+            
+            <blockquote>
+                <p>
+                本文地址：
+                <a href="http://tonglei.win/2016/11/03/IT学习/数据库/学习MYSQL5-7免装版的使用/" target="_blank" rel="external">http://tonglei.win/2016/11/03/IT学习/数据库/学习MYSQL5-7免装版的使用/</a>
+                </p>
+                <footer><cite><a href="http://tonglei.win">@铜镭</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2016/12/06/文学学习/论语/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">论语</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/10/25/IT学习/SSO/理解OAuth2.0协议-基础篇/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">理解OAuth2.0协议-基础篇</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="IT学习/数据库/学习MYSQL5-7免装版的使用" data-title="学习MYSQL5.7免装版的使用" data-url="http://tonglei.win/2016/11/03/IT学习/数据库/学习MYSQL5-7免装版的使用/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"tonglei"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "学习MYSQL5.7免装版的使用",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://tonglei.win/2016/11/03/IT学习/数据库/学习MYSQL5-7免装版的使用/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+
+<div id="reward" class="reward-lay">
+    <a class="reward-off" id="rewardOff" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        点确定别犹豫！
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8b11206e714935934a6674b4a55ea783";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+</body>
+</html>
