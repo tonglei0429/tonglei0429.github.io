@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonglei.win/"/>
-  <updated>2017-01-07T01:13:51.956Z</updated>
+  <updated>2017-01-13T08:04:05.905Z</updated>
   <id>http://tonglei.win/</id>
   
   <author>
@@ -16,197 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>NodeJs基本知识</title>
-    <link href="http://tonglei.win/2017/01/07/IT%E5%AD%A6%E4%B9%A0/Javascript/NodeJs%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
-    <id>http://tonglei.win/2017/01/07/IT学习/Javascript/NodeJs基本知识/</id>
-    <published>2017-01-07T01:13:51.956Z</published>
-    <updated>2017-01-07T01:13:51.956Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="什么是-NodeJS"><a href="#什么是-NodeJS" class="headerlink" title="什么是 NodeJS ?"></a>什么是 NodeJS ?</h1><p>Node.js 是运行在服务端的 JavaScript。   </p>
-<h1 id="NodeJs-的安装"><a href="#NodeJs-的安装" class="headerlink" title="NodeJs 的安装"></a>NodeJs 的安装</h1><p><a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
-<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><h2 id="创建-app-js"><a href="#创建-app-js" class="headerlink" title="创建 app.js"></a>创建 app.js</h2><h2 id="通过-required-引入模块"><a href="#通过-required-引入模块" class="headerlink" title="通过 required 引入模块"></a>通过 required 引入模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div></pre></td></tr></table></figure>
-<h2 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">// 发送 HTTP 头部 </span></div><div class="line">	<span class="comment">// HTTP 状态值: 200 : OK</span></div><div class="line">	<span class="comment">// 内容类型: text/plain</span></div><div class="line">	response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</div><div class="line"></div><div class="line">	<span class="comment">// 发送响应数据 "Hello World"</span></div><div class="line">	response.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;).listen(<span class="number">4000</span>);</div><div class="line"></div><div class="line"><span class="comment">// 终端打印如下信息</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:4000/'</span>);</div></pre></td></tr></table></figure>
-<p>如此便创建了http服务器，使用node命令运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node app.js</div></pre></td></tr></table></figure></p>
-<p>访问 <a href="http://localhost:4000，可以在浏览器里看到熟悉的Hello" target="_blank" rel="external">http://localhost:4000，可以在浏览器里看到熟悉的Hello</a> World。</p>
-<h1 id="关于npm"><a href="#关于npm" class="headerlink" title="关于npm"></a>关于npm</h1><h2 id="什么是npm"><a href="#什么是npm" class="headerlink" title="什么是npm"></a>什么是npm</h2><p>npm是nodejs的包管理工具，类似java的maven，最新的nodejs安装包里已经包含了npm，不需要再单独安装。</p>
-<h2 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h2><p>官网手册 <a href="https://docs.npmjs.com/" target="_blank" rel="external">https://docs.npmjs.com/</a></p>
-<p>查看本地npm版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure></p>
-<p>npm指令列表</p>
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>npm install</td>
-<td>安装模块</td>
-</tr>
-<tr>
-<td>npm uninstall</td>
-<td>卸载模块</td>
-</tr>
-<tr>
-<td>npm update</td>
-<td>更新模块</td>
-</tr>
-<tr>
-<td>npm outdated</td>
-<td>检查模块是否已经过时</td>
-</tr>
-<tr>
-<td>npm ls</td>
-<td>查看安装的模块</td>
-</tr>
-<tr>
-<td>npm init</td>
-<td>在项目中引导创建一个package.json文件</td>
-</tr>
-<tr>
-<td>npm help</td>
-<td>查看某条命令的详细帮助</td>
-</tr>
-<tr>
-<td>npm root</td>
-<td>查看包的安装路径</td>
-</tr>
-<tr>
-<td>npm config</td>
-<td>管理npm的配置路径</td>
-</tr>
-<tr>
-<td>npm cache</td>
-<td>管理模块的缓存</td>
-</tr>
-<tr>
-<td>npm start</td>
-<td>启动模块</td>
-</tr>
-<tr>
-<td>npm stop</td>
-<td>停止模块</td>
-</tr>
-<tr>
-<td>npm restart</td>
-<td>重新启动模块</td>
-</tr>
-<tr>
-<td>npm test</td>
-<td>测试模块</td>
-</tr>
-<tr>
-<td>npm version</td>
-<td>查看模块版本</td>
-</tr>
-<tr>
-<td>npm view</td>
-<td>查看模块的注册信息</td>
-</tr>
-<tr>
-<td>npm publish</td>
-<td>发布模块</td>
-</tr>
-<tr>
-<td>npm access</td>
-<td>在发布的包上设置访问级别</td>
-</tr>
-</tbody>
-</table>
-<h2 id="npm-package-json的语法"><a href="#npm-package-json的语法" class="headerlink" title="npm package.json的语法"></a>npm package.json的语法</h2><p>官网介绍 <a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="external">https://docs.npmjs.com/files/package.json</a><br>网友翻译 <a href="http://mujiang.info/translation/npmjs/files/package.json.html" target="_blank" rel="external">http://mujiang.info/translation/npmjs/files/package.json.html</a></p>
-<p>对于普通人没必要记得太多，只需要在工程目录执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node init</div></pre></td></tr></table></figure></p>
-<p>然后根据提示填好各部分信息即可</p>
-<h1 id="nodejs-REPL"><a href="#nodejs-REPL" class="headerlink" title="nodejs REPL"></a>nodejs REPL</h1><p>REPL = Read Eval Print Loop = 交互解释器<br>类似于 php cli，可以在终端执行nodejs表达式。</p>
-<h2 id="nodejs-REPL-示例"><a href="#nodejs-REPL-示例" class="headerlink" title="nodejs REPL 示例"></a>nodejs REPL 示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ node</div><div class="line">&gt; 1 + 1</div><div class="line">2</div><div class="line">&gt; var x = 1, y = 2</div><div class="line">undefined</div><div class="line">&gt; x + y</div><div class="line">3</div><div class="line">&gt; console.log(&quot;x + y = &quot; + (x + y))</div><div class="line">x + y = 3</div><div class="line">undefined</div><div class="line">&gt; console.log(&quot;http://tonglei.win&quot;)</div><div class="line">http://tonglei.win</div><div class="line">undefined</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-<h2 id="REPL-指令"><a href="#REPL-指令" class="headerlink" title="REPL 指令"></a>REPL 指令</h2><table>
-<thead>
-<tr>
-<th>指令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ctrl + c</td>
-<td>撤销当前指令</td>
-</tr>
-<tr>
-<td>ctrl + c 两次</td>
-<td>退出 Node REPL</td>
-</tr>
-<tr>
-<td>ctrl + d</td>
-<td>退出 Node REPL</td>
-</tr>
-<tr>
-<td>↑/↓</td>
-<td>查看输入的历史命令</td>
-</tr>
-<tr>
-<td>tab 键</td>
-<td>列出当前命令</td>
-</tr>
-<tr>
-<td>.help</td>
-<td>列出使用命令</td>
-</tr>
-<tr>
-<td>.break</td>
-<td>退出多行表达式</td>
-</tr>
-<tr>
-<td>.clear</td>
-<td>退出多行表达式</td>
-</tr>
-<tr>
-<td>.save filename</td>
-<td>保存当前的 Node REPL 会话到指定文件</td>
-</tr>
-<tr>
-<td>.load filename</td>
-<td>载入当前 Node REPL 会话的文件内容</td>
-</tr>
-</tbody>
-</table>
-<h1 id="node基本用法"><a href="#node基本用法" class="headerlink" title="node基本用法"></a>node基本用法</h1><h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><p>Node.js 异步编程的直接体现就是回调。<br>异步编程依托于回调来实现，但不能说使用了回调后程序就异步化了。<br>回调函数在完成任务后就会被调用，Node 使用了大量的回调函数，Node 所有 API 都支持回调函数。<br>例如，我们可以一边读取文件，一边执行其他命令，在文件读取完成后，我们将文件内容作为回调函数的参数返回。这样在执行代码时就没有阻塞或等待文件 I/O 操作。这就大大提高了 Node.js 的性能，可以处理大量的并发请求。   </p>
-<h3 id="阻塞方式读取文件"><a href="#阻塞方式读取文件" class="headerlink" title="阻塞方式读取文件"></a>阻塞方式读取文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'filename.txt'</span>);</div><div class="line"><span class="built_in">console</span>.log(data.toString());</div></pre></td></tr></table></figure>
-<h3 id="非阻塞方式读取文件"><a href="#非阻塞方式读取文件" class="headerlink" title="非阻塞方式读取文件"></a>非阻塞方式读取文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> data = fs.readFile(<span class="string">'filename.txt'</span>);</div><div class="line"><span class="built_in">console</span>.log(data.toString());</div></pre></td></tr></table></figure>
-<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>Node.js 是单进程单线程应用程序，但是通过事件和回调支持并发，所以性能非常高。<br>Node.js 的每一个 API 都是异步的，并作为一个独立线程运行，使用异步函数调用，并处理并发。<br>Node.js 基本上所有的事件机制都是用设计模式中观察者模式实现。<br>Node.js 单线程类似进入一个while(true)的事件循环，直到没有事件观察者退出，每个异步事件都生成一个事件观察者，如果有事件发生就调用该回调函数。</p>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入 events 模块</span></div><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="comment">// 创建 eventEmitter 对象</span></div><div class="line"><span class="keyword">var</span> eventEmitter = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"></div><div class="line"><span class="comment">// 绑定事件及事件的处理程序</span></div><div class="line">eventEmitter.on(<span class="string">'eventName'</span>, eventHandler);</div><div class="line"></div><div class="line"><span class="comment">// 触发事件</span></div><div class="line">eventEmitter.emit(<span class="string">'eventName'</span>);</div></pre></td></tr></table></figure>
-<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// 引入 events 模块</div><div class="line">var events = require(&apos;events&apos;);</div><div class="line">// 创建 eventEmitter 对象</div><div class="line">var eventEmitter = new events.EventEmitter();</div><div class="line"></div><div class="line">// 创建事件处理程序</div><div class="line">var connectHandler = function connected() &#123;</div><div class="line">   console.log(&apos;连接成功。&apos;);</div><div class="line">   // 触发 data_received 事件 </div><div class="line">   eventEmitter.emit(&apos;data_received&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 绑定 connection 事件处理程序</div><div class="line">eventEmitter.on(&apos;connection&apos;, connectHandler);</div><div class="line"> </div><div class="line">// 使用匿名函数绑定 data_received 事件</div><div class="line">eventEmitter.on(&apos;data_received&apos;, function()&#123;</div><div class="line">   console.log(&apos;数据接收成功。&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 触发 connection 事件 </div><div class="line">eventEmitter.emit(&apos;connection&apos;);</div></pre></td></tr></table></figure>
-<h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><p>为了让Node.js的文件可以相互调用，Node.js提供了一个简单的模块系统。<br>模块是Node.js 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 Node.js 文件就是一个模块，这个文件可能是JavaScript 代码、JSON 或者编译过的C/C++ 扩展。</p>
-<h3 id="创建自定义模块"><a href="#创建自定义模块" class="headerlink" title="创建自定义模块"></a>创建自定义模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hello.js </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>) </span>&#123; </div><div class="line">	<span class="keyword">var</span> name; </div><div class="line">	<span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">newName</span>) </span>&#123; </div><div class="line">		name = newName;</div><div class="line">	&#125;; </div><div class="line">	<span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name); </div><div class="line">	&#125;; </div><div class="line">&#125;; </div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app.js</span></div><div class="line"><span class="keyword">var</span> hello = <span class="built_in">require</span>(<span class="string">'./hello'</span>);</div><div class="line">hello.setName(<span class="string">"tonglei.win"</span>);</div><div class="line">hello.sayHello();</div></pre></td></tr></table></figure>
-<h3 id="模块查找顺序"><a href="#模块查找顺序" class="headerlink" title="模块查找顺序"></a>模块查找顺序</h3><p>nodejs包含了一些内置模块，如前文用到的 http、fs等等，其模块加载顺序为</p>
-<p><strong><em>文件缓存模块 &gt; 原生模块 &gt; 文件模块</em></strong></p>
-<hr>
-<p><strong><em>此篇完 <a href="http://tonglei.win">http://tonglei.win</a> </em></strong></p>
-<link href="/css/prism.css" rel="stylesheet">]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;什么是-NodeJS&quot;&gt;&lt;a href=&quot;#什么是-NodeJS&quot; class=&quot;headerlink&quot; title=&quot;什么是 NodeJS ?&quot;&gt;&lt;/a&gt;什么是 NodeJS ?&lt;/h1&gt;&lt;p&gt;Node.js 是运行在服务端的 JavaScript。   &lt;/p
-    
-    </summary>
-    
-      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Javascript" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Javascript/"/>
-    
-    
-      <category term="nodejs" scheme="http://tonglei.win/tags/nodejs/"/>
-    
-      <category term="javascript" scheme="http://tonglei.win/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>node-in-action_笔记</title>
     <link href="http://tonglei.win/2017/01/03/IT%E5%AD%A6%E4%B9%A0/Javascript/node-in-action-%E7%AC%94%E8%AE%B0/"/>
     <id>http://tonglei.win/2017/01/03/IT学习/Javascript/node-in-action-笔记/</id>
     <published>2017-01-03T09:07:49.000Z</published>
-    <updated>2017-01-09T08:40:33.253Z</updated>
+    <updated>2017-01-13T08:04:05.905Z</updated>
     
     <content type="html"><![CDATA[<h1 id="第一部分-简介"><a href="#第一部分-简介" class="headerlink" title="第一部分 简介"></a>第一部分 简介</h1><h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><p><strong>关键词: node.js express</strong></p>
 <p>第一章主要回答了以下几个问题。</p>
@@ -404,10 +218,11 @@
 </ul>
 <p>这样当你访问 <a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a> 时候，Nodejs 会寻找 views 目录下的 index.ejs 文件进行渲染，并将结果发送给浏览器。</p>
 <ul>
-<li>从pug到html<br>pug的源文件<br>``js<br>doctype html<br>html(lang=”en”)<br>head<br>  title Hello world!<br>body<br>  h1 This is a pug example<br>  #container<pre><code>p Wow
-</code></pre><code>渲染后的结果</code>js<br>&lt;!DOCTYPE html&gt;<br><html lang="en"><br><head><br>  <title>Hello world!</title><br></head><br><body><br>  <h1>This is a pug example</h1><br>  <div id="container"><pre><code>&lt;p&gt;Wow.&lt;/p&gt;
-</code></pre>  </div><br></body><br></html><br>``<br>关于 Pug 本身的内容，以后再详细介绍。简单说来，pug就是利用缩进来区分区块的层级，用每行的地一个单词表示区块的标签，用空格引出区块的文本内容，用括号指定其属性。</li>
+<li>从pug到html</li>
 </ul>
+<p>pug的源文件<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">doctype html</div><div class="line">html(lang="en")</div><div class="line">  head</div><div class="line">    title Hello world!</div><div class="line">  body</div><div class="line">    h1 This is a pug example</div><div class="line">    #container</div><div class="line">      p Wow</div></pre></td></tr></table></figure></p>
+<p>渲染后的结果<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is a pug example<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Wow.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>关于 Pug 本身的内容，以后再详细介绍。简单说来，pug就是利用缩进来区分区块的层级，用每行的地一个单词表示区块的标签，用空格引出区块的文本内容，用括号指定其属性。</p>
 <h1 id="第三部分"><a href="#第三部分" class="headerlink" title="第三部分"></a>第三部分</h1><h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p><strong>关键词: MongoDB, bcrypt, 认证</strong></p>
 <ul>
 <li>MongoDB 怎么样？</li>
@@ -427,13 +242,122 @@
 <li>MongoDB 的 Databases 相当与 SQL 的 Databases</li>
 </ol>
 <ul>
-<li>构建一个简单的工程</li>
+<li>MongoDB 的安装（Ubuntu、Mint）<br><a href="https://docs.mongodb.com/master/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="external">https://docs.mongodb.com/master/tutorial/install-mongodb-on-ubuntu/</a></li>
 </ul>
+<ol>
+<li>sudo apt-key adv –keyserver hkp://keyserver.ubuntu.com:80 –recv 0C49F3730359A14518585931BC711F9BA15703C6</li>
+<li>echo “deb [ arch=amd64,arm64 ] <a href="http://repo.mongodb.org/apt/ubuntu" target="_blank" rel="external">http://repo.mongodb.org/apt/ubuntu</a> xenial/mongodb-org/3.4 multiverse” | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list</li>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install -y mongodb-org</li>
+</ol>
+<ul>
+<li>MongoDB 的Shell命令</li>
+</ul>
+<ol>
+<li>sudo service mongod start</li>
+<li>sudo service mongod stop</li>
+<li>sudo service mongod restart</li>
+<li>查看启动状态：cat /var/log/mongodb/mongod.log</li>
+</ol>
+<ul>
+<li>MongoDB 的卸载</li>
+</ul>
+<ol>
+<li>sudo service mongod stop</li>
+<li>sudo apt-get purge mongodb-org*</li>
+<li>sudo rm -r /var/log/mongodb</li>
+<li>sudo rm -r /var/lib/mongodb</li>
+</ol>
+<ul>
+<li><p>构建一个简单的工程</p>
+<ul>
+<li><p>需求描述：</p>
 <ol>
 <li>首页，所有用户可见，可以查看用户信息</li>
 <li>用户信息页显示用户昵称或用户名，注册日期，用户登录后可以编辑自己的信息</li>
 <li>新用户注册页</li>
 </ol>
+</li>
+<li><p>实现步骤</p>
+<ol>
+<li>package.json 中配置依赖包</li>
+<li>定义数据模型 user.js<br>2.1 模型中增加保持密码的处理<br>2.2 模型中增加校验密码的处理<br>2.3 模型中增加返回属性的处理<br>2.4 模型发布为系统模块</li>
+<li>增加路由配置文件 route.js</li>
+<li>增加ejs模板</li>
+<li>利用passport认证<br>5.1 设置passport中间件(3个Express中间件，1个第三方中间件，2个Passport中间件)<pre><code>body-parser: 解析HTML的表单
+cookie-parser: 解析浏览器的Cookies
+express-session: Express保存用户session
+connect-flash: 显示错误信息
+passport.initialize: 初始化passport模块
+passport.session: 使用Passport会话
+</code></pre>5.2 定义User的序列化与反序列化<pre><code>把User转换成_id
+把_id转换回User
+</code></pre>5.3 定义如何认证User，通过设置 Strategy 实现</li>
+<li>在 app.js 中使用模型<br>6.1 增加一系列中间件</li>
+</ol>
+</li>
+</ul>
+<p><strong>代码</strong></p>
+<ol>
+<li><p>package.json<br>使用以下命令配置 package.json</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ npm init</div><div class="line">$ npm install bcrypt-nodejs --save</div><div class="line">$ npm install body-parser --save</div><div class="line">$ npm install connect-flash --save</div><div class="line">$ npm install cookie-parser --save</div><div class="line">$ npm install ejs --save</div><div class="line">$ npm install express --save</div><div class="line">$ npm install express-session --save</div><div class="line">$ npm install mongoose --save</div><div class="line">$ npm install passport --save</div><div class="line">$ npm install passport-local --save</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"men-demo-1"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">"MongoDB+Express+Nodejs"</span>,</div><div class="line">  <span class="string">"main"</span>: <span class="string">"app.js"</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"test"</span>: <span class="string">"node app"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"keywords"</span>: [</div><div class="line">    <span class="string">"mongoDB"</span>,</div><div class="line">    <span class="string">"express"</span>,</div><div class="line">    <span class="string">"nodejs"</span></div><div class="line">  ],</div><div class="line">  <span class="string">"author"</span>: <span class="string">"Booker"</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,</div><div class="line">  <span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"bcrypt-nodejs"</span>: <span class="string">"0.0.3"</span>,</div><div class="line">    <span class="string">"body-parser"</span>: <span class="string">"^1.15.2"</span>,</div><div class="line">    <span class="string">"connect-flash"</span>: <span class="string">"^0.1.1"</span>,</div><div class="line">    <span class="string">"cookie-parser"</span>: <span class="string">"^1.4.3"</span>,</div><div class="line">    <span class="string">"ejs"</span>: <span class="string">"^2.5.5"</span>,</div><div class="line">    <span class="string">"express"</span>: <span class="string">"^4.14.0"</span>,</div><div class="line">    <span class="string">"express-session"</span>: <span class="string">"^1.14.2"</span>,</div><div class="line">    <span class="string">"mongoose"</span>: <span class="string">"^4.7.6"</span>,</div><div class="line">    <span class="string">"passport"</span>: <span class="string">"^0.3.2"</span>,</div><div class="line">    <span class="string">"passport-local"</span>: <span class="string">"^1.0.0"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>user.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</div><div class="line"></div><div class="line"><span class="comment">// User 模型</span></div><div class="line"><span class="keyword">var</span> userSchema = mongoose.Schema(&#123;</div><div class="line">  <span class="attr">username</span>: &#123;<span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">unique</span>: <span class="literal">true</span>&#125;,</div><div class="line">  <span class="attr">password</span>: &#123;<span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">required</span>: <span class="literal">true</span>&#125;,</div><div class="line">  <span class="attr">createdAt</span>: &#123;<span class="attr">type</span>: <span class="built_in">Date</span>, <span class="attr">default</span>: <span class="built_in">Date</span>.now&#125;,</div><div class="line">  <span class="attr">displayName</span>: <span class="built_in">String</span>,</div><div class="line">  <span class="attr">bio</span>: <span class="built_in">String</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 获取显示名称</span></div><div class="line">userSchema.methods.name = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.displayName || <span class="keyword">this</span>.username;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 加密密码，这里使用 bcrypt。</span></div><div class="line"><span class="keyword">var</span> bcrypt = <span class="built_in">require</span>(<span class="string">"bcrypt-nodejs"</span>);</div><div class="line"><span class="keyword">var</span> SALT_FACTOR = <span class="number">10</span>;</div><div class="line"></div><div class="line"><span class="comment">// 增加一个 Pre-Save，当数据写入数据库的时候，执行对密码明文的Hash</span></div><div class="line"><span class="keyword">var</span> noop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// 这是一个空操作，用来补齐bcrypt.hash方法的参数</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">userSchema.pre(<span class="string">"save"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> user = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">  <span class="keyword">if</span>(!user.isModified(<span class="string">"password"</span>)) &#123;</div><div class="line">    <span class="keyword">return</span> done();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  bcrypt.genSalt(SALT_FACTOR, <span class="function"><span class="keyword">function</span>(<span class="params">err, salt</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) &#123; <span class="keyword">return</span> done(err); &#125;</div><div class="line">    bcrypt.hash(user.password, salt, noop, <span class="function"><span class="keyword">function</span>(<span class="params">err, hashedPassword</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span>(err) &#123; <span class="keyword">return</span> done(err); &#125;</div><div class="line">      user.password = hashedPassword;</div><div class="line">      done();</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 检查密码</span></div><div class="line"><span class="comment">// 使用bcrypt.compare 方法检查密码，比使用全等===更加安全，这样我们可以减少暴露出的信息，避免如时序攻击等。</span></div><div class="line">userSchema.methods.checkPassword = <span class="function"><span class="keyword">function</span>(<span class="params">guess, done</span>) </span>&#123;</div><div class="line">  bcrypt.compare(guess, <span class="keyword">this</span>.password, <span class="function"><span class="keyword">function</span>(<span class="params">err, isMatch</span>) </span>&#123;</div><div class="line">    done(err, isMatch);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 发布用户模块，供nodejs使用</span></div><div class="line"><span class="keyword">var</span> User = mongoose.model(<span class="string">"User"</span>, userSchema);</div><div class="line"><span class="built_in">module</span>.exports = User;</div></pre></td></tr></table></figure>
+</li>
+<li><p>app.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">"body-parser"</span>);</div><div class="line"><span class="keyword">var</span> cookieParser = <span class="built_in">require</span>(<span class="string">"cookie-parser"</span>);</div><div class="line"><span class="keyword">var</span> session  = <span class="built_in">require</span>(<span class="string">"express-session"</span>);</div><div class="line"><span class="keyword">var</span> flash = <span class="built_in">require</span>(<span class="string">"connect-flash"</span>);</div><div class="line"><span class="keyword">var</span> passport = <span class="built_in">require</span>(<span class="string">"passport"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> routes = <span class="built_in">require</span>(<span class="string">"./router"</span>); <span class="comment">// 路由定义文件，我们把所有的路由定义都写在routes文件中。</span></div><div class="line"><span class="keyword">var</span> setUpPassport = <span class="built_in">require</span>(<span class="string">"./setuppassport"</span>); <span class="comment">// 授权令牌</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line">mongoose.connect(<span class="string">"mongodb://localhost:27017/test"</span>); <span class="comment">// 连接mongo数据库</span></div><div class="line"></div><div class="line">setUpPassport(); <span class="comment">// 初始化令牌程序</span></div><div class="line"></div><div class="line"><span class="comment">// 设置环境变量</span></div><div class="line">app.set(<span class="string">"port"</span>, process.env.PORT || <span class="number">3000</span>); <span class="comment">// 访问地址</span></div><div class="line">app.set(<span class="string">"views"</span>, path.join(__dirname, <span class="string">"views"</span>)); <span class="comment">// 页面模板目录</span></div><div class="line">app.set(<span class="string">"view engine"</span>, <span class="string">"ejs"</span>); <span class="comment">// 模板类型</span></div><div class="line"></div><div class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">false</span>&#125;)); <span class="comment">// Form 表单数据的解析</span></div><div class="line">app.use(cookieParser()); <span class="comment">// 浏览器Cookie的解析</span></div><div class="line">app.use(session(&#123;</div><div class="line">  <span class="attr">secret</span>: <span class="string">"TKRv0IJs=HYqrvagQ#&amp;!F!%V]Ww/4KiVs$s,&lt;&lt;MX"</span>, <span class="comment">// 用于加密Session</span></div><div class="line">  resave: <span class="literal">true</span>, <span class="comment">// 即使 Session 未发生改变依然执行保存操作</span></div><div class="line">  saveUninitialized: <span class="literal">true</span> <span class="comment">// 即使 Session 未完成初始化也执行保持操作</span></div><div class="line">&#125;));</div><div class="line">app.use(flash()); <span class="comment">// 用于输出错误消息</span></div><div class="line"></div><div class="line">app.use(passport.initialize()); <span class="comment">// 令牌初始化</span></div><div class="line">app.use(passport.session()); <span class="comment">// 使令牌支持Session操作</span></div><div class="line"></div><div class="line">app.use(routes); <span class="comment">// 使用路由的定义</span></div><div class="line"></div><div class="line">app.listen(app.get(<span class="string">"port"</span>), <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"服务已启动，端口为："</span> + app.get(<span class="string">"port"</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>router.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</div><div class="line"><span class="keyword">var</span> passport = <span class="built_in">require</span>(<span class="string">"passport"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> User = <span class="built_in">require</span>(<span class="string">"./models/user"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> router = express.Router();</div><div class="line"></div><div class="line"><span class="comment">// 在 response 中绑定基本属性</span></div><div class="line">router.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  res.locals.currentUser = req.user;</div><div class="line">  res.locals.errors = req.flash(<span class="string">"error"</span>);</div><div class="line">  res.locals.infos = req.flash(<span class="string">"info"</span>);</div><div class="line">  next();</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ensureAuthenticated</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(req.isAuthenticated()) &#123;</div><div class="line">    next();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    req.flash(<span class="string">"info"</span>, <span class="string">"登录后可访问此页。"</span>);</div><div class="line">    res.redirect(<span class="string">"/login"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 查询用户，返回列表</span></div><div class="line">router.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  User.find()</div><div class="line">    .sort(&#123;<span class="attr">createdAt</span>: <span class="string">"descending"</span>&#125;)</div><div class="line">    .exec(<span class="function"><span class="keyword">function</span>(<span class="params">err, users</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span>(err) &#123; <span class="keyword">return</span> next(err); &#125;</div><div class="line">      res.render(<span class="string">"index"</span>, &#123;<span class="attr">users</span>: users&#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 进入注册页</span></div><div class="line">router.get(<span class="string">"/signup"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.render(<span class="string">"signup"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 接收注册提交的表单</span></div><div class="line">router.post(<span class="string">"/signup"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> username = req.body.username;</div><div class="line">  <span class="keyword">var</span> password = req.body.password;</div><div class="line"></div><div class="line">  User.findOne(&#123; <span class="attr">username</span>: username &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) &#123; <span class="keyword">return</span> next(err); &#125;</div><div class="line">    <span class="keyword">if</span>(user) &#123;</div><div class="line">      req.flash(<span class="string">"error"</span>, <span class="string">"用户已存在"</span>);</div><div class="line">      <span class="keyword">return</span> res.redirect(<span class="string">"/signup"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> newUser = <span class="keyword">new</span> User(&#123;</div><div class="line">      <span class="attr">username</span>: username,</div><div class="line">      <span class="attr">password</span>: password</div><div class="line">    &#125;);</div><div class="line">    newUser.save(next);</div><div class="line">  &#125;);</div><div class="line">&#125;, passport.authenticate(<span class="string">"login"</span>, &#123;</div><div class="line">  <span class="attr">successRedirect</span>: <span class="string">"/"</span>,</div><div class="line">  <span class="attr">failureRedirect</span>: <span class="string">"/signup"</span>,</div><div class="line">  <span class="attr">failureFlash</span>: <span class="literal">true</span></div><div class="line">&#125;));</div><div class="line"></div><div class="line">router.get(<span class="string">"/login"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.render(<span class="string">"login"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.post(<span class="string">"/login"</span>, passport.authenticate(<span class="string">"login"</span>, &#123;</div><div class="line">  <span class="attr">successRedirect</span>: <span class="string">"/"</span>,</div><div class="line">  <span class="attr">failureRedirect</span>: <span class="string">"/login"</span>,</div><div class="line">  <span class="attr">failureFlash</span>: <span class="literal">true</span></div><div class="line">&#125;));</div><div class="line"></div><div class="line">router.get(<span class="string">"logout"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  req.logout();</div><div class="line">  res.redirect(<span class="string">"/"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.get(<span class="string">"/users/:username"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  User.findOne(&#123;<span class="attr">username</span>:req.params.username&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) &#123;<span class="keyword">return</span> next(err);&#125;</div><div class="line">    <span class="keyword">if</span>(!user) &#123;<span class="keyword">return</span> next(<span class="number">404</span>);&#125;</div><div class="line">    res.render(<span class="string">"profile"</span>, &#123;<span class="attr">user</span>: user&#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.get(<span class="string">"/edit"</span>, ensureAuthenticated, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.render(<span class="string">"edit"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">router.post(<span class="string">"/edit"</span>, ensureAuthenticated, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  req.user.displayName = req.body.displayname;</div><div class="line">  req.user.bio = req.body.bio;</div><div class="line">  req.user.save(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) &#123;</div><div class="line">      next(err);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    req.flash(<span class="string">"info"</span>, <span class="string">"个人信息已更新"</span>);</div><div class="line">    res.redirect(<span class="string">"/edit"</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router;</div></pre></td></tr></table></figure>
+</li>
+<li><p>setuppassport.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> passport = <span class="built_in">require</span>(<span class="string">"passport"</span>);</div><div class="line"><span class="keyword">var</span> User = <span class="built_in">require</span>(<span class="string">"./models/user"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> LocalStrategy = <span class="built_in">require</span>(<span class="string">"passport-local"</span>).Strategy;</div><div class="line"></div><div class="line">passport.use(<span class="string">"login"</span>, <span class="keyword">new</span> LocalStrategy(<span class="function"><span class="keyword">function</span>(<span class="params">username, password, done</span>) </span>&#123;</div><div class="line">  User.findOne(&#123; <span class="attr">username</span>: username &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) &#123; <span class="keyword">return</span> done(err); &#125;</div><div class="line">    <span class="keyword">if</span> (!user) &#123;</div><div class="line">      <span class="keyword">return</span> done(<span class="literal">null</span>, <span class="literal">false</span>, &#123;<span class="attr">message</span>: <span class="string">"No user has that username!"</span> &#125;);</div><div class="line">    &#125;</div><div class="line">    user.checkPassword(password, <span class="function"><span class="keyword">function</span>(<span class="params">err, isMatch</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (err) &#123; <span class="keyword">return</span> done(err); &#125;</div><div class="line">      <span class="keyword">if</span> (isMatch) &#123;</div><div class="line">        <span class="keyword">return</span> done(<span class="literal">null</span>, user);</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> done(<span class="literal">null</span>, <span class="literal">false</span>, &#123; <span class="attr">message</span>: <span class="string">"Invalid password."</span> &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;));</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  passport.serializeUser(<span class="function"><span class="keyword">function</span>(<span class="params">user, done</span>) </span>&#123;</div><div class="line">    done(<span class="literal">null</span>, user._id);</div><div class="line">  &#125;);</div><div class="line">  passport.deserializeUser(<span class="function"><span class="keyword">function</span>(<span class="params">id, done</span>) </span>&#123;</div><div class="line">    User.findById(id, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</div><div class="line">      done(err, user);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Views 中的各文件</p>
+<p>6.1 _header.ejs</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>MEN简单完整示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-static-top"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>学习 MEN<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav navbar-right"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">currentUser</span>) &#123; %&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/edit"</span>&gt;</span></div><div class="line">              Hello, <span class="tag">&lt;<span class="name">%=</span> <span class="attr">currentUser.name</span>() %&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/logout"</span>&gt;</span>登出<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">%</span> &#125; <span class="attr">else</span> &#123; %&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/login"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/signup"</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">errors.forEach</span>(<span class="attr">function</span>(<span class="attr">error</span>) &#123; %&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-danger"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">%=</span> <span class="attr">error</span> %&gt;</span></div><div class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">%</span> &#125;) %&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">%</span> <span class="attr">infos.forEach</span>(<span class="attr">function</span>(<span class="attr">info</span>) &#123; %&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-info"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></div><div class="line">              <span class="tag">&lt;<span class="name">%=</span> <span class="attr">info</span> %&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">%</span> &#125;) %&gt;</span></div></pre></td></tr></table></figure>
+<p>6.2 _footer.ejs</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>6.3 index.ejs</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_header</span> %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>开始学习MEN<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">users.forEach</span>(<span class="attr">function</span>(<span class="attr">user</span>) &#123; %&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel panel-default"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel-heading"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/users/&lt;%= user.username %&gt;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">%=</span> <span class="attr">user.name</span>() %&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">user.bio</span>) &#123; %&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel-body"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">user.bio</span> %&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> &#125;) %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_footer</span> %&gt;</span></div></pre></td></tr></table></figure>
+<p>6.4 profile.ejs</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_header</span> %&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>((<span class="attr">currentUser</span>) &amp;&amp; (<span class="attr">currentUser.id</span> === <span class="string">user.id))</span> &#123; %&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/edit"</span> <span class="attr">class</span>=<span class="string">"pull-right"</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">user.name</span>() %&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>注册时间 <span class="tag">&lt;<span class="name">%=</span> <span class="attr">user.createdAt</span> %&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">user.bio</span>) &#123; %&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">user.bio</span> %&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_footer</span> %&gt;</span></div></pre></td></tr></table></figure>
+<p>6.5 signup.ejs</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_header</span> %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Sign up<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/signup"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span></span></div><div class="line"><span class="attr">placeholder</span>=<span class="string">"Username"</span> <span class="attr">required</span> <span class="attr">autofocus</span>&gt;</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">class</span>=<span class="string">"form-control"</span></span></div><div class="line"><span class="attr">placeholder</span>=<span class="string">"Password"</span> <span class="attr">required</span>&gt;</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Sign up"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary btn-block"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_footer</span> %&gt;</span></div></pre></td></tr></table></figure>
+<p>6.6 login.ejs</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_header</span> %&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/login"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"登录名"</span> <span class="attr">required</span>=<span class="string">"required"</span> <span class="attr">autofocus</span>=<span class="string">"autofocus"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"密  码"</span> <span class="attr">required</span>=<span class="string">"required"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary btn-block"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_footer</span> %&gt;</span></div></pre></td></tr></table></figure>
+<p>6.7 edit.ejs</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_header</span> %&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>编辑个人信息<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/edit"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"displayname"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"昵称"</span> <span class="attr">value</span>=<span class="string">"&lt;%= currentUser.displayName || "</span>" %&gt;</span>"&gt;</div><div class="line">  <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"bio"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"个人描述"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">currentUser.bio</span> %&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"更新"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary btn-block"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">include</span> <span class="attr">_footer</span> %&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="Express的测试"><a href="#Express的测试" class="headerlink" title="Express的测试"></a>Express的测试</h1><ul>
+<li><p>什么是TDD？<br>TDD 是 test-driver development 的缩写，也就是有测试驱动开发。即比如我们要实现一套API，在开始写API代码之前，就应该先把对应的单元测试写好。</p>
+</li>
+<li><p>TDD如何工作？<br>编写测试用例-&gt;实现代码，保证每个测试用例都可以通过-&gt;优化代码-&gt;回到第一步如此循环。</p>
+</li>
+<li><p>Nodejs 如何测试？<br>常见的测试框架有：Mocha（这个框架用来自动执行测试用例），Chai（这是个断言框架，是用来辅助自动化测试的）</p>
+</li>
+<li><p>Mocha + Chai 的简单示例</p>
+<p><strong>目录结构</strong></p>
+<ol>
+<li>package.json</li>
+<li>capitalize.js 待测试的模块</li>
+<li>test/capitalize.js 单元测试代码</li>
+</ol>
+<p>package.json</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"Chai-1"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"main"</span>: <span class="string">"app.js"</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"test"</span>: <span class="string">"mocha"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"author"</span>: <span class="string">"Booker"</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,</div><div class="line">  <span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"chai"</span>: <span class="string">"^3.5.0"</span>,</div><div class="line">    <span class="string">"mocha"</span>: <span class="string">"^3.2.0"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>capitalize.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">capitalize</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="comment">//var firstLetter = str[0].toUpperCase(); // 空字符串时会报错</span></div><div class="line">  <span class="keyword">var</span> firstLetter = str.charAt(<span class="number">0</span>).toUpperCase(); <span class="comment">// 空字符串不会报错</span></div><div class="line">  <span class="keyword">var</span> rest = str.slice(<span class="number">1</span>).toLowerCase();</div><div class="line">  <span class="keyword">return</span> firstLetter + rest;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = capitalize;</div></pre></td></tr></table></figure>
+<p>test/capitalize.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> chai = <span class="built_in">require</span>(<span class="string">"chai"</span>); <span class="comment">// 断言框架</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> capitalize = <span class="built_in">require</span>(<span class="string">"../capitalize"</span>); <span class="comment">// 待测试的模块</span></div><div class="line"><span class="keyword">var</span> expect = chai.expect;</div><div class="line"></div><div class="line">describe(<span class="string">"大小写转换测试"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  beforeEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"每个Test之前会被执行."</span>);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">	it(<span class="string">"一个单词大小写"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		expect(capitalize(<span class="string">"express"</span>)).to.equal(<span class="string">"Express"</span>);</div><div class="line">		expect(capitalize(<span class="string">"cats"</span>)).to.equal(<span class="string">"Cats"</span>);</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	it(<span class="string">"两个单词的大小写"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		expect(capitalize(<span class="string">"express one"</span>)).to.equal(<span class="string">"Express one"</span>);</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">	it(<span class="string">"空字符串"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		expect(capitalize(<span class="string">""</span>)).to.equal(<span class="string">""</span>);</div><div class="line">	&#125;);</div><div class="line"></div><div class="line">  it(<span class="string">"没有字母"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    expect(capitalize(<span class="string">"   "</span>)).to.equal(<span class="string">"   "</span>);</div><div class="line">    expect(capitalize(<span class="string">"123"</span>)).to.equal(<span class="string">"123"</span>);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="string">"字符串对象"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"who am I"</span>);</div><div class="line">    expect(capitalize(str)).to.equal(<span class="string">"Who am i"</span>);</div><div class="line">    expect(str.valueOf()).to.equal(<span class="string">"who am I"</span>);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="string">"测试抛出异常"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    expect(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;capitalize(<span class="number">123</span>); &#125;).to.throw(<span class="built_in">Error</span>);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="string">"测试非的情况"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    expect(capitalize(<span class="string">"foo"</span>)).not.to.equal(<span class="string">"foo"</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 SuperTest 测试 API</p>
+</li>
+</ul>
 <link href="/css/prism.css" rel="stylesheet">]]></content>
     
     <summary type="html">
@@ -673,6 +597,192 @@
       <category term="论语" scheme="http://tonglei.win/tags/%E8%AE%BA%E8%AF%AD/"/>
     
       <category term="孔子" scheme="http://tonglei.win/tags/%E5%AD%94%E5%AD%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NodeJs基本知识</title>
+    <link href="http://tonglei.win/2016/12/05/IT%E5%AD%A6%E4%B9%A0/Javascript/NodeJs%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
+    <id>http://tonglei.win/2016/12/05/IT学习/Javascript/NodeJs基本知识/</id>
+    <published>2016-12-05T09:07:49.000Z</published>
+    <updated>2017-01-13T08:00:13.360Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是-NodeJS"><a href="#什么是-NodeJS" class="headerlink" title="什么是 NodeJS ?"></a>什么是 NodeJS ?</h1><p>Node.js 是运行在服务端的 JavaScript。   </p>
+<h1 id="NodeJs-的安装"><a href="#NodeJs-的安装" class="headerlink" title="NodeJs 的安装"></a>NodeJs 的安装</h1><p><a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
+<h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><h2 id="创建-app-js"><a href="#创建-app-js" class="headerlink" title="创建 app.js"></a>创建 app.js</h2><h2 id="通过-required-引入模块"><a href="#通过-required-引入模块" class="headerlink" title="通过 required 引入模块"></a>通过 required 引入模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div></pre></td></tr></table></figure>
+<h2 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">// 发送 HTTP 头部</span></div><div class="line">	<span class="comment">// HTTP 状态值: 200 : OK</span></div><div class="line">	<span class="comment">// 内容类型: text/plain</span></div><div class="line">	response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</div><div class="line"></div><div class="line">	<span class="comment">// 发送响应数据 "Hello World"</span></div><div class="line">	response.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;).listen(<span class="number">4000</span>);</div><div class="line"></div><div class="line"><span class="comment">// 终端打印如下信息</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:4000/'</span>);</div></pre></td></tr></table></figure>
+<p>如此便创建了http服务器，使用node命令运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node app.js</div></pre></td></tr></table></figure></p>
+<p>访问 <a href="http://localhost:4000，可以在浏览器里看到熟悉的Hello" target="_blank" rel="external">http://localhost:4000，可以在浏览器里看到熟悉的Hello</a> World。</p>
+<h1 id="关于npm"><a href="#关于npm" class="headerlink" title="关于npm"></a>关于npm</h1><h2 id="什么是npm"><a href="#什么是npm" class="headerlink" title="什么是npm"></a>什么是npm</h2><p>npm是nodejs的包管理工具，类似java的maven，最新的nodejs安装包里已经包含了npm，不需要再单独安装。</p>
+<h2 id="npm常用命令"><a href="#npm常用命令" class="headerlink" title="npm常用命令"></a>npm常用命令</h2><p>官网手册 <a href="https://docs.npmjs.com/" target="_blank" rel="external">https://docs.npmjs.com/</a></p>
+<p>查看本地npm版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm -v</div></pre></td></tr></table></figure></p>
+<p>npm指令列表</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>npm install</td>
+<td>安装模块</td>
+</tr>
+<tr>
+<td>npm uninstall</td>
+<td>卸载模块</td>
+</tr>
+<tr>
+<td>npm update</td>
+<td>更新模块</td>
+</tr>
+<tr>
+<td>npm outdated</td>
+<td>检查模块是否已经过时</td>
+</tr>
+<tr>
+<td>npm ls</td>
+<td>查看安装的模块</td>
+</tr>
+<tr>
+<td>npm init</td>
+<td>在项目中引导创建一个package.json文件</td>
+</tr>
+<tr>
+<td>npm help</td>
+<td>查看某条命令的详细帮助</td>
+</tr>
+<tr>
+<td>npm root</td>
+<td>查看包的安装路径</td>
+</tr>
+<tr>
+<td>npm config</td>
+<td>管理npm的配置路径</td>
+</tr>
+<tr>
+<td>npm cache</td>
+<td>管理模块的缓存</td>
+</tr>
+<tr>
+<td>npm start</td>
+<td>启动模块</td>
+</tr>
+<tr>
+<td>npm stop</td>
+<td>停止模块</td>
+</tr>
+<tr>
+<td>npm restart</td>
+<td>重新启动模块</td>
+</tr>
+<tr>
+<td>npm test</td>
+<td>测试模块</td>
+</tr>
+<tr>
+<td>npm version</td>
+<td>查看模块版本</td>
+</tr>
+<tr>
+<td>npm view</td>
+<td>查看模块的注册信息</td>
+</tr>
+<tr>
+<td>npm publish</td>
+<td>发布模块</td>
+</tr>
+<tr>
+<td>npm access</td>
+<td>在发布的包上设置访问级别</td>
+</tr>
+</tbody>
+</table>
+<h2 id="npm-package-json的语法"><a href="#npm-package-json的语法" class="headerlink" title="npm package.json的语法"></a>npm package.json的语法</h2><p>官网介绍 <a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="external">https://docs.npmjs.com/files/package.json</a><br>网友翻译 <a href="http://mujiang.info/translation/npmjs/files/package.json.html" target="_blank" rel="external">http://mujiang.info/translation/npmjs/files/package.json.html</a></p>
+<p>对于普通人没必要记得太多，只需要在工程目录执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node init</div></pre></td></tr></table></figure></p>
+<p>然后根据提示填好各部分信息即可</p>
+<h1 id="nodejs-REPL"><a href="#nodejs-REPL" class="headerlink" title="nodejs REPL"></a>nodejs REPL</h1><p>REPL = Read Eval Print Loop = 交互解释器<br>类似于 php cli，可以在终端执行nodejs表达式。</p>
+<h2 id="nodejs-REPL-示例"><a href="#nodejs-REPL-示例" class="headerlink" title="nodejs REPL 示例"></a>nodejs REPL 示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$ node</div><div class="line">&gt; 1 + 1</div><div class="line">2</div><div class="line">&gt; var x = 1, y = 2</div><div class="line">undefined</div><div class="line">&gt; x + y</div><div class="line">3</div><div class="line">&gt; console.log(&quot;x + y = &quot; + (x + y))</div><div class="line">x + y = 3</div><div class="line">undefined</div><div class="line">&gt; console.log(&quot;http://tonglei.win&quot;)</div><div class="line">http://tonglei.win</div><div class="line">undefined</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h2 id="REPL-指令"><a href="#REPL-指令" class="headerlink" title="REPL 指令"></a>REPL 指令</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl + c</td>
+<td>撤销当前指令</td>
+</tr>
+<tr>
+<td>ctrl + c 两次</td>
+<td>退出 Node REPL</td>
+</tr>
+<tr>
+<td>ctrl + d</td>
+<td>退出 Node REPL</td>
+</tr>
+<tr>
+<td>↑/↓</td>
+<td>查看输入的历史命令</td>
+</tr>
+<tr>
+<td>tab 键</td>
+<td>列出当前命令</td>
+</tr>
+<tr>
+<td>.help</td>
+<td>列出使用命令</td>
+</tr>
+<tr>
+<td>.break</td>
+<td>退出多行表达式</td>
+</tr>
+<tr>
+<td>.clear</td>
+<td>退出多行表达式</td>
+</tr>
+<tr>
+<td>.save filename</td>
+<td>保存当前的 Node REPL 会话到指定文件</td>
+</tr>
+<tr>
+<td>.load filename</td>
+<td>载入当前 Node REPL 会话的文件内容</td>
+</tr>
+</tbody>
+</table>
+<h1 id="node基本用法"><a href="#node基本用法" class="headerlink" title="node基本用法"></a>node基本用法</h1><h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><p>Node.js 异步编程的直接体现就是回调。<br>异步编程依托于回调来实现，但不能说使用了回调后程序就异步化了。<br>回调函数在完成任务后就会被调用，Node 使用了大量的回调函数，Node 所有 API 都支持回调函数。<br>例如，我们可以一边读取文件，一边执行其他命令，在文件读取完成后，我们将文件内容作为回调函数的参数返回。这样在执行代码时就没有阻塞或等待文件 I/O 操作。这就大大提高了 Node.js 的性能，可以处理大量的并发请求。   </p>
+<h3 id="阻塞方式读取文件"><a href="#阻塞方式读取文件" class="headerlink" title="阻塞方式读取文件"></a>阻塞方式读取文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'filename.txt'</span>);</div><div class="line"><span class="built_in">console</span>.log(data.toString());</div></pre></td></tr></table></figure>
+<h3 id="非阻塞方式读取文件"><a href="#非阻塞方式读取文件" class="headerlink" title="非阻塞方式读取文件"></a>非阻塞方式读取文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> data = fs.readFile(<span class="string">'filename.txt'</span>);</div><div class="line"><span class="built_in">console</span>.log(data.toString());</div></pre></td></tr></table></figure>
+<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>Node.js 是单进程单线程应用程序，但是通过事件和回调支持并发，所以性能非常高。<br>Node.js 的每一个 API 都是异步的，并作为一个独立线程运行，使用异步函数调用，并处理并发。<br>Node.js 基本上所有的事件机制都是用设计模式中观察者模式实现。<br>Node.js 单线程类似进入一个while(true)的事件循环，直到没有事件观察者退出，每个异步事件都生成一个事件观察者，如果有事件发生就调用该回调函数。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入 events 模块</span></div><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="comment">// 创建 eventEmitter 对象</span></div><div class="line"><span class="keyword">var</span> eventEmitter = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"></div><div class="line"><span class="comment">// 绑定事件及事件的处理程序</span></div><div class="line">eventEmitter.on(<span class="string">'eventName'</span>, eventHandler);</div><div class="line"></div><div class="line"><span class="comment">// 触发事件</span></div><div class="line">eventEmitter.emit(<span class="string">'eventName'</span>);</div></pre></td></tr></table></figure>
+<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// 引入 events 模块</div><div class="line">var events = require(&apos;events&apos;);</div><div class="line">// 创建 eventEmitter 对象</div><div class="line">var eventEmitter = new events.EventEmitter();</div><div class="line"></div><div class="line">// 创建事件处理程序</div><div class="line">var connectHandler = function connected() &#123;</div><div class="line">   console.log(&apos;连接成功。&apos;);</div><div class="line">   // 触发 data_received 事件</div><div class="line">   eventEmitter.emit(&apos;data_received&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 绑定 connection 事件处理程序</div><div class="line">eventEmitter.on(&apos;connection&apos;, connectHandler);</div><div class="line"></div><div class="line">// 使用匿名函数绑定 data_received 事件</div><div class="line">eventEmitter.on(&apos;data_received&apos;, function()&#123;</div><div class="line">   console.log(&apos;数据接收成功。&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 触发 connection 事件</div><div class="line">eventEmitter.emit(&apos;connection&apos;);</div></pre></td></tr></table></figure>
+<h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><p>为了让Node.js的文件可以相互调用，Node.js提供了一个简单的模块系统。<br>模块是Node.js 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 Node.js 文件就是一个模块，这个文件可能是JavaScript 代码、JSON 或者编译过的C/C++ 扩展。</p>
+<h3 id="创建自定义模块"><a href="#创建自定义模块" class="headerlink" title="创建自定义模块"></a>创建自定义模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hello.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> name;</div><div class="line">	<span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">newName</span>) </span>&#123;</div><div class="line">		name = newName;</div><div class="line">	&#125;;</div><div class="line">	<span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">	&#125;;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app.js</span></div><div class="line"><span class="keyword">var</span> hello = <span class="built_in">require</span>(<span class="string">'./hello'</span>);</div><div class="line">hello.setName(<span class="string">"tonglei.win"</span>);</div><div class="line">hello.sayHello();</div></pre></td></tr></table></figure>
+<h3 id="模块查找顺序"><a href="#模块查找顺序" class="headerlink" title="模块查找顺序"></a>模块查找顺序</h3><p>nodejs包含了一些内置模块，如前文用到的 http、fs等等，其模块加载顺序为</p>
+<p><strong><em>文件缓存模块 &gt; 原生模块 &gt; 文件模块</em></strong></p>
+<hr>
+<p><strong><em>此篇完 <a href="http://tonglei.win">http://tonglei.win</a> </em></strong></p>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是-NodeJS&quot;&gt;&lt;a href=&quot;#什么是-NodeJS&quot; class=&quot;headerlink&quot; title=&quot;什么是 NodeJS ?&quot;&gt;&lt;/a&gt;什么是 NodeJS ?&lt;/h1&gt;&lt;p&gt;Node.js 是运行在服务端的 JavaScript。   &lt;/p
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Javascript" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Javascript/"/>
+    
+    
+      <category term="nodejs" scheme="http://tonglei.win/tags/nodejs/"/>
+    
+      <category term="javascript" scheme="http://tonglei.win/tags/javascript/"/>
     
   </entry>
   

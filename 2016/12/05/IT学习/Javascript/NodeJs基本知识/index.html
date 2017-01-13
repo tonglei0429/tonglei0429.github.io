@@ -16,13 +16,13 @@ Hello world创建 app.js通过 required 引入模块1var http = require(&quot;ht
 创建服务器12345678910111213http.createServer(function">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NodeJs基本知识">
-<meta property="og:url" content="http://tonglei.win/2017/01/07/IT学习/Javascript/NodeJs基本知识/index.html">
+<meta property="og:url" content="http://tonglei.win/2016/12/05/IT学习/Javascript/NodeJs基本知识/index.html">
 <meta property="og:site_name" content="元素力量">
 <meta property="og:description" content="什么是 NodeJS ?Node.js 是运行在服务端的 JavaScript。   
 NodeJs 的安装https://nodejs.org/en/download/
 Hello world创建 app.js通过 required 引入模块1var http = require(&quot;http&quot;);
 创建服务器12345678910111213http.createServer(function">
-<meta property="og:updated_time" content="2017-01-07T01:13:51.956Z">
+<meta property="og:updated_time" content="2017-01-13T08:00:13.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJs基本知识">
 <meta name="twitter:description" content="什么是 NodeJS ?Node.js 是运行在服务端的 JavaScript。   
@@ -127,8 +127,8 @@ Hello world创建 app.js通过 required 引入模块1var http = require(&quot;ht
     <h1 class="author">NodeJs基本知识</h1>
     <h5 class="subtitle">
         
-            <time datetime="2017-01-07T01:13:51.956Z" itemprop="datePublished" class="page-time">
-  2017-01-07
+            <time datetime="2016-12-05T09:07:49.000Z" itemprop="datePublished" class="page-time">
+  2016-12-05
 </time>
 
 
@@ -207,7 +207,7 @@ Hello world创建 app.js通过 required 引入模块1var http = require(&quot;ht
             <h1 id="什么是-NodeJS"><a href="#什么是-NodeJS" class="headerlink" title="什么是 NodeJS ?"></a>什么是 NodeJS ?</h1><p>Node.js 是运行在服务端的 JavaScript。   </p>
 <h1 id="NodeJs-的安装"><a href="#NodeJs-的安装" class="headerlink" title="NodeJs 的安装"></a>NodeJs 的安装</h1><p><a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
 <h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><h2 id="创建-app-js"><a href="#创建-app-js" class="headerlink" title="创建 app.js"></a>创建 app.js</h2><h2 id="通过-required-引入模块"><a href="#通过-required-引入模块" class="headerlink" title="通过 required 引入模块"></a>通过 required 引入模块</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div></pre></td></tr></table></figure>
-<h2 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">// 发送 HTTP 头部 </span></div><div class="line">	<span class="comment">// HTTP 状态值: 200 : OK</span></div><div class="line">	<span class="comment">// 内容类型: text/plain</span></div><div class="line">	response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</div><div class="line"></div><div class="line">	<span class="comment">// 发送响应数据 "Hello World"</span></div><div class="line">	response.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;).listen(<span class="number">4000</span>);</div><div class="line"></div><div class="line"><span class="comment">// 终端打印如下信息</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:4000/'</span>);</div></pre></td></tr></table></figure>
+<h2 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">// 发送 HTTP 头部</span></div><div class="line">	<span class="comment">// HTTP 状态值: 200 : OK</span></div><div class="line">	<span class="comment">// 内容类型: text/plain</span></div><div class="line">	response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</div><div class="line"></div><div class="line">	<span class="comment">// 发送响应数据 "Hello World"</span></div><div class="line">	response.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;).listen(<span class="number">4000</span>);</div><div class="line"></div><div class="line"><span class="comment">// 终端打印如下信息</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:4000/'</span>);</div></pre></td></tr></table></figure>
 <p>如此便创建了http服务器，使用node命令运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node app.js</div></pre></td></tr></table></figure></p>
 <p>访问 <a href="http://localhost:4000，可以在浏览器里看到熟悉的Hello" target="_blank" rel="external">http://localhost:4000，可以在浏览器里看到熟悉的Hello</a> World。</p>
 <h1 id="关于npm"><a href="#关于npm" class="headerlink" title="关于npm"></a>关于npm</h1><h2 id="什么是npm"><a href="#什么是npm" class="headerlink" title="什么是npm"></a>什么是npm</h2><p>npm是nodejs的包管理工具，类似java的maven，最新的nodejs安装包里已经包含了npm，不需要再单独安装。</p>
@@ -356,9 +356,9 @@ Hello world创建 app.js通过 required 引入模块1var http = require(&quot;ht
 <h3 id="非阻塞方式读取文件"><a href="#非阻塞方式读取文件" class="headerlink" title="非阻塞方式读取文件"></a>非阻塞方式读取文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="keyword">var</span> data = fs.readFile(<span class="string">'filename.txt'</span>);</div><div class="line"><span class="built_in">console</span>.log(data.toString());</div></pre></td></tr></table></figure>
 <h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>Node.js 是单进程单线程应用程序，但是通过事件和回调支持并发，所以性能非常高。<br>Node.js 的每一个 API 都是异步的，并作为一个独立线程运行，使用异步函数调用，并处理并发。<br>Node.js 基本上所有的事件机制都是用设计模式中观察者模式实现。<br>Node.js 单线程类似进入一个while(true)的事件循环，直到没有事件观察者退出，每个异步事件都生成一个事件观察者，如果有事件发生就调用该回调函数。</p>
 <h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入 events 模块</span></div><div class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</div><div class="line"><span class="comment">// 创建 eventEmitter 对象</span></div><div class="line"><span class="keyword">var</span> eventEmitter = <span class="keyword">new</span> events.EventEmitter();</div><div class="line"></div><div class="line"><span class="comment">// 绑定事件及事件的处理程序</span></div><div class="line">eventEmitter.on(<span class="string">'eventName'</span>, eventHandler);</div><div class="line"></div><div class="line"><span class="comment">// 触发事件</span></div><div class="line">eventEmitter.emit(<span class="string">'eventName'</span>);</div></pre></td></tr></table></figure>
-<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// 引入 events 模块</div><div class="line">var events = require(&apos;events&apos;);</div><div class="line">// 创建 eventEmitter 对象</div><div class="line">var eventEmitter = new events.EventEmitter();</div><div class="line"></div><div class="line">// 创建事件处理程序</div><div class="line">var connectHandler = function connected() &#123;</div><div class="line">   console.log(&apos;连接成功。&apos;);</div><div class="line">   // 触发 data_received 事件 </div><div class="line">   eventEmitter.emit(&apos;data_received&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 绑定 connection 事件处理程序</div><div class="line">eventEmitter.on(&apos;connection&apos;, connectHandler);</div><div class="line"> </div><div class="line">// 使用匿名函数绑定 data_received 事件</div><div class="line">eventEmitter.on(&apos;data_received&apos;, function()&#123;</div><div class="line">   console.log(&apos;数据接收成功。&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 触发 connection 事件 </div><div class="line">eventEmitter.emit(&apos;connection&apos;);</div></pre></td></tr></table></figure>
+<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// 引入 events 模块</div><div class="line">var events = require(&apos;events&apos;);</div><div class="line">// 创建 eventEmitter 对象</div><div class="line">var eventEmitter = new events.EventEmitter();</div><div class="line"></div><div class="line">// 创建事件处理程序</div><div class="line">var connectHandler = function connected() &#123;</div><div class="line">   console.log(&apos;连接成功。&apos;);</div><div class="line">   // 触发 data_received 事件</div><div class="line">   eventEmitter.emit(&apos;data_received&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 绑定 connection 事件处理程序</div><div class="line">eventEmitter.on(&apos;connection&apos;, connectHandler);</div><div class="line"></div><div class="line">// 使用匿名函数绑定 data_received 事件</div><div class="line">eventEmitter.on(&apos;data_received&apos;, function()&#123;</div><div class="line">   console.log(&apos;数据接收成功。&apos;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 触发 connection 事件</div><div class="line">eventEmitter.emit(&apos;connection&apos;);</div></pre></td></tr></table></figure>
 <h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><p>为了让Node.js的文件可以相互调用，Node.js提供了一个简单的模块系统。<br>模块是Node.js 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 Node.js 文件就是一个模块，这个文件可能是JavaScript 代码、JSON 或者编译过的C/C++ 扩展。</p>
-<h3 id="创建自定义模块"><a href="#创建自定义模块" class="headerlink" title="创建自定义模块"></a>创建自定义模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hello.js </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>) </span>&#123; </div><div class="line">	<span class="keyword">var</span> name; </div><div class="line">	<span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">newName</span>) </span>&#123; </div><div class="line">		name = newName;</div><div class="line">	&#125;; </div><div class="line">	<span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name); </div><div class="line">	&#125;; </div><div class="line">&#125;; </div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure>
+<h3 id="创建自定义模块"><a href="#创建自定义模块" class="headerlink" title="创建自定义模块"></a>创建自定义模块</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// hello.js</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> name;</div><div class="line">	<span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">newName</span>) </span>&#123;</div><div class="line">		name = newName;</div><div class="line">	&#125;;</div><div class="line">	<span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</div><div class="line">	&#125;;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">module</span>.exports = Hello;</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app.js</span></div><div class="line"><span class="keyword">var</span> hello = <span class="built_in">require</span>(<span class="string">'./hello'</span>);</div><div class="line">hello.setName(<span class="string">"tonglei.win"</span>);</div><div class="line">hello.sayHello();</div></pre></td></tr></table></figure>
 <h3 id="模块查找顺序"><a href="#模块查找顺序" class="headerlink" title="模块查找顺序"></a>模块查找顺序</h3><p>nodejs包含了一些内置模块，如前文用到的 http、fs等等，其模块加载顺序为</p>
 <p><strong><em>文件缓存模块 &gt; 原生模块 &gt; 文件模块</em></strong></p>
@@ -375,7 +375,7 @@ Hello world创建 app.js通过 required 引入模块1var http = require(&quot;ht
             <blockquote>
                 <p>
                 本文地址：
-                <a href="http://tonglei.win/2017/01/07/IT学习/Javascript/NodeJs基本知识/" target="_blank" rel="external">http://tonglei.win/2017/01/07/IT学习/Javascript/NodeJs基本知识/</a>
+                <a href="http://tonglei.win/2016/12/05/IT学习/Javascript/NodeJs基本知识/" target="_blank" rel="external">http://tonglei.win/2016/12/05/IT学习/Javascript/NodeJs基本知识/</a>
                 </p>
                 <footer><cite><a href="http://tonglei.win">@铜镭</a></cite></footer>
             </blockquote>
@@ -383,12 +383,19 @@ Hello world创建 app.js通过 required 引入模块1var http = require(&quot;ht
             
 <nav class="post-nav">
   
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2016/12/06/文学学习/论语/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">论语</h4>
+      </a>
+    </div>
+  
 
   
     <div class="waves-block waves-effect next fr">
-      <a href="/2017/01/03/IT学习/Javascript/node-in-action-笔记/" id="post-next" class="post-nav-link">
+      <a href="/2016/11/03/IT学习/数据库/学习MYSQL5-7免装版的使用/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">node-in-action_笔记</h4>
+        <h4 class="title">学习MYSQL5.7免装版的使用</h4>
       </a>
     </div>
   
@@ -399,7 +406,7 @@ Hello world创建 app.js通过 required 引入模块1var http = require(&quot;ht
             
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="IT学习/Javascript/NodeJs基本知识" data-title="NodeJs基本知识" data-url="http://tonglei.win/2017/01/07/IT学习/Javascript/NodeJs基本知识/index.html"></div>
+	<div class="ds-thread" data-thread-key="IT学习/Javascript/NodeJs基本知识" data-title="NodeJs基本知识" data-url="http://tonglei.win/2016/12/05/IT学习/Javascript/NodeJs基本知识/index.html"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -433,7 +440,7 @@ var BLOG_SHARE = {
     title: "NodeJs基本知识",
     pic: "/img/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "http://tonglei.win/2017/01/07/IT学习/Javascript/NodeJs基本知识/index.html"
+    url: "http://tonglei.win/2016/12/05/IT学习/Javascript/NodeJs基本知识/index.html"
 };
 </script>
 <div class="global-share" id="global-share">
