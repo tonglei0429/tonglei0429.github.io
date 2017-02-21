@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonglei.win/"/>
-  <updated>2017-01-16T08:37:59.867Z</updated>
+  <updated>2017-02-21T03:34:58.887Z</updated>
   <id>http://tonglei.win/</id>
   
   <author>
@@ -16,11 +16,317 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>node-in-action_笔记</title>
-    <link href="http://tonglei.win/2017/01/03/IT%E5%AD%A6%E4%B9%A0/Javascript/node-in-action-%E7%AC%94%E8%AE%B0/"/>
-    <id>http://tonglei.win/2017/01/03/IT学习/Javascript/node-in-action-笔记/</id>
+    <title>hexo-源码学习-包管理</title>
+    <link href="http://tonglei.win/2017/02/21/IT%E5%AD%A6%E4%B9%A0/Javascript/hexo-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-%E5%8C%85%E7%AE%A1%E7%90%86/"/>
+    <id>http://tonglei.win/2017/02/21/IT学习/Javascript/hexo-源码学习-包管理/</id>
+    <published>2017-02-21T03:29:18.000Z</published>
+    <updated>2017-02-21T03:34:58.887Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="hexo-使用的第三方模块一览-package-json文件分析"><a href="#hexo-使用的第三方模块一览-package-json文件分析" class="headerlink" title="hexo 使用的第三方模块一览 (package.json文件分析)"></a>hexo 使用的第三方模块一览 (package.json文件分析)</h1><h2 id="开发环境依赖-devDependencies"><a href="#开发环境依赖-devDependencies" class="headerlink" title="开发环境依赖 (devDependencies)"></a>开发环境依赖 (devDependencies)</h2><table>
+<thead>
+<tr>
+<th>模块名</th>
+<th>主页</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chai</td>
+<td><a href="https://github.com/chaijs/chai" target="_blank" rel="external">https://github.com/chaijs/chai</a></td>
+<td>断言框架，用于测试</td>
+</tr>
+<tr>
+<td>chai-as-promised</td>
+<td><a href="https://github.com/domenic/chai-as-promised" target="_blank" rel="external">https://github.com/domenic/chai-as-promised</a></td>
+<td>chai 模块的 <a href="https://promisesaplus.com/?source=Blog_Email_%5BPromises%20for%20better%20%5D" target="_blank" rel="external">promise/a+</a> 扩展。(简化js异步回调为链式写法)</td>
+</tr>
+<tr>
+<td>eslint</td>
+<td><a href="https://github.com/eslint/eslint" target="_blank" rel="external">https://github.com/eslint/eslint</a></td>
+<td>javascript 代码检查工具</td>
+</tr>
+<tr>
+<td>eslint-config-hexo</td>
+<td><a href="https://github.com/hexojs/eslint-config-hexo" target="_blank" rel="external">https://github.com/hexojs/eslint-config-hexo</a></td>
+<td>hexo 工程的个性化配置</td>
+</tr>
+<tr>
+<td>hexo-renderer-marked</td>
+<td><a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="external">https://github.com/hexojs/hexo-renderer-marked</a></td>
+<td>hexo 的 markdown 文件渲染引擎</td>
+</tr>
+<tr>
+<td>istanbul</td>
+<td><a href="https://github.com/gotwarlost/istanbul" target="_blank" rel="external">https://github.com/gotwarlost/istanbul</a></td>
+<td>代码覆盖率检测工具</td>
+</tr>
+<tr>
+<td>jscs</td>
+<td><a href="https://github.com/jscs-dev/node-jscs" target="_blank" rel="external">https://github.com/jscs-dev/node-jscs</a></td>
+<td>js 代码格式化工具(该模块已合并到 eslint 模块中)</td>
+</tr>
+<tr>
+<td>jscs-preset-hexo</td>
+<td><a href="https://github.com/hexojs/jscs-preset-hexo" target="_blank" rel="external">https://github.com/hexojs/jscs-preset-hexo</a></td>
+<td>hexo 工程的 jscs 个性化配置</td>
+</tr>
+<tr>
+<td>mocha</td>
+<td><a href="https://github.com/mochajs/mocha" target="_blank" rel="external">https://github.com/mochajs/mocha</a></td>
+<td>nodejs 单元测试框架</td>
+</tr>
+<tr>
+<td>rewrite</td>
+<td><a href="https://github.com/teknopaul/rewrite" target="_blank" rel="external">https://github.com/teknopaul/rewrite</a></td>
+<td>url 重定向模块</td>
+</tr>
+<tr>
+<td>sinon</td>
+<td><a href="https://github.com/sinonjs/sinon" target="_blank" rel="external">https://github.com/sinonjs/sinon</a></td>
+<td>辅助测试工具，可以模拟数据库，冒烟等场景</td>
+</tr>
+</tbody>
+</table>
+<h2 id="正式环境依赖-dependencies"><a href="#正式环境依赖-dependencies" class="headerlink" title="正式环境依赖 (dependencies)"></a>正式环境依赖 (dependencies)</h2><table>
+<thead>
+<tr>
+<th>模块名</th>
+<th>主页</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abbrev</td>
+<td><a href="https://github.com/isaacs/abbrev-js" target="_blank" rel="external">https://github.com/isaacs/abbrev-js</a></td>
+<td>ruby 上 abbrev 的 nodejs 实现，类似自动补全的功能，多用于命令行的命令补全(tab健功能)</td>
+</tr>
+<tr>
+<td>archy</td>
+<td><a href="https://github.com/substack/node-archy" target="_blank" rel="external">https://github.com/substack/node-archy</a></td>
+<td>把 json 对象用漂亮的树状结构打印出来</td>
+</tr>
+<tr>
+<td>bluebird</td>
+<td><a href="https://github.com/petkaantonov/bluebird" target="_blank" rel="external">https://github.com/petkaantonov/bluebird</a></td>
+<td>是一种 promise 的实现，简化 nodejs 事件回调、捕捉、书写的辅助模块</td>
+</tr>
+<tr>
+<td>chalk</td>
+<td><a href="https://github.com/chalk/chalk" target="_blank" rel="external">https://github.com/chalk/chalk</a></td>
+<td>使控制台的输出变得五颜六色</td>
+</tr>
+<tr>
+<td>cheerio</td>
+<td><a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="external">https://github.com/cheeriojs/cheerio</a></td>
+<td>server 版的 jquery</td>
+</tr>
+<tr>
+<td>deep-assign</td>
+<td><a href="https://github.com/sindresorhus/deep-assign" target="_blank" rel="external">https://github.com/sindresorhus/deep-assign</a></td>
+<td>递归赋值的工具模块</td>
+</tr>
+<tr>
+<td>hexo-cli</td>
+<td><a href="https://github.com/hexojs/hexo-cli" target="_blank" rel="external">https://github.com/hexojs/hexo-cli</a></td>
+<td>hexo 的命令行封装</td>
+</tr>
+<tr>
+<td>hexo-front-matter</td>
+<td><a href="https://github.com/hexojs/hexo-front-matter" target="_blank" rel="external">https://github.com/hexojs/hexo-front-matter</a></td>
+<td>使页面支持在页头定义参数</td>
+</tr>
+<tr>
+<td>hexo-fs</td>
+<td><a href="https://github.com/hexojs/hexo-fs" target="_blank" rel="external">https://github.com/hexojs/hexo-fs</a></td>
+<td>hexo 文件系统处理模块</td>
+</tr>
+<tr>
+<td>hexo-i18n</td>
+<td><a href="https://github.com/hexojs/hexo-i18n" target="_blank" rel="external">https://github.com/hexojs/hexo-i18n</a></td>
+<td>国际化模块</td>
+</tr>
+<tr>
+<td>hexo-log</td>
+<td><a href="https://github.com/hexojs/hexo-log" target="_blank" rel="external">https://github.com/hexojs/hexo-log</a></td>
+<td>日志模块</td>
+</tr>
+<tr>
+<td>hexo-util</td>
+<td><a href="https://github.com/hexojs/hexo-util" target="_blank" rel="external">https://github.com/hexojs/hexo-util</a></td>
+<td>hexo 扩展的常用工具集合</td>
+</tr>
+<tr>
+<td>js-yaml</td>
+<td><a href="https://github.com/nodeca/js-yaml" target="_blank" rel="external">https://github.com/nodeca/js-yaml</a></td>
+<td>YAML 处理工具模块</td>
+</tr>
+<tr>
+<td>lodash</td>
+<td><a href="https://github.com/lodash/lodash" target="_blank" rel="external">https://github.com/lodash/lodash</a></td>
+<td>js 常用工具结合</td>
+</tr>
+<tr>
+<td>minimatch</td>
+<td><a href="https://github.com/isaacs/minimatch" target="_blank" rel="external">https://github.com/isaacs/minimatch</a></td>
+<td>文件名匹配工具 如: a.js, b.js 匹配为 *.js</td>
+</tr>
+<tr>
+<td>moment</td>
+<td><a href="https://github.com/moment/moment" target="_blank" rel="external">https://github.com/moment/moment</a></td>
+<td>日期转换模块</td>
+</tr>
+<tr>
+<td>moment-timezone</td>
+<td><a href="https://github.com/moment/moment-timezone" target="_blank" rel="external">https://github.com/moment/moment-timezone</a></td>
+<td>使 moment 支持时区</td>
+</tr>
+<tr>
+<td>nunjucks</td>
+<td><a href="https://github.com/mozilla/nunjucks" target="_blank" rel="external">https://github.com/mozilla/nunjucks</a></td>
+<td>模板引擎</td>
+</tr>
+<tr>
+<td>pretty-hrtime</td>
+<td><a href="https://github.com/robrich/pretty-hrtime" target="_blank" rel="external">https://github.com/robrich/pretty-hrtime</a></td>
+<td>格式化时间</td>
+</tr>
+<tr>
+<td>strip-indent</td>
+<td><a href="https://github.com/sindresorhus/strip-indent" target="_blank" rel="external">https://github.com/sindresorhus/strip-indent</a></td>
+<td>处理字符串开头的空字符</td>
+</tr>
+<tr>
+<td>swig</td>
+<td><a href="https://github.com/paularmstrong/swig" target="_blank" rel="external">https://github.com/paularmstrong/swig</a></td>
+<td>模板引擎</td>
+</tr>
+<tr>
+<td>swig-extras</td>
+<td><a href="https://github.com/paularmstrong/swig-extras" target="_blank" rel="external">https://github.com/paularmstrong/swig-extras</a></td>
+<td>swig 的一些标签扩展</td>
+</tr>
+<tr>
+<td>text-table</td>
+<td><a href="https://github.com/substack/text-table" target="_blank" rel="external">https://github.com/substack/text-table</a></td>
+<td>格式化字符串表格</td>
+</tr>
+<tr>
+<td>tildify</td>
+<td><a href="https://github.com/sindresorhus/tildify" target="_blank" rel="external">https://github.com/sindresorhus/tildify</a></td>
+<td>将全路径格式化为～</td>
+</tr>
+<tr>
+<td>titlecase</td>
+<td><a href="https://github.com/rvagg/titlecase" target="_blank" rel="external">https://github.com/rvagg/titlecase</a></td>
+<td>将段落首字母大写</td>
+</tr>
+<tr>
+<td>warehouse</td>
+<td><a href="https://github.com/tommy351/warehouse" target="_blank" rel="external">https://github.com/tommy351/warehouse</a></td>
+<td>基于 JSON 的数据库</td>
+</tr>
+</tbody>
+</table>
+<h2 id="执行任务-scripts"><a href="#执行任务-scripts" class="headerlink" title="执行任务 (scripts)"></a>执行任务 (scripts)</h2><table>
+<thead>
+<tr>
+<th>任务</th>
+<th>指令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eslint</td>
+<td>eslint .</td>
+<td>代码检查</td>
+</tr>
+<tr>
+<td>jscs</td>
+<td>jscs .</td>
+<td>代码格式化</td>
+</tr>
+<tr>
+<td>test</td>
+<td>mocha test/index.js</td>
+<td>自动化测试</td>
+</tr>
+<tr>
+<td>test-cov</td>
+<td>istanbul cover –print both _mocha – test/index.js</td>
+<td>覆盖率检查</td>
+</tr>
+</tbody>
+</table>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;hexo-使用的第三方模块一览-package-json文件分析&quot;&gt;&lt;a href=&quot;#hexo-使用的第三方模块一览-package-json文件分析&quot; class=&quot;headerlink&quot; title=&quot;hexo 使用的第三方模块一览 (package.jso
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Javascript" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Javascript/"/>
+    
+    
+      <category term="nodejs" scheme="http://tonglei.win/tags/nodejs/"/>
+    
+      <category term="javascript" scheme="http://tonglei.win/tags/javascript/"/>
+    
+      <category term="hexo" scheme="http://tonglei.win/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-源码学习-准备</title>
+    <link href="http://tonglei.win/2017/02/20/IT%E5%AD%A6%E4%B9%A0/Javascript/hexo-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-%E5%87%86%E5%A4%87/"/>
+    <id>http://tonglei.win/2017/02/20/IT学习/Javascript/hexo-源码学习-准备/</id>
+    <published>2017-02-20T03:29:18.000Z</published>
+    <updated>2017-02-21T03:33:48.395Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>Hexo 是一个快速、简单且功能强大的 Node.js 博客框架。</p>
+</blockquote>
+<p>Hexo 的两个主要工程: <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexo</a> 和 <a href="https://github.com/hexojs/hexo-cli" target="_blank" rel="external">hexo-cli</a></p>
+<p>其中, hexo 是核心,罗辑全部在此项目中.hexo-cli 是 hexo 工程的命令行接口</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li><a href="/2017/02/21/IT学习/Javascript/hexo-源码学习-包管理/">hexo 包管理</a></li>
+<li><a href="">hexo 文件结构</a></li>
+</ol>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;Hexo 是一个快速、简单且功能强大的 Node.js 博客框架。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;He
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Javascript" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Javascript/"/>
+    
+    
+      <category term="nodejs" scheme="http://tonglei.win/tags/nodejs/"/>
+    
+      <category term="javascript" scheme="http://tonglei.win/tags/javascript/"/>
+    
+      <category term="hexo" scheme="http://tonglei.win/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>express-in-action_笔记</title>
+    <link href="http://tonglei.win/2017/01/03/IT%E5%AD%A6%E4%B9%A0/Javascript/express-in-action-%E7%AC%94%E8%AE%B0/"/>
+    <id>http://tonglei.win/2017/01/03/IT学习/Javascript/express-in-action-笔记/</id>
     <published>2017-01-03T09:07:49.000Z</published>
-    <updated>2017-01-16T08:37:59.867Z</updated>
+    <updated>2017-02-21T02:26:28.331Z</updated>
     
     <content type="html"><![CDATA[<h1 id="第一部分-简介"><a href="#第一部分-简介" class="headerlink" title="第一部分 简介"></a>第一部分 简介</h1><h2 id="第一章-基本概念"><a href="#第一章-基本概念" class="headerlink" title="第一章 基本概念"></a>第一章 基本概念</h2><p><strong>关键词: node.js express</strong></p>
 <p>第一章主要回答了以下几个问题。</p>
@@ -919,55 +1225,6 @@ passport.session: 使用Passport会话
   
   <entry>
     <title>学习ApacheCxf+Spring建立Rest服务</title>
-    <link href="http://tonglei.win/2016/10/24/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0ApacheCxf+Spring%E5%BB%BA%E7%AB%8BOAuth2%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://tonglei.win/2016/10/24/IT学习/Java/学习ApacheCxf+Spring建立OAuth2服务/</id>
-    <published>2016-10-24T03:20:00.000Z</published>
-    <updated>2017-01-07T01:13:51.956Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2"><a href="#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2" class="headerlink" title="Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2"></a>Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2</h2><p>官方文档: <a href="http://cxf.apache.org/docs/jax-rs-oauth2.html" target="_blank" rel="external">http://cxf.apache.org/docs/jax-rs-oauth2.html</a></p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Apache 的 CXF 可以实现 <a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="external">OAuth2.0</a><br>实现 OAuth2.0 需要这么几步：</p>
-<ol>
-<li>浏览器访问第三方网站；</li>
-<li>带着它的客户端ID，状态，地址等信息跳转到 OAuth2.0 服务，服务给它授权；</li>
-<li>OAuth2.0 服务端用请求的 ClientID 生成登录表单给终端用户，用户登录并给第三方应用授权；</li>
-<li>登录成功返回授权码等一大堆参数给第三方应用；</li>
-<li>客户端用授权码请求票据；</li>
-<li>获取票据之后，客户端允许终端用户访问其资源。</li>
-</ol>
-<h2 id="Maven依赖"><a href="#Maven依赖" class="headerlink" title="Maven依赖"></a>Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;cxf-rt-rs-security-oauth2&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;3.1.7&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
-<h2 id="服务端开发"><a href="#服务端开发" class="headerlink" title="服务端开发"></a>服务端开发</h2><p>三步：</p>
-<ol>
-<li>挑战用户，然后将授权码返回客户端</li>
-<li>用授权码生成票据</li>
-<li>验证票据</li>
-</ol>
-<link href="/css/prism.css" rel="stylesheet">]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot;&gt;&lt;a href=&quot;#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot; clas
-    
-    </summary>
-    
-      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
-    
-    
-      <category term="oauth2" scheme="http://tonglei.win/tags/oauth2/"/>
-    
-      <category term="spring" scheme="http://tonglei.win/tags/spring/"/>
-    
-      <category term="java" scheme="http://tonglei.win/tags/java/"/>
-    
-      <category term="apache cxf" scheme="http://tonglei.win/tags/apache-cxf/"/>
-    
-      <category term="源码" scheme="http://tonglei.win/tags/%E6%BA%90%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习ApacheCxf+Spring建立Rest服务</title>
     <link href="http://tonglei.win/2016/10/24/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0ApacheCxf+Spring%E5%BB%BA%E7%AB%8BRest%E6%9C%8D%E5%8A%A1/"/>
     <id>http://tonglei.win/2016/10/24/IT学习/Java/学习ApacheCxf+Spring建立Rest服务/</id>
     <published>2016-10-24T03:20:00.000Z</published>
@@ -1013,6 +1270,55 @@ passport.session: 使用Passport会话
     
       <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
     
+    
+      <category term="spring" scheme="http://tonglei.win/tags/spring/"/>
+    
+      <category term="java" scheme="http://tonglei.win/tags/java/"/>
+    
+      <category term="apache cxf" scheme="http://tonglei.win/tags/apache-cxf/"/>
+    
+      <category term="源码" scheme="http://tonglei.win/tags/%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习ApacheCxf+Spring建立Rest服务</title>
+    <link href="http://tonglei.win/2016/10/24/IT%E5%AD%A6%E4%B9%A0/Java/%E5%AD%A6%E4%B9%A0ApacheCxf+Spring%E5%BB%BA%E7%AB%8BOAuth2%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://tonglei.win/2016/10/24/IT学习/Java/学习ApacheCxf+Spring建立OAuth2服务/</id>
+    <published>2016-10-24T03:20:00.000Z</published>
+    <updated>2017-01-07T01:13:51.956Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2"><a href="#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2" class="headerlink" title="Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2"></a>Apache CXF &gt; RESTful Services &gt; JAX-RS &gt; JAX-RS OAuth2</h2><p>官方文档: <a href="http://cxf.apache.org/docs/jax-rs-oauth2.html" target="_blank" rel="external">http://cxf.apache.org/docs/jax-rs-oauth2.html</a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Apache 的 CXF 可以实现 <a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="external">OAuth2.0</a><br>实现 OAuth2.0 需要这么几步：</p>
+<ol>
+<li>浏览器访问第三方网站；</li>
+<li>带着它的客户端ID，状态，地址等信息跳转到 OAuth2.0 服务，服务给它授权；</li>
+<li>OAuth2.0 服务端用请求的 ClientID 生成登录表单给终端用户，用户登录并给第三方应用授权；</li>
+<li>登录成功返回授权码等一大堆参数给第三方应用；</li>
+<li>客户端用授权码请求票据；</li>
+<li>获取票据之后，客户端允许终端用户访问其资源。</li>
+</ol>
+<h2 id="Maven依赖"><a href="#Maven依赖" class="headerlink" title="Maven依赖"></a>Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;org.apache.cxf&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;cxf-rt-rs-security-oauth2&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;3.1.7&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<h2 id="服务端开发"><a href="#服务端开发" class="headerlink" title="服务端开发"></a>服务端开发</h2><p>三步：</p>
+<ol>
+<li>挑战用户，然后将授权码返回客户端</li>
+<li>用授权码生成票据</li>
+<li>验证票据</li>
+</ol>
+<link href="/css/prism.css" rel="stylesheet">]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot;&gt;&lt;a href=&quot;#Apache-CXF-gt-RESTful-Services-gt-JAX-RS-gt-JAX-RS-OAuth2&quot; clas
+    
+    </summary>
+    
+      <category term="IT学习" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Java" scheme="http://tonglei.win/categories/IT%E5%AD%A6%E4%B9%A0/Java/"/>
+    
+    
+      <category term="oauth2" scheme="http://tonglei.win/tags/oauth2/"/>
     
       <category term="spring" scheme="http://tonglei.win/tags/spring/"/>
     
